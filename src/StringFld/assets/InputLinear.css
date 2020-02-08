@@ -1,0 +1,15 @@
+input.st-core-input-input {
+  height: 18px;
+  width: 100%;
+  outline: none;
+  border: 0px;
+  text-overflow: ellipsis;
+  border-collapse: collapse;
+  line-height: normal;
+  font-family: inherit;
+  font-size: 12px;
+  font-kerning: auto;
+  padding-left: 2px;
+  box-sizing: border-box;
+  background-color: transparent
+}

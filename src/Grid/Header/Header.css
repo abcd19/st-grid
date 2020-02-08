@@ -1,0 +1,30 @@
+td.st-grid-head-cell {
+  user-select: none;
+  -moz-user-select: none;
+  text-align: center;
+  padding: 0px;
+  height: 29px;
+}
+
+
+div.st-grid-head-cell-widthChangeAnchor {
+  width: 5px;
+  float: left;
+  cursor: w-resize;
+  //background-color: lightgray;
+}
+
+div.st-grid-head-cell-textContainer {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+  //background-color: lightgray;
+}
+
+div.st-grid-head-cell-textContainer {
+  text-align: left;
+  margin-left: 5px;
+}
+
+

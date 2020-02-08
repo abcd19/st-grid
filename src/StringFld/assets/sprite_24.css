@@ -1,0 +1,312 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.st_icon_24_about {
+  background-image: url(sprite_24.png);
+  background-position: 0px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_bookmark {
+  background-image: url(sprite_24.png);
+  background-position: -24px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_box {
+  background-image: url(sprite_24.png);
+  background-position: -48px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_calendar {
+  background-image: url(sprite_24.png);
+  background-position: -72px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_cancel {
+  background-image: url(sprite_24.png);
+  background-position: -96px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_check-all {
+  background-image: url(sprite_24.png);
+  background-position: -120px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_checked {
+  background-image: url(sprite_24.png);
+  background-position: -144px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_checkmark {
+  background-image: url(sprite_24.png);
+  background-position: -168px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_chooceCellGray {
+  background-image: url(sprite_24.png);
+  background-position: -192px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_clearCellGray {
+  background-image: url(sprite_24.png);
+  background-position: -216px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_combobox {
+  background-image: url(sprite_24.png);
+  background-position: -240px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_connect {
+  background-image: url(sprite_24.png);
+  background-position: -264px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_delete {
+  background-image: url(sprite_24.png);
+  background-position: -288px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_document {
+  background-image: url(sprite_24.png);
+  background-position: -312px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_edit {
+  background-image: url(sprite_24.png);
+  background-position: -336px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_external-link {
+  background-image: url(sprite_24.png);
+  background-position: -360px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_file {
+  background-image: url(sprite_24.png);
+  background-position: -384px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_folder {
+  background-image: url(sprite_24.png);
+  background-position: -408px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_idea {
+  background-image: url(sprite_24.png);
+  background-position: -432px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_image-file {
+  background-image: url(sprite_24.png);
+  background-position: -456px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_info {
+  background-image: url(sprite_24.png);
+  background-position: -480px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_key {
+  background-image: url(sprite_24.png);
+  background-position: -504px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_lock {
+  background-image: url(sprite_24.png);
+  background-position: -528px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_menu {
+  background-image: url(sprite_24.png);
+  background-position: -552px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_ok {
+  background-image: url(sprite_24.png);
+  background-position: -576px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_opened-folder {
+  background-image: url(sprite_24.png);
+  background-position: -600px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_padlock {
+  background-image: url(sprite_24.png);
+  background-position: -624px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_picture {
+  background-image: url(sprite_24.png);
+  background-position: -648px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_plus {
+  background-image: url(sprite_24.png);
+  background-position: -672px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_puzzle {
+  background-image: url(sprite_24.png);
+  background-position: -696px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_rating {
+  background-image: url(sprite_24.png);
+  background-position: -720px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_refresh {
+  background-image: url(sprite_24.png);
+  background-position: -744px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_remove {
+  background-image: url(sprite_24.png);
+  background-position: -768px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_restart {
+  background-image: url(sprite_24.png);
+  background-position: -792px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_round {
+  background-image: url(sprite_24.png);
+  background-position: -816px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_scroll {
+  background-image: url(sprite_24.png);
+  background-position: -840px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_search {
+  background-image: url(sprite_24.png);
+  background-position: -864px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_services {
+  background-image: url(sprite_24.png);
+  background-position: -888px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_settings {
+  background-image: url(sprite_24.png);
+  background-position: -912px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_share-3 {
+  background-image: url(sprite_24.png);
+  background-position: -936px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_share {
+  background-image: url(sprite_24.png);
+  background-position: -960px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_support {
+  background-image: url(sprite_24.png);
+  background-position: -984px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_synchronize {
+  background-image: url(sprite_24.png);
+  background-position: -1008px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_tick-box {
+  background-image: url(sprite_24.png);
+  background-position: -1032px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_trash-can {
+  background-image: url(sprite_24.png);
+  background-position: -1056px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_trash {
+  background-image: url(sprite_24.png);
+  background-position: -1080px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_unavailable {
+  background-image: url(sprite_24.png);
+  background-position: -1104px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_undelete {
+  background-image: url(sprite_24.png);
+  background-position: -1128px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_viewCellGray {
+  background-image: url(sprite_24.png);
+  background-position: -1152px 0px;
+  width: 24px;
+  height: 24px;
+}
