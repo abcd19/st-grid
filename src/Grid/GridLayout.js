@@ -5,6 +5,7 @@ import {HeaderLayout} from './Header/HeaderLayout';
 import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout';
 import {ToolbarLayout} from './Toolbar/ToolbarLayout'
 import {StringFldCell  as StringFldCell} from './../StringFld/StringFldCell'
+import {calcSumColumnsWidth} from './calcSumColumnsWidth';
 import './GridLayout.css'
 import {onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth} from './handle'
 
@@ -44,19 +45,26 @@ class GridLayout extends React.Component {
     this.onChangeHeaderCellWidth = onChangeHeaderCellWidth.bind(this);
   };
   
-  
-  calcSumColumnsWidth()
-  {
-    let sum = 0;
-    for(let i = 0; i < this.props.columns.length; i++)
-    {
-      sum = sum + this.props.columns[i]['widthPix'];
-    }
-    return sum;
-  }
-  
+    
   componentDidMount()
   {
+    
+    //чтобы не крутилась страница в chrom дисеблим скролл с флагом  passive: false
+    const prevDef = (e) => e.preventDefault ? e.preventDefault(): (e.returnValue = false);
+    
+    if ('onwheel' in document)
+    {
+      // IE9+, FF17+, Ch31+
+      this.bodyDivRef.current.addEventListener("wheel", prevDef, { passive: false });
+    } else if ('onmousewheel' in document) {
+      // устаревший вариант события
+      this.bodyDivRef.current.addEventListener("mousewheel", prevDef, { passive: false });
+    } else {
+      // Firefox < 17
+      this.bodyDivRef.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
+    }
+
+    
     this.prepareScrollToLastItem();
   }
 
@@ -110,7 +118,7 @@ class GridLayout extends React.Component {
     //высота контентной части таблицы
     let bodyContentHeight = this.props.height - this.SCROLL - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
     //ширина контентной части таблицы
-    let bodyContentWidth = this.calcSumColumnsWidth();
+    let bodyContentWidth = calcSumColumnsWidth(this.props.columns);
 
     
     //Если передан флаг скроллинга до последнего айтема
@@ -143,7 +151,7 @@ class GridLayout extends React.Component {
         </tr>
         <tr>
           <td className="st-grid-body-td">
-            <div onWheel={ this.onItemMouseWheelScrollingY } ref ={this.bodyDivRef} className="st-grid-body-div" style={{width: width, height: bodyContentHeight}}>
+            <div  onWheel={ this.onItemMouseWheelScrollingY } ref ={this.bodyDivRef} className="st-grid-body-div" style={{width: width, height: bodyContentHeight}}>
               <div className="st-grid-body-content-div" style={{width: bodyContentWidth+'px'}}>
                 <ItemsLayout 
                   columns={columns} 

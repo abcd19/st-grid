@@ -1,9 +1,0 @@
-node_modules
-package-lock.json
-nbproject
-dev/**/*.map
-dev/**/*.min.css
-dev/**/*.min.js
-prod
-/dev/assets/grid.bundle.js
-/dev/assets/main.bundle.js

@@ -53,6 +53,8 @@ export function onItemScrollY(e)
  */
 export function onItemMouseWheelScrollingY(e)
 {
+
+
   //на сколько сильно прокручена страница
   let delta = e.deltaY;
   
@@ -65,6 +67,21 @@ export function onItemMouseWheelScrollingY(e)
   //определяем виличну новго скролла
   //какова бы не была велечина скролла скрллим всегда на размера строки
   let newScroll;
+
+
+  //прокручиваем минимум на 2 строки вверх/вниз
+  //в некоторых браузерах сколеско отробатываем по разному
+  // в Firefox скролится на 3 пикселя, как в Хроме на 100
+  if(Math.abs(delta) < CELL_HEIGHT*2)
+  {
+    if(delta > 0)
+    {
+      delta = CELL_HEIGHT*2;
+    }else{
+      delta = -1*(CELL_HEIGHT*2)
+    }
+  }
+
   //если скролл был вниз
   if(delta > 0 )
   {
@@ -86,12 +103,18 @@ export function onItemMouseWheelScrollingY(e)
     }
   }
 
+
+
   //устанавливаем величину скролла слою-Скролу
   this.scrollRightRef.current.scrollTop = newScroll;
 
   //перерисовываем множество видимых строк в Items
   let newFirstVisibleRow = Math.floor(newScroll/CELL_HEIGHT);
   this.setState({firstVisibleRowI: newFirstVisibleRow});
+  
+     //чтобы не крутилась страница
+  //e.preventDefault();
+
 }
 
  /**

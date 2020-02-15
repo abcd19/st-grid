@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox tests 1`] = `
+<div
+  className="pr-checkbox-imgCont"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundPosition": "30px 15px",
+      "opacity": "1",
+    }
+  }
+/>
+`;

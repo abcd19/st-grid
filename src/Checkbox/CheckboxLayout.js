@@ -1,7 +1,7 @@
 import * as ST from './../common'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Checkbox.css'
+//import './Checkbox.css'
 
 class CheckboxLayout extends React.Component{
     

@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 
 
 let list = [];
-for(var i = 0; i < 2; i++)
+for(var i = 0; i < 20; i++)
 {
   list.push({
   raw: String('raw'+i), display: String('display'+i)
@@ -60,10 +60,7 @@ class App extends React.Component
         type: {
           constr: ComboboxCell,
           settings:{
-            items: [
-              {raw: 'val1', display: 'val1'}, 
-              {raw: 'val2', display: 'val2'}
-              ],
+            items: list,
             clearBtnFlag: true
           }
         },
@@ -160,7 +157,9 @@ export const MyCheckbox = () =>
 export function run()
 {    
     ReactDOM.render(
-    <App  />
+      <div style={{height: 400, overflow:'scroll'}}>
+        <App  />
+      </div>
     , document.getElementById('myTbl1'));
 
 } 
