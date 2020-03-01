@@ -1,6 +1,6 @@
 {
   "name": "@abcd19/st-grid",
-  "version": "3.4.9",
+  "version": "3.4.11",
   "description": "JavaScript Grid for building storage and accounting forms. Works with React.",
   "main": "dist/index.bundle.js",
   "dependencies": {
@@ -24,6 +24,8 @@
     "css-loader": "^3.4.1",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "file-loader": "^5.0.2",
     "gm": "^1.23.1",
     "gulp": "^4.0.2",
@@ -43,6 +45,7 @@
     "gulp-watch": "^5.0.1",
     "gulp.spritesmith": "^6.11.0",
     "jest": "^25.1.0",
+    "jsdom": "^16.2.0",
     "node-static": "^0.7.11",
     "react-test-renderer": "^16.12.0",
     "style-loader": "^1.1.2",
@@ -52,15 +55,12 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "test": "jest",
+    "updateSnapshot": "jest --updateSnapshot",
+    "test": "jest Combo #or --watch",
+    "testAll": "jest",
     "watch": "webpack --watch",
     "build": "webpack --mode=production",
     "start": "webpack-dev-server"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
   },
   "repository": {
     "type": "git",
@@ -68,11 +68,13 @@
   },
   "keywords": [
     "grid",
-    "react",
     "accounting",
     "storage",
     "UI",
-    "billing"
+    "billing",
+    "react",
+    "jest",
+    "enzyme"
   ],
   "author": "A. Subbotin",
   "license": "MIT",

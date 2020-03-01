@@ -1,4 +1,4 @@
-JavaScript components for building storage and accounting UI forms. Based on React UI library.
+Set of JavaScript components for building storage and accounting web forms. Based on React UI library.
 
 ## Installation
 
@@ -6,9 +6,12 @@ JavaScript components for building storage and accounting UI forms. Based on Rea
 npm install @abcd19/st-grid
 ```
 
-## Usage
-example: https://codesandbox.io/s/table-59iyo
+## Examples
+- line input: https://codesandbox.io/s/stringfld-192kg
+- combobox: https://codesandbox.io/s/combobox-c4g3d
+- checkbox https://codesandbox.io/s/checkbox-y3g3h
+- table: https://codesandbox.io/s/table-59iyo
 
 ## Compatibility
-Chrome - last 2 versions
-Firefox -  last 2 versions
+- Chrome - last 2 versions
+- Firefox -  last 2 versions

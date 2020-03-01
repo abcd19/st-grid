@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit';
 import {ListLayout} from './ListLayout'
 
+
 class ComboboxLayoutEdit extends React.Component{
     
     /**
@@ -75,6 +76,11 @@ class ComboboxLayoutEdit extends React.Component{
     //находит значение в виде {raw,display} по сырому значению raw
     findValByRawVal(rawVal)
     {
+      if(ST.isUndefined(this.props.items))
+      {
+        return undefined;
+      }
+
       let val = this.props.items.filter((item) =>{
         return item['raw'] == rawVal;
       });
@@ -85,7 +91,12 @@ class ComboboxLayoutEdit extends React.Component{
 
     render()
     {
-      let {val} = this.props;
+      let {val, items} = this.props;
+
+      if(ST.isUndefined(items))
+      {
+        items = [];
+      }
 
       let realVal ={
         raw: undefined,
@@ -135,7 +146,7 @@ class ComboboxLayoutEdit extends React.Component{
             </tr>
             <tr>
               <td>
-                <ListLayout  selectedVal = {realVal['raw'] } handler={handler}  items={this.props.items} />
+                <ListLayout  selectedVal = {realVal['raw'] } handler={handler}  items={items} />
               </td>
             </tr>
           </tbody>  

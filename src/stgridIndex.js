@@ -142,7 +142,7 @@ export const MyCombobox = () =>
   const [val, setVal] = useState({raw: 'raw5'});
   return (
       <div style={{width: 420, height:100,}}> 
-        <Combobox onChange={(newVal)=> setVal(newVal)} items={list} disableSearch={true} clearBtnFlag = {true} val = {val} />
+        <Combobox />
       </div>)
 }
 
@@ -158,7 +158,7 @@ export function run()
 {    
     ReactDOM.render(
       <div style={{height: 400, overflow:'scroll'}}>
-        <App  />
+        <MyCombobox  />
       </div>
     , document.getElementById('myTbl1'));
 

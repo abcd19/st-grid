@@ -44,7 +44,6 @@ import './assets/InputLinear.css'
         },500);
     }
    
-
     //onChange происходит сразу
     if(ST.isFunction(this.props['onChange']))
     {

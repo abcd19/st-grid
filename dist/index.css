@@ -822,5 +822,49 @@ table.st-grid-layout .st-grid-rightScroll-div{
 
 
 
+div.pr-checkbox-imgCont {
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  background-image: url(7f45482a8791a5c0b37c43b72b969aa2.png);
+}
+
+table.st-checkbox-table {
+  color: black; 
+}
+
+table.st-checkbox-table-disabled {
+  color: gray; 
+}
+
+
+
+td.pr-checkbox-labelTd {
+  background-color: transparent;
+  height: 15px;
+  font-size: 10pt;
+  vertical-align:  middle;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+
+div.pr-checkbox-label {
+  background-color: transparent;
+  margin-left: 5px;
+}
+
+
+div.st-checkbox-curtian {
+  background-color: lightgray;
+  width: 15px;
+  height: 15px;
+  opacity: 0.6;
+}
 
 /*# sourceMappingURL=index.css.map*/

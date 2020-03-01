@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox tests 1`] = `
+exports[`Checkbox tests val = false 1`] = `
+<div
+  className="pr-checkbox-imgCont"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundPosition": "30px 15px",
+      "opacity": "1",
+    }
+  }
+/>
+`;
+
+exports[`Checkbox tests val = true 1`] = `
+<div
+  className="pr-checkbox-imgCont"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundPosition": "0px 15px",
+      "opacity": "1",
+    }
+  }
+/>
+`;
+
+exports[`Checkbox tests val = undefined 1`] = `
 <div
   className="pr-checkbox-imgCont"
   onClick={[Function]}

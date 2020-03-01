@@ -26,7 +26,7 @@ class ListLayout extends React.Component{
         //флаг фильтр пременен
         isFiltred: false
       }
-      this.onWheelHandle = this.onWheelHandle.bind(this);
+      //this.onWheelHandle = this.onWheelHandle.bind(this);
     };
 
     clickItemHandle(val)
@@ -37,12 +37,12 @@ class ListLayout extends React.Component{
       }
     }
 
-    onWheelHandle(e)
+    /*onWheelHandle(e)
     {
       //при скроллинге листа скроллится только он
       //Если убрать то скроллиться грид      
       e.stopPropagation();
-    }
+    }*/
 
     //фильтрация элементов при поиске
     changeSearchHandle(val)
@@ -111,6 +111,23 @@ class ListLayout extends React.Component{
       // у потомка берем его отступ и прибавляем размер скролла страницы
       this.genDiv.current.style.left = left + getBodyScrollLeft() + 'px';
       this.genDiv.current.style.top = top + getBodyScrollTop() + 'px';
+
+          //чтобы не крутилась страница в chrom дисеблим скролл с флагом  passive: false
+      const prevDef = (e) => e.stopPropagation();
+      
+      if ('onwheel' in document)
+      {
+        // IE9+, FF17+, Ch31+
+        this.genDiv.current.addEventListener("wheel", prevDef, { passive: false });
+      } else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        this.genDiv.current.addEventListener("mousewheel", prevDef, { passive: false });
+      } else {
+        // Firefox < 17
+        this.genDiv.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
+      }
+
+
     }
 
     render(){
@@ -170,7 +187,7 @@ class ListLayout extends React.Component{
       {
         itemsDivHeight = items.length*itemHeight
       }
-
+      console.log('items', items.length)
       return(
         <div id="ListLayout" ref={this.genDiv}  style= {{background: 'white', width: "100%",  boxSizing: 'border-box', zIndex:'100', position: 'absolute', border: '1px solid gray'}}>
           <table style={{borderSpacing: '2px', borderCollapse: 'separate', width: '100%'}}>
@@ -178,7 +195,7 @@ class ListLayout extends React.Component{
               {searchBlock}
               <tr>
                 <td style={{padding: '0px', margin: '0px'}}>
-                  <div id="ListLayout-item" style={{height: itemsDivHeight+'px', overflow: 'auto', boxSizing: 'content-box'}} onWheel={this.onWheelHandle}>
+                  <div id="ListLayout-item" style={{height: itemsDivHeight+'px', overflow: 'auto', boxSizing: 'content-box'}} /*onWheel={this.onWheelHandle}*/>
                     {items}
                   </div>
                 </td>
