@@ -1,7 +1,7 @@
 import * as ST from '../common';
 import React, {useState} from 'react';
 import {StringFldLayoutEdit} from './StringFldLayoutEdit';
-import './../Tree/assets/sprite_16.css';
+//import './../Tree/assets/sprite_16.css';
 import './assets/sprite_24.css';
 
 export const StringFldAnchoredCell = (props) =>

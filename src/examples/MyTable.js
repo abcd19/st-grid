@@ -1,131 +1,125 @@
 
 
-import {DirectoryTbl, ImgButtonLayout, ComboboxFldCell, CheckboxFldCell, DateFldCell} from '../stgrid'
+import {DirectoryTbl, ImgButtonLayout, ComboboxFldCell, CheckboxFldCell} from '../stgrid'
 import React, { useState } from 'react'
-import {list} from './stgridIndexCommon';
 import ReactDOM from 'react-dom'
 
 
-function generateItem()
-{
-  var newItem = {
-  
-    data: {
-      'Num': '321',
-      'alias': 'ИзделияВВТ',
-    },
-  }
-  return newItem
-}
-
-export class MyTable extends React.Component
-{
-  constructor(props)
-  {
+export class MyTable extends React.Component {
+  constructor(props) {
     super(props);
 
-    let items = [];
+    let list = [
+      { raw: "newcomer", display: "newcomer" },
+      { raw: "intermediate", display: "intermediate" },
+      { raw: "advanced", display: "advanced user" }
+    ];
 
-    for(var i = 0; i < 10; i++)
-    {
-      var newItem = {
-  
+    let items = [
+      {
         data: {
-          'Num': String(i),
-          'CheckboxFldCell': true,
-          'textCell': '123  dfsfsd sdfdfs dsd sdfdsf sdfsdf dsfdfdsf'
+          num: String(1),
+          login: "Jane",
+          userName: "Jane Smith",
+          verified: false,
+          level: list[0]
         }
-  
-      }; 
-      items.push(newItem);
-    }
-    
+      },
+
+      {
+        data: {
+          num: String(3),
+          login: "Steven",
+          userName: "Steven Tyler",
+          verified: true,
+          level: list[2]
+        }
+      },
+
+      {
+        data: {
+          num: String(2),
+          login: "John",
+          userName: "John Cash",
+          verified: false,
+          level: list[1]
+        }
+      }
+    ];
+
     let columns = [
       {
-        title: '№',
-        alias: 'Num',        
-      },                   
+        title: "№",
+        alias: "num"
+      },
       {
-        title: 'CheckboxFldCell123456789',
-        alias: 'CheckboxFldCell',
+        title: "Login",
+        alias: "login"
+      },
+      {
+        title: "User name",
+        alias: "userName"
+      },
+      {
+        title: "Verified",
+        alias: "verified",
         widthPix: 200,
         type: {
-          constr: CheckboxFldCell,
-          settings:{}
-        },
+          constr: CheckboxFldCell
+        }
       },
-  
+
       {
-        title: 'col5',
-        alias: 'col5',
+        title: "Level",
+        alias: "level",
         widthPix: 200,
         type: {
           constr: ComboboxFldCell,
-          settings:{
+          settings: {
             items: list,
             listWidthPix: 200,
             clearBtnFlag: true
           }
-        },
-      },
-      
-      {
-        title: 'col6',
-        alias: 'col6',
-        widthPix: 200,
-        type: {
-          constr: DateFldCell,
-          settings:{
-            items: list,
-            clearBtnFlag: true
-          }
-        },
-      },
-
+        }
+      }
     ];
 
     this.onChange = this.onChange.bind(this);
-    
+
     this.state = {
-        items: items,
-        columns: columns,
-        toolbar: toolbar
-    }
-
+      items: items,
+      columns: columns
+    };
   }
 
-  onChange(newItems, action)
-  {
+  onChange(newItems, action) {
     console.dir(arguments);
-    this.setState({items: newItems});
+    this.setState({ items: newItems });
   }
 
-  onSelectItem(itemNum)
-  {
+  onSelectItem(itemNum) {
     console.dir(arguments);
-    console.log('onSelectItem');
+    console.log("onSelectItem");
   }
 
-  render(){    
-    return(
+  render() {
+    return (
       <>
-      <button onClick = {()=>this.setState({items: [generateItem('id')]})}>Делай</button>
-      <DirectoryTbl
-        width = {900} 
-        height = {400}
-        addBtnFlag = {true}
-        onChange = {this.onChange}
-        items = {this.state.items}        
-        onSelectItem = {this.onSelectItem}
-        removeBtnFlag = {true}
-        removeAllBtnFlag = {true}
-        onRemoveAllItems = {function(){alert(123)}}
-        sortingFlag = {true}
-        columns = {this.state.columns}
-    /></ >);
-
+        <DirectoryTbl
+          width={900}
+          height={400}
+          addBtnFlag={true}
+          onChange={this.onChange}
+          items={this.state.items}
+          onSelectItem={this.onSelectItem}
+          removeBtnFlag={true}
+          columns={this.state.columns}
+        />
+      </>
+    );
   }
 }
+
 
 
 

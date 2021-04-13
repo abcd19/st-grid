@@ -1,4 +1,4 @@
-Set of JavaScript components for building storage and accounting web forms. Based on React UI library.
+Flexible Data Grid JavaScript component for building storage and accounting web forms. Based on React UI library.
 
 ## Installation
 
@@ -6,12 +6,6 @@ Set of JavaScript components for building storage and accounting web forms. Base
 npm install @abcd19/st-grid
 ```
 
-## Examples
-- line input: https://codesandbox.io/s/stringfld-192kg
-- combobox: https://codesandbox.io/s/combobox-c4g3d
-- checkbox https://codesandbox.io/s/checkbox-y3g3h
-- table: https://codesandbox.io/s/table-59iyo
+## Example
+https://codesandbox.io/s/table-expample-ler7w
 
-## Compatibility
-- Chrome - last 2 versions
-- Firefox -  last 2 versions

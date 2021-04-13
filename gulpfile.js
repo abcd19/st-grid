@@ -101,8 +101,8 @@ gulp.task('spritePng24', function () {
 	});
 	
 gulp.task('sprite', gulp.series(
-      'clean', 'resizePng32', 'spritePng32', 'resizePng24', 'spritePng24','clean', 
-      'cleanTree16', 'resizeTree16','spriteTree16','cleanTree16'));
+      'clean', 'resizePng32', 'spritePng32', 'resizePng24', 'spritePng24','clean'/*, 
+      'cleanTree16', 'resizeTree16','spriteTree16','cleanTree16'*/));
 //--------------------------------------------
 
 
