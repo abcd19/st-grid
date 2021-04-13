@@ -1,6 +1,5 @@
 import * as ST from './../../common'
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {LinearGroupLayout} from '../../StringFld/LinearGroupLayout';
 import {ImgButtonLayout} from "../../StringFld/ImgButtonLayout";
 /**
@@ -25,19 +24,23 @@ class ToolbarLayout extends React.Component{
     //console.dir(this.props['items'])
     for(let i = 0; i < this.props['items'].length; i++)
     {
-      nItems.push(<ImgButtonLayout 
-              imageName={this.props['items'][i]['type']['settings']['imageName']} 
-              handler ={this.props['items'][i]['type']['settings']['handler']} 
-              key={this.props['items'][i]['name']} 
-              widthPix = "32" 
-              size = "32"
-              name={this.props['items'][i]['name']} 
-         />);
+      let Constr = this.props['items'][i]['type']['constr'];
+      let settings = this.props['items'][i]['type']['settings'];
+      let {name, widthPix} = this.props['items'][i]
+      nItems.push(<Constr
+              //imageName={imageName} 
+              //handler ={handler} 
+              key={name} 
+              widthPix = { widthPix ?  widthPix: "32" }
+             // size = "32"
+              name={name} 
+              {...settings}
+              />);
     }
 
     
     return(
-        <LinearGroupLayout prepareGridDisplay={true} items={ this.props['items'] } >
+        <LinearGroupLayout height={32} prepareGridDisplay={true} items={ this.props['items'] } >
           {nItems}
         </LinearGroupLayout>
       )

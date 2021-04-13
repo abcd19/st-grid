@@ -1,5 +1,4 @@
 node_modules
-package-lock.json
 nbproject
 dev/**/*.map
 dev/**/*.min.css

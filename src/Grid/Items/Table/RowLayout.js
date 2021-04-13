@@ -1,12 +1,11 @@
 import * as ST from '../../../common'
 import {CellLayout} from '../Cell/CellLayout';
-import ReactDOM from 'react-dom';
 import React from 'react';
 
 /**
  * Строка
  */
-class RowLayout extends React.Component {
+export class RowLayout extends React.Component {
     
   constructor(props)
   {
@@ -16,6 +15,10 @@ class RowLayout extends React.Component {
 
     this.onChangeItem = this.onChangeItem.bind(this);
     this.onMouseDownItem = this.onMouseDownItem.bind(this);
+    this.onMouseEnterItem = this.onMouseEnterItem.bind(this);
+    this.onMouseLeaveItem = this.onMouseLeaveItem.bind(this);
+    this.onDoubleClickItem = this.onDoubleClickItem.bind(this);
+    this.onClickItem = this.onClickItem.bind(this);
   };
   
   onChangeItem(cellAlias, val)
@@ -25,6 +28,26 @@ class RowLayout extends React.Component {
       let rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onChangeItem'].apply(self,[rowObject, cellAlias, val])
+    }
+  }
+
+  onMouseEnterItem(cellAlias)
+  {
+    if(ST.isFunction(this.props['onMouseEnterItem']))
+    {
+      let rowObject = this.props.item;
+      rowObject.rowNum = this.props.rowNum;
+      this.props['onMouseEnterItem'].apply(self,[rowObject, cellAlias])
+    }
+  }
+
+  onMouseLeaveItem(cellAlias)
+  {
+    if(ST.isFunction(this.props['onMouseLeaveItem']))
+    {
+      let rowObject = this.props.item;
+      rowObject.rowNum = this.props.rowNum;
+      this.props['onMouseLeaveItem'].apply(self,[rowObject, cellAlias])
     }
   }
 
@@ -38,6 +61,27 @@ class RowLayout extends React.Component {
     }
   }
 
+  onDoubleClickItem(cellAlias)
+  {
+    if(ST.isFunction(this.props['onDoubleClickItem']))
+    {
+      let rowObject = this.props.item;
+      rowObject.rowNum = this.props.rowNum;
+      this.props['onDoubleClickItem'].apply(this,[rowObject, cellAlias])
+    }
+  }
+
+  onClickItem(cellAlias)
+  {
+    if(ST.isFunction(this.props['onClickItem']))
+    {
+      let rowObject = this.props.item;
+      rowObject.rowNum = this.props.rowNum;
+      this.props['onClickItem'].apply(this,[rowObject, cellAlias])
+    }
+  }
+
+
   render()
   {
     let cells = [];  
@@ -49,17 +93,26 @@ class RowLayout extends React.Component {
       {
         continue
       }
-      
+
+      let layoutMode = this.props.item ? this.props.item.layoutMode: 'view';
+      let color = this.props.item ? this.props.item.color: undefined;
+      let itemData = this.props.item ?  this.props.item['data']: undefined;
+      let val = itemData ?  this.props.item['data'][ alias ]: undefined;
       //Создаем ячейки
       let newCell = <CellLayout 
-        color = {this.props.item.color}
+        color = {color}
         onChangeItem = {this.onChangeItem}
         onMouseDownItem = {this.onMouseDownItem}
-        layoutMode = {this.props.item.layoutMode}
+        onMouseEnterItem = {this.onMouseEnterItem}
+        onMouseLeaveItem = {this.onMouseLeaveItem}
+        onDoubleClickItem = {this.onDoubleClickItem}
+        onClickItem = {this.onClickItem}
+        layoutMode = {layoutMode}
         type = {type}
         alias = {alias}
+        rowItem = {this.props.item}
         rowNum = {this.props.rowNum} 
-        val = {this.props.item['data'][ alias ]}
+        val = {val}
         defaultColor={this.props.defaultColor} 
         widthPix = {widthPix} 
         key={alias}  />;
@@ -76,5 +129,4 @@ class RowLayout extends React.Component {
   
 }
 
-export {RowLayout}
 

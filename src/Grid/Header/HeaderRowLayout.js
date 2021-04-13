@@ -1,5 +1,4 @@
 import {HeaderCellLayout} from './HeaderCellLayout'
-import ReactDOM from 'react-dom';
 import React from 'react';
 
 /**
@@ -15,11 +14,15 @@ class HeaderRowLayout extends React.Component {
   {
     super(props);
     this.props = props;
-    this.state = {}
+    this.state = {};
+
   };
 
+
   render(){
+
     let items = [];
+    
     for(let i = 0; i < this.props['columns'].length; i++)
     {
       if(this.props['columns'][i]['visible'] === false)
@@ -29,6 +32,7 @@ class HeaderRowLayout extends React.Component {
       
       let newItem = <HeaderCellLayout 
                           key = {i} 
+                          sortingFlag={this.props.sortingFlag}
                           width = {this.props['columns'][i]['widthPix']}
                           handler={this.props['handler']}  
                           settings={this.props['columns'][i]} 

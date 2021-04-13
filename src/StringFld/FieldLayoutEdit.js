@@ -1,6 +1,5 @@
 import * as ST from '../common'
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {LinearGroupLayout} from "./LinearGroupLayout";
 import {InputLayout} from "./InputLayout";
 import {ImgButtonLayout} from "./ImgButtonLayout";
@@ -13,7 +12,7 @@ export const FieldLayoutEdit = (props) => {
   
     //Массив с потомками. Первый идет инпут.
     let items = [
-        <InputLayout name='input' readOnly= {props.readOnly} val ={props['inputVal']} key="input" onChange = {
+        <InputLayout name='input' canUserSelectFlag={props.canUserSelectFlag} readOnly= {props.readOnly || props.inputReadOnly} val ={props['inputVal']} key="input" onChange = {
             function(val){  
               if(ST.isFunction(props['onChange']))
               {
@@ -43,6 +42,7 @@ export const FieldLayoutEdit = (props) => {
       for(let i = 0; i < buttons['items'].length; i++)
       {
         items.push(<ImgButtonLayout 
+                title = {buttons['items'][i]['settings']['title']} 
                 imageName = {buttons['items'][i]['settings']['imageName']} 
                 handler = {buttons['items'][i]['settings']['handler']} 
                 key={buttons['items'][i]['name']} 
@@ -67,6 +67,7 @@ export const FieldLayoutEdit = (props) => {
                 }
               }
             }}
+            title='Очистить'
             readOnly= {props.readOnly}
             key='clearCellGray'
             imageName = 'clearCellGray'

@@ -1,7 +1,6 @@
 
 
 import * as ST from '../../../common.js'
-import ReactDOM from 'react-dom';
 import React from 'react';
 import './Cell.css'
 /**
@@ -21,17 +20,38 @@ class CellLayout extends React.Component {
     this.onMouseDownItem = this.onMouseDownItem.bind(this);
     this.onChangeItem = this.onChangeItem.bind(this);
 
+    this.onMouseEnterItem = this.onMouseEnterItem.bind(this);
+    this.onMouseLeaveItem = this.onMouseLeaveItem.bind(this);
+    this.onDoubleClickItem = this.onDoubleClickItem.bind(this);
+    this.onClickItem = this.onClickItem.bind(this);
+    
     this._baseStyle = {
       whiteSpace: 'nowrap',
       lineHeight: 'normal',
       fontKerning: 'auto',
-      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-      fontSize: '12px', 
+      fontFamily: '"Tahoma", Helvetica, Arial, sans-serif',
+      fontSize: '10pt', 
       textOverflow: 'ellipsis',
       boxSizing: 'border-box', 
       paddingLeft: '0px',
     }
   };
+
+  onMouseEnterItem()
+  {
+    if(ST.has(this.props, 'onMouseEnterItem'))
+    {
+      this.props['onMouseEnterItem'](this.props.alias);
+    }
+  }
+
+  onMouseLeaveItem()
+  {
+    if(ST.has(this.props, 'onMouseLeaveItem'))
+    {
+      this.props['onMouseLeaveItem'](this.props.alias);
+    }
+  }
 
   onMouseDownItem()
   {
@@ -46,6 +66,22 @@ class CellLayout extends React.Component {
     if(ST.has(this.props, 'onChangeItem'))
     {
       this.props['onChangeItem'](this.props.alias, val);
+    }
+  }
+
+  onDoubleClickItem()
+  {
+    if(ST.has(this.props, 'onDoubleClickItem'))
+    {
+      this.props['onDoubleClickItem'](this.props.alias);
+    }
+  }
+
+  onClickItem()
+  {
+    if(ST.has(this.props, 'onClickItem'))
+    {
+      this.props['onClickItem'](this.props.alias);
     }
   }
 
@@ -70,7 +106,7 @@ class CellLayout extends React.Component {
       if(this.props.layoutMode != 'edit')
       {
         style.overflow = 'hidden';
-        style.paddingLeft = '2px';
+        style.paddingLeft = '5px';
       }
 
 
@@ -82,8 +118,14 @@ class CellLayout extends React.Component {
       return (<this.props.type.constr 
           layoutMode = {this.props.layoutMode}
           style={style}  
+          widthPix = {this.props.widthPix}
           onChangeItem = {this.onChangeItem}
           onMouseDownItem = {this.onMouseDownItem} 
+          onMouseLeaveItem = {this.onMouseLeaveItem} 
+          onMouseEnterItem = {this.onMouseEnterItem} 
+          onDoubleClickItem = {this.onDoubleClickItem}
+          onClickItem = {this.onClickItem}
+          rowItem = {this.props.rowItem}
           val = {this.props.val} 
           settings = {this.props.type.settings}
           className={className} />)

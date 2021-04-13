@@ -15,7 +15,8 @@ module.exports = {
     libraryTarget: 'umd',
 	  },
 	
-	mode: 'development', //development production
+  mode: 'development', //development
+
 	module:{
 		rules: [
       {

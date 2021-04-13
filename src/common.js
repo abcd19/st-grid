@@ -8,11 +8,29 @@ import lodash_isUndefined from 'lodash/isUndefined';
 import lodash_isNumber from 'lodash/isNumber';
 import lodash_defaults from 'lodash/defaults';
 import lodash_isArray from 'lodash/isArray';
+import lodash_isBoolean from 'lodash/isBoolean';
+import lodash_isString from 'lodash/isString';
+import lodash_isEqual from 'lodash/isEqual';
 
+//cравнение массивов, объектов, дат, строк и проч
+export function isEqual(obj1, obj2)
+{
+  return lodash_isEqual(obj1, obj2)
+}
+
+export function isString(obj)
+{
+  return lodash_isString(obj)
+}
 
 export function isArray(obj)
 {
   return lodash_isArray(obj)
+}
+
+export function isBoolean(obj)
+{
+  return lodash_isBoolean(obj);
 }
 
 /**

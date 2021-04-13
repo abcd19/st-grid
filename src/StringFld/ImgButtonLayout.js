@@ -1,6 +1,5 @@
 import * as ST from '../common';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './assets/sprite_24.css'
 import './assets/sprite_32.css'
 
@@ -8,7 +7,7 @@ import './assets/sprite_32.css'
 /**
  * Кнопка - картинка (Шаблон)
  */
-class ImgButtonLayout extends React.Component {
+export class ImgButtonLayout extends React.Component {
 
 	constructor(props)
   {
@@ -49,7 +48,7 @@ class ImgButtonLayout extends React.Component {
   }
 
 
-  handlerMouseDown()
+  handlerMouseDown(e)
   {
     this.setState(function(state, props) {
       
@@ -57,10 +56,15 @@ class ImgButtonLayout extends React.Component {
         backgroundColor: 'gray'
       }
 
-    })
+    });
+
+    if(ST.has(this.props, 'handler.mousedown'))
+    {
+      this.props['handler']['mousedown'].apply(this, [e]);
+    }
   }
 
-  handlerMouseUp()
+  handlerMouseUp(e)
   {
     this.setState(function(state, props) {
       
@@ -68,7 +72,13 @@ class ImgButtonLayout extends React.Component {
         backgroundColor: 'transparent'
       }
 
-    })
+    });
+
+    if(ST.has(this.props, 'handler.mouseup'))
+    {
+      this.props['handler']['mouseup'].apply(this, [e]);
+    }
+    
   }
   
   handleLayoutLeave()
@@ -95,6 +105,7 @@ class ImgButtonLayout extends React.Component {
   }
 
 	render() {
+    
     //если установлен флаг readOnly то снимаем все хендлеры
     let onClick,onMouseLeave, onMouseEnter,onMouseDown,onMouseUp;
     if(this.props.readOnly !== true)
@@ -124,11 +135,3 @@ class ImgButtonLayout extends React.Component {
 			);
 	}
 }
-
-
-function createImgButtonLayout(wrapper, props)
-{
-	ReactDOM.render(<ImgButtonLayout size={props.size} imageName = {props.imageName} handler = {props.handler}/>, wrapper);
-}
-
-export {ImgButtonLayout, createImgButtonLayout};

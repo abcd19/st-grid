@@ -1,0 +1,79 @@
+table.st-calendar-table {
+  background: white;
+  z-index:99;
+  position:absolute;
+  width: 233px;
+  border-collapse: collapse;
+  height: 223px;
+  border: 1px solid lightgray;
+}
+
+table.st-calendar-day-table {
+  border-collapse: collapse; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+  width: 100%;
+}
+
+td.st-calendar-td {
+  
+  border: 1px solid lightgray;
+}
+
+td.st-calendar-year {
+  border: 1px solid lightgray;
+  height: 30px;
+}
+
+td.st-calendar-month {
+  border: 1px solid lightgray;
+  height: 30px;
+}
+
+.st-calendar-day-td{
+    padding: 0px;
+    cursor: pointer; 
+    border: 1px solid #ccc; 
+    width: 30px;
+    height: 30px; 
+    text-align: center; 
+    font: 12px Tahoma,Helvetica,sans-serif; 
+    background: white;
+}
+
+.st-calendar-day-tdprevNextMonth {
+    color: #A6ACB8;
+}   
+
+.st-calendar-day-tdToday{
+    border: 2px solid gray; 
+    font-weight: bold;
+}
+
+.st-calendar-day-tdWeekend{
+    color: red;
+} 
+
+.st-calendar-day-tdNow{
+    border: 2px solid rgb(107, 219, 107); 
+    font-weight: bold;
+} 
+
+.st-calendar-floating-tdSelected{
+  background-color: #EDF5FC
+}
+
+
+.st-calendar-day-th{
+    border: none; 
+    width: 25px; 
+    height: 20px; 
+    font: bold 12px Tahoma,Helvetica,sans-serif; 
+    background: #F2F2F2;
+    text-align: center;
+}
+
+.st-calendar-day-td:hover{
+    background: #FEFFBF;
+}
+

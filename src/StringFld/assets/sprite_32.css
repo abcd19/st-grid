@@ -46,33 +46,207 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 32px;
   height: 32px;
 }
-.st_icon_32_check-all {
+.st_icon_32_backgroundColor {
   background-image: url(sprite_32.png);
-  background-position: -184px 0px;
+  background-position: -1624px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_border_all {
+  background-image: url(sprite_32.png);
+  background-position: -2424px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_border_bottom {
+  background-image: url(sprite_32.png);
+  background-position: -2456px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_border_left {
+  background-image: url(sprite_32.png);
+  background-position: -2488px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_border_right {
+  background-image: url(sprite_32.png);
+  background-position: -2520px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_border_top {
+  background-image: url(sprite_32.png);
+  background-position: -2552px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_breaksButton {
+  background-image: url(sprite_32.png);
+  background-position: -1656px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_clearCell {
+  background-image: url(sprite_32.png);
+  background-position: -1688px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_clearList {
+  background-image: url(sprite_32.png);
+  background-position: -1720px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_code {
+  background-image: url(sprite_32.png);
+  background-position: -1752px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_fontBold {
+  background-image: url(sprite_32.png);
+  background-position: -1784px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_fontColor {
+  background-image: url(sprite_32.png);
+  background-position: -1816px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_fontItalic {
+  background-image: url(sprite_32.png);
+  background-position: -1848px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_fontUnderline {
+  background-image: url(sprite_32.png);
+  background-position: -1880px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_noAutoresize {
+  background-image: url(sprite_32.png);
+  background-position: -1912px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_pictureCanvas {
+  background-image: url(sprite_32.png);
+  background-position: -1944px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_printerProps {
+  background-image: url(sprite_32.png);
+  background-position: -1976px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_redo {
+  background-image: url(sprite_32.png);
+  background-position: -2008px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_showmm {
+  background-image: url(sprite_32.png);
+  background-position: -2040px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_align_bottom {
+  background-image: url(sprite_32.png);
+  background-position: -2232px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_align_center {
+  background-image: url(sprite_32.png);
+  background-position: -2264px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_align_left {
+  background-image: url(sprite_32.png);
+  background-position: -2296px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_align_middle {
+  background-image: url(sprite_32.png);
+  background-position: -2328px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_align_right {
+  background-image: url(sprite_32.png);
+  background-position: -2360px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_align_top {
+  background-image: url(sprite_32.png);
+  background-position: -2392px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_textDirection {
+  background-image: url(sprite_32.png);
+  background-position: -2072px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_toExcel {
+  background-image: url(sprite_32.png);
+  background-position: -2104px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_undo {
+  background-image: url(sprite_32.png);
+  background-position: -2136px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_union {
+  background-image: url(sprite_32.png);
+  background-position: -2168px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_wideScreenButton {
+  background-image: url(sprite_32.png);
+  background-position: -2200px 0px;
   width: 32px;
   height: 32px;
 }
 .st_icon_32_checked {
   background-image: url(sprite_32.png);
-  background-position: -216px 0px;
+  background-position: -184px 0px;
   width: 32px;
   height: 32px;
 }
 .st_icon_32_checkmark {
   background-image: url(sprite_32.png);
-  background-position: -248px 0px;
+  background-position: -216px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_chooceCellGray {
+.st_icon_32_chooseCellGray {
   background-image: url(sprite_32.png);
-  background-position: -280px 0px;
+  background-position: -248px 0px;
   width: 32px;
   height: 32px;
 }
 .st_icon_32_clearCellGray {
   background-image: url(sprite_32.png);
-  background-position: -312px 0px;
+  background-position: -280px 0px;
   width: 32px;
   height: 32px;
 }
@@ -84,17 +258,23 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .st_icon_32_connect {
   background-image: url(sprite_32.png);
-  background-position: -344px 0px;
+  background-position: -312px 0px;
   width: 32px;
   height: 32px;
 }
 .st_icon_32_delete {
   background-image: url(sprite_32.png);
-  background-position: -376px 0px;
+  background-position: -344px 0px;
   width: 32px;
   height: 32px;
 }
 .st_icon_32_document {
+  background-image: url(sprite_32.png);
+  background-position: -376px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_download {
   background-image: url(sprite_32.png);
   background-position: -408px 0px;
   width: 32px;
@@ -106,7 +286,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 32px;
   height: 32px;
 }
-.st_icon_32_external-link {
+.st_icon_32_externalLink {
   background-image: url(sprite_32.png);
   background-position: -472px 0px;
   width: 32px;
@@ -130,7 +310,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 32px;
   height: 32px;
 }
-.st_icon_32_image-file {
+.st_icon_32_imageFile {
   background-image: url(sprite_32.png);
   background-position: -600px 0px;
   width: 32px;
@@ -160,153 +340,165 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 32px;
   height: 32px;
 }
-.st_icon_32_ok {
+.st_icon_32_numberSeven {
   background-image: url(sprite_32.png);
   background-position: -760px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_opened-folder {
+.st_icon_32_ok {
   background-image: url(sprite_32.png);
   background-position: -792px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_padlock {
+.st_icon_32_openedFolder {
   background-image: url(sprite_32.png);
   background-position: -824px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_picture {
+.st_icon_32_padlock {
   background-image: url(sprite_32.png);
   background-position: -856px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_plus {
+.st_icon_32_picture {
   background-image: url(sprite_32.png);
   background-position: -888px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_puzzle {
+.st_icon_32_plus {
   background-image: url(sprite_32.png);
   background-position: -920px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_rating {
+.st_icon_32_plusDocument {
   background-image: url(sprite_32.png);
   background-position: -952px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_refresh {
+.st_icon_32_plusFolder {
   background-image: url(sprite_32.png);
   background-position: -984px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_remove {
+.st_icon_32_rating {
   background-image: url(sprite_32.png);
   background-position: -1016px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_restart {
+.st_icon_32_refresh {
   background-image: url(sprite_32.png);
   background-position: -1048px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_round {
+.st_icon_32_remove {
   background-image: url(sprite_32.png);
   background-position: -1080px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_scroll {
+.st_icon_32_removeAll {
   background-image: url(sprite_32.png);
   background-position: -1112px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_search {
+.st_icon_32_restart {
   background-image: url(sprite_32.png);
   background-position: -1144px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_services {
+.st_icon_32_scroll {
   background-image: url(sprite_32.png);
   background-position: -1176px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_settings {
+.st_icon_32_search {
   background-image: url(sprite_32.png);
   background-position: -1208px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_share-3 {
+.st_icon_32_services {
   background-image: url(sprite_32.png);
   background-position: -1240px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_share {
+.st_icon_32_settings {
   background-image: url(sprite_32.png);
   background-position: -1272px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_support {
+.st_icon_32_share {
   background-image: url(sprite_32.png);
   background-position: -1304px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_synchronize {
+.st_icon_32_share3 {
   background-image: url(sprite_32.png);
   background-position: -1336px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_tick-box {
+.st_icon_32_support {
   background-image: url(sprite_32.png);
   background-position: -1368px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_trash-can {
+.st_icon_32_synchronize {
   background-image: url(sprite_32.png);
   background-position: -1400px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_trash {
+.st_icon_32_tick-box {
   background-image: url(sprite_32.png);
   background-position: -1432px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_unavailable {
+.st_icon_32_trash {
   background-image: url(sprite_32.png);
   background-position: -1464px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_undelete {
+.st_icon_32_trashCan {
   background-image: url(sprite_32.png);
   background-position: -1496px 0px;
   width: 32px;
   height: 32px;
 }
-.st_icon_32_viewCellGray {
+.st_icon_32_unavailable {
   background-image: url(sprite_32.png);
   background-position: -1528px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_undelete {
+  background-image: url(sprite_32.png);
+  background-position: -1560px 0px;
+  width: 32px;
+  height: 32px;
+}
+.st_icon_32_viewCellGray {
+  background-image: url(sprite_32.png);
+  background-position: -1592px 0px;
   width: 32px;
   height: 32px;
 }

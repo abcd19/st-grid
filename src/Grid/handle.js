@@ -1,5 +1,11 @@
 import * as ST from './../common'
 import {CELL_HEIGHT} from './Items/ItemsLayout';
+
+//ивент onItemMouseWheelScrollingY триггерит onItemScrollY
+// этот флаг помогает предотвратить повтроную перерисовку строк при скролле колесиком
+//let prevScrollYEvent = false;
+
+
 /**
  * Обработчик скролла по X
  * @param {*} e 
@@ -18,31 +24,44 @@ export function onItemScrollX(e)
  */
 export function onItemScrollY(e)
 {
-  //на сколько сильно прокручена страница
-  let delta = e.deltaY;
+  //console.log('oonItemScrollY')
 
+  /*if(prevScrollYEvent == true)
+  {
+    prevScrollYEvent = false;
+    return;
+  }*/
+ 
   //определяем величину предыдущего скролла
   let curScroll = this.scrollRightRef.current.scrollTop;
-  let newScroll;
-  //если скролл был вниз
-  if(delta > 0 )
-  {
-    newScroll  = curScroll;
+  let newScroll = curScroll;
 
-  
-  //если скролл был вверх
-  }else{
-    newScroll  = curScroll;
-    //не скролим таблицу в минус
-    if(newScroll < 0)
-    {
-      newScroll = 0;
-    }
+  //максимально возможный скролл
+  let maxScroll = this.scrollRightRef.current.scrollHeight - this.scrollRightRef.current.offsetHeight;
+
+  //не скролим таблицу выше чем возможно
+  if(newScroll < 0)
+  {
+    newScroll = 0;
   }
 
   //перерисовываем множество видимых строк в Items
   //расчитываем первую видимую строку
   let newFirstVisibleRow = Math.floor(newScroll/CELL_HEIGHT);
+
+  //Cлучай когда доскролили до конца таблицы
+  if(newScroll == maxScroll)
+  {
+    //но скрол был на величину меньше высоты строки
+    if(newScroll < CELL_HEIGHT)
+    {
+      //проскролим до конца
+      newFirstVisibleRow = newFirstVisibleRow + 1;
+    }
+    
+  }
+
+
   this.setState({firstVisibleRowI: newFirstVisibleRow});
 }
 
@@ -53,14 +72,10 @@ export function onItemScrollY(e)
  */
 export function onItemMouseWheelScrollingY(e)
 {
-
-
-  //на сколько сильно прокручена страница
-  let delta = e.deltaY;
   
-  //на сколько прокрученно мышкой
-  //let rowScrolled = Math.round(Math.abs(delta)/CELL_HEIGHT);
-    
+  //на сколько сильно крутонули колесо
+  let delta = e.deltaY;
+      
   //определяем величину предыдущего скролла
   let curScroll = this.scrollRightRef.current.scrollTop;
 
@@ -68,31 +83,39 @@ export function onItemMouseWheelScrollingY(e)
   //какова бы не была велечина скролла скрллим всегда на размера строки
   let newScroll;
 
-
-  //прокручиваем минимум на 2 строки вверх/вниз
+  //максимально возможноый скролл
+  let maxScroll = this.scrollRightRef.current.scrollHeight - this.scrollRightRef.current.offsetHeight;
+  
+  //прокручиваем строго на 2 строки вверх/вниз
   //в некоторых браузерах сколеско отробатываем по разному
   // в Firefox скролится на 3 пикселя, как в Хроме на 100
-  if(Math.abs(delta) < CELL_HEIGHT*2)
+  if(delta > 0)
   {
-    if(delta > 0)
-    {
-      delta = CELL_HEIGHT*2;
-    }else{
-      delta = -1*(CELL_HEIGHT*2)
-    }
+    delta = CELL_HEIGHT*2;
+  }else{
+    delta = -1*(CELL_HEIGHT*2)
   }
 
+
+ 
   //если скролл был вниз
   if(delta > 0 )
   {
+    //если скрол в самом низу, то скролить бльше не нужно
+    if(curScroll == maxScroll)
+    {
+      return;
+    }
+
     newScroll  = curScroll + Math.abs(delta);
+
     //не скроллим таблицу в плюс
-    let maxScroll = this.scrollRightRef.current.scrollHeight - this.scrollRightRef.current.offsetHeight;
     if(newScroll > maxScroll)
     {
       newScroll = maxScroll;
     }
-  
+    
+       
   //если скролл был вверх
   }else{
     newScroll  = curScroll - Math.abs(delta);
@@ -101,20 +124,38 @@ export function onItemMouseWheelScrollingY(e)
     {
       newScroll = 0;
     }
+
+    //если мы наверху скрола, то скролить больше не нужно
+    if(curScroll == 0)
+    {
+      return;
+    }
   }
 
-
-
   //устанавливаем величину скролла слою-Скролу
+  //такая установка триггрерит ивент onItemScrollY
+  //предотвратим этот вызов
+  //prevScrollYEvent = true;
   this.scrollRightRef.current.scrollTop = newScroll;
 
   //перерисовываем множество видимых строк в Items
   let newFirstVisibleRow = Math.floor(newScroll/CELL_HEIGHT);
+
+  //Cлучай когда доскролили до конца таблицы
+  if(newScroll == maxScroll)
+  {
+    //но скрол был на величину меньше высоты строки
+    if(newScroll < CELL_HEIGHT)
+    {
+      //проскролим до конца
+      newFirstVisibleRow = newFirstVisibleRow + 1;
+    }
+    
+  }
+
+
   this.setState({firstVisibleRowI: newFirstVisibleRow});
   
-     //чтобы не крутилась страница
-  //e.preventDefault();
-
 }
 
  /**

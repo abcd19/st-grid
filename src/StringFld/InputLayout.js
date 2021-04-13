@@ -1,7 +1,8 @@
 import * as ST from '../common'
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './assets/InputLinear.css'
+
+
 /**
  * Инупт типа text (Шаблон)
  */
@@ -10,18 +11,17 @@ import './assets/InputLinear.css'
   constructor(props)
   {
     super(props);
+    
     this.state = {
       type: 'text',
       value: '',
     }
     this.onChangeDelayTimer = undefined;
-    this.handleChange = this.handleChange.bind(this);
-
+    this.onChange = this.onChange.bind(this);
     this.inputRef =React.createRef();
-    
   }
 
-  handleChange(event)
+  onChange(event)
   {    
 
     if(ST.isFunction(this.props['onChangeDelay']))
@@ -52,35 +52,36 @@ import './assets/InputLinear.css'
   }
 
   render() {
-    let val = this.props.val;
+
+    let {canUserSelectFlag, val, readOnly, placeholder} = this.props;
     
     if(ST.isUndefined(val))
     {
       val = '';
     }else{
-      val = String(this.props.val);
+      val = String(val);
     }
     
+    let _baseStyle = {
+      whiteSpace: 'nowrap',
+      lineHeight: 'normal',
+      fontKerning: 'auto',
+      fontFamily: '"Tahoma", Helvetica, Arial, sans-serif',
+      fontSize: '10pt'
+    }
+
     return (
         <input 
           type = "text" 
           ref = {this.inputRef}
-					value = {val}
-					readOnly = {this.props.readOnly}
-					onChange = { this.handleChange }
+          value = {val}
+          style={_baseStyle}
+					readOnly = {readOnly}
+					onChange = { this.onChange }
           className = "st-core-input-input" 
-          placeholder={this.props.placeholder} />
+          placeholder={placeholder} />
       );
   }
 }
 
-function createInputLayout(wrapper, props)
-{
-  ReactDOM.render(<InputLayout 
-    placeholder={props.placeholder} 
-    value={props.value} 
-    readOnly={props.readOnly}  
-    handler= {props.handler}/>, wrapper);
-}
-
-export {InputLayout, createInputLayout};
+export {InputLayout};

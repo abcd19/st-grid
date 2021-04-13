@@ -59,7 +59,7 @@ export function calcRank(arrayWords, word,  flags)
   }
   
   var ranks = []; 
-  
+
   for(var i = 0; i < arrayWords.length; i++)
   {    
     var rank = calcRankWords(word,  arrayWords[i]);

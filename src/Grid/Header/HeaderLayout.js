@@ -1,6 +1,5 @@
 
 import {HeaderRowLayout} from './HeaderRowLayout';
-import ReactDOM from 'react-dom';
 import React from 'react';
 /**
  * Заголовок у грида
@@ -21,7 +20,7 @@ class HeaderLayout extends React.Component {
   {  
     let handler= {
       changeHeaderCellWidth: this.props.onChangeHeaderCellWidth,
-      clickHeaderCell: function(alias){},
+      clickHeaderCell: this.props.clickHeaderCell,
    };
 
    let columns = this.props['columns'];
@@ -29,7 +28,7 @@ class HeaderLayout extends React.Component {
     return(
       <table cellPadding="0" cellSpacing="0" className="st-innerTableLayout-table" style={{borderCollapse: "collapse"}}>
         <tbody>
-          <HeaderRowLayout handler ={handler} columns={columns} />
+          <HeaderRowLayout sortingFlag={this.props.sortingFlag} handler ={handler} columns={columns} />
         </tbody>
       </table>
     )

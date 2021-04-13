@@ -1,6 +1,6 @@
 import * as ST from '../common';
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import {HeaderLayout} from './Header/HeaderLayout';
 import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout';
 import {ToolbarLayout} from './Toolbar/ToolbarLayout'
@@ -43,9 +43,19 @@ class GridLayout extends React.Component {
     this.onItemMouseWheelScrollingY = onItemMouseWheelScrollingY.bind(this);
     this.onItemScrollY = onItemScrollY.bind(this);
     this.onChangeHeaderCellWidth = onChangeHeaderCellWidth.bind(this);
+
+    this.onClickHeaderCell = this.onClickHeaderCell.bind(this);
   };
   
-    
+
+  onClickHeaderCell(alias, order)
+  {
+    if(ST.isFunction(this.props.onClickHeaderCell))
+    {
+      this.props.onClickHeaderCell(alias, order);
+    }
+  } 
+
   componentDidMount()
   {
     
@@ -83,13 +93,12 @@ class GridLayout extends React.Component {
       //за счет отступа вконце строк в виде еще одной скрытой строки таблицу можно проскролить еще больше
       newScroll = newScroll + CELL_HEIGHT;
       this.scrollRightRef.current.scrollTop = newScroll;  
-      this.props.scrollToLastItemHandle(false);
+      //this.props.scrollToLastItemHandle(false);
     }
   }
 
   render()
   {
-
     //запролняем дефолтные значения
     let {columns, items} =  this.props;
     for(let i = 0; i < this.props.columns.length; i++)
@@ -98,37 +107,59 @@ class GridLayout extends React.Component {
         {
           //ширина = 100 px
           widthPix: 100,
+          visible: true,
           //по умолчанию текстовое поле
           type: {
             constr: StringFldCell,
             settings:{}
           }
         });
+
+        //у скрытых столбцов ширина = 0;
+        if(columns[i]['visible'] == false)
+        {
+          columns[i]['widthPix'] = 0;
+        }
     }
 
-    
+
     //ширина таблицы целиком
     let width = this.props.width - this.SCROLL;
     
     //высота правого скролла расчитывается на основе колва ячеек
     let rightScrollHeight = items.length*CELL_HEIGHT;
-    //к этой высоте можно прибавить одну строку тк для красоты отображения вконце строк 
-    //в тело добавляется еще одна строка
-    rightScrollHeight = rightScrollHeight + CELL_HEIGHT;
+
     //высота контентной части таблицы
     let bodyContentHeight = this.props.height - this.SCROLL - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
+    //console.log(this.HEADER_HEIGHT)
     //ширина контентной части таблицы
     let bodyContentWidth = calcSumColumnsWidth(this.props.columns);
 
+    //к этой высоте можно прибавить одну строку тк для красоты отображения вконце строк 
+    //в тело добавляется еще одна строка
+    //в конец строк добавляется еще одна пустая невидимая строка free-spaceTr высотой 30 
+    if(rightScrollHeight > bodyContentHeight)
+    {
+      rightScrollHeight = rightScrollHeight + CELL_HEIGHT;
+    }
     
     //Если передан флаг скроллинга до последнего айтема
     if(this.props.scrollToLastItem === true)
     {
       //расчитываем сколько строк еще влезает высоту тела
+      //округляем в большую сторону
       let visibleRowsCount = Math.ceil(bodyContentHeight / CELL_HEIGHT);
-      this.state.firstVisibleRowI = items.length-visibleRowsCount;
+      
+      this.state.firstVisibleRowI = items.length-visibleRowsCount +1;
+
     }
     
+    //случай когда изменили высоту таблицы и влезли все строки
+    if(bodyContentHeight > rightScrollHeight)
+    {
+      this.state.firstVisibleRowI = 0;
+    }
+
     return(<table className="st-grid-layout">
       <tbody>
         <tr>
@@ -143,7 +174,7 @@ class GridLayout extends React.Component {
           <td className="st-grid-header-td">
             <div className="st-grid-header-div" ref={this.headerDivRef} style={{height: '32px', width: width}}>
               <div className="st-grid-header-content-div" style={{height: '32px', width: bodyContentWidth+'px'}}>
-                <HeaderLayout columns={columns} onChangeHeaderCellWidth = {this.onChangeHeaderCellWidth}  />
+                <HeaderLayout clickHeaderCell={this.onClickHeaderCell} sortingFlag={this.props.sortingFlag} columns={columns} onChangeHeaderCellWidth = {this.onChangeHeaderCellWidth}  />
               </div>
             </div>
           </td>
@@ -156,6 +187,10 @@ class GridLayout extends React.Component {
                 <ItemsLayout 
                   columns={columns} 
                   onMouseDownItem = {this.props.onMouseDownItem}
+                  onMouseEnterItem = {this.props.onMouseEnterItem}
+                  onMouseLeaveItem = {this.props.onMouseLeaveItem}
+                  onDoubleClickItem = {this.props.onDoubleClickItem}
+                  onClickItem = {this.props.onClickItem}
                   onChangeItem = {this.props.onChangeItem}  
                   items = {items} 
                   height={bodyContentHeight} 
@@ -164,7 +199,7 @@ class GridLayout extends React.Component {
             </div>
           </td>
           <td className="st-grid-body-rightScroll">
-            <div onScroll={ this.onItemScrollY } ref={this.scrollRightRef} className="st-grid-rightScroll-div" style={{width: this.SCROLL+'px', height: bodyContentHeight}}>
+            <div onScroll={ this.onItemScrollY } ref={this.scrollRightRef} className="st-grid-rightScroll-div" style={{width: this.SCROLL+'px', height: bodyContentHeight }}>
               <div style={{height: rightScrollHeight}}></div>
             </div>
           </td>

@@ -46,55 +46,235 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 24px;
   height: 24px;
 }
-.st_icon_24_check-all {
+.st_icon_24_backgroundColor {
   background-image: url(sprite_24.png);
-  background-position: -120px 0px;
+  background-position: -1224px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_border_all {
+  background-image: url(sprite_24.png);
+  background-position: -1680px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_border_bottom {
+  background-image: url(sprite_24.png);
+  background-position: -1704px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_border_left {
+  background-image: url(sprite_24.png);
+  background-position: -1728px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_border_right {
+  background-image: url(sprite_24.png);
+  background-position: -1752px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_border_top {
+  background-image: url(sprite_24.png);
+  background-position: -1776px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_breaksButton {
+  background-image: url(sprite_24.png);
+  background-position: -1248px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_clearCell {
+  background-image: url(sprite_24.png);
+  background-position: -1272px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_clearList {
+  background-image: url(sprite_24.png);
+  background-position: -1296px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_code {
+  background-image: url(sprite_24.png);
+  background-position: -1320px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_fontBold {
+  background-image: url(sprite_24.png);
+  background-position: -1344px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_fontColor {
+  background-image: url(sprite_24.png);
+  background-position: -1368px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_fontItalic {
+  background-image: url(sprite_24.png);
+  background-position: -1392px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_fontUnderline {
+  background-image: url(sprite_24.png);
+  background-position: -1416px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_noAutoresize {
+  background-image: url(sprite_24.png);
+  background-position: -1440px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_pictureCanvas {
+  background-image: url(sprite_24.png);
+  background-position: -1464px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_printerProps {
+  background-image: url(sprite_24.png);
+  background-position: -1488px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_redo {
+  background-image: url(sprite_24.png);
+  background-position: -1512px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_showmm {
+  background-image: url(sprite_24.png);
+  background-position: -1536px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_align_bottom {
+  background-image: url(sprite_24.png);
+  background-position: -1800px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_align_center {
+  background-image: url(sprite_24.png);
+  background-position: -1824px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_align_left {
+  background-image: url(sprite_24.png);
+  background-position: -1848px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_align_middle {
+  background-image: url(sprite_24.png);
+  background-position: -1872px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_align_right {
+  background-image: url(sprite_24.png);
+  background-position: -1896px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_align_top {
+  background-image: url(sprite_24.png);
+  background-position: -1920px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_textDirection {
+  background-image: url(sprite_24.png);
+  background-position: -1560px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_toExcel {
+  background-image: url(sprite_24.png);
+  background-position: -1584px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_undo {
+  background-image: url(sprite_24.png);
+  background-position: -1608px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_union {
+  background-image: url(sprite_24.png);
+  background-position: -1632px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_wideScreenButton {
+  background-image: url(sprite_24.png);
+  background-position: -1656px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_checked {
   background-image: url(sprite_24.png);
-  background-position: -144px 0px;
+  background-position: -120px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_checkmark {
   background-image: url(sprite_24.png);
-  background-position: -168px 0px;
+  background-position: -144px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_chooceCellGray {
+.st_icon_24_chooseCellGray {
   background-image: url(sprite_24.png);
-  background-position: -192px 0px;
+  background-position: -168px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_clearCellGray {
   background-image: url(sprite_24.png);
-  background-position: -216px 0px;
+  background-position: -192px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_combobox {
   background-image: url(sprite_24.png);
-  background-position: -240px 0px;
+  background-position: -216px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_connect {
   background-image: url(sprite_24.png);
-  background-position: -264px 0px;
+  background-position: -240px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_delete {
   background-image: url(sprite_24.png);
-  background-position: -288px 0px;
+  background-position: -264px 0px;
   width: 24px;
   height: 24px;
 }
 .st_icon_24_document {
+  background-image: url(sprite_24.png);
+  background-position: -288px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_download {
   background-image: url(sprite_24.png);
   background-position: -312px 0px;
   width: 24px;
@@ -106,7 +286,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 24px;
   height: 24px;
 }
-.st_icon_24_external-link {
+.st_icon_24_externalLink {
   background-image: url(sprite_24.png);
   background-position: -360px 0px;
   width: 24px;
@@ -130,7 +310,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 24px;
   height: 24px;
 }
-.st_icon_24_image-file {
+.st_icon_24_imageFile {
   background-image: url(sprite_24.png);
   background-position: -456px 0px;
   width: 24px;
@@ -160,153 +340,165 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 24px;
   height: 24px;
 }
-.st_icon_24_ok {
+.st_icon_24_numberSeven {
   background-image: url(sprite_24.png);
   background-position: -576px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_opened-folder {
+.st_icon_24_ok {
   background-image: url(sprite_24.png);
   background-position: -600px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_padlock {
+.st_icon_24_openedFolder {
   background-image: url(sprite_24.png);
   background-position: -624px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_picture {
+.st_icon_24_padlock {
   background-image: url(sprite_24.png);
   background-position: -648px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_plus {
+.st_icon_24_picture {
   background-image: url(sprite_24.png);
   background-position: -672px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_puzzle {
+.st_icon_24_plus {
   background-image: url(sprite_24.png);
   background-position: -696px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_rating {
+.st_icon_24_plusDocument {
   background-image: url(sprite_24.png);
   background-position: -720px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_refresh {
+.st_icon_24_plusFolder {
   background-image: url(sprite_24.png);
   background-position: -744px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_remove {
+.st_icon_24_rating {
   background-image: url(sprite_24.png);
   background-position: -768px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_restart {
+.st_icon_24_refresh {
   background-image: url(sprite_24.png);
   background-position: -792px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_round {
+.st_icon_24_remove {
   background-image: url(sprite_24.png);
   background-position: -816px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_scroll {
+.st_icon_24_removeAll {
   background-image: url(sprite_24.png);
   background-position: -840px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_search {
+.st_icon_24_restart {
   background-image: url(sprite_24.png);
   background-position: -864px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_services {
+.st_icon_24_scroll {
   background-image: url(sprite_24.png);
   background-position: -888px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_settings {
+.st_icon_24_search {
   background-image: url(sprite_24.png);
   background-position: -912px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_share-3 {
+.st_icon_24_services {
   background-image: url(sprite_24.png);
   background-position: -936px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_share {
+.st_icon_24_settings {
   background-image: url(sprite_24.png);
   background-position: -960px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_support {
+.st_icon_24_share {
   background-image: url(sprite_24.png);
   background-position: -984px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_synchronize {
+.st_icon_24_share3 {
   background-image: url(sprite_24.png);
   background-position: -1008px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_tick-box {
+.st_icon_24_support {
   background-image: url(sprite_24.png);
   background-position: -1032px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_trash-can {
+.st_icon_24_synchronize {
   background-image: url(sprite_24.png);
   background-position: -1056px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_trash {
+.st_icon_24_tick-box {
   background-image: url(sprite_24.png);
   background-position: -1080px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_unavailable {
+.st_icon_24_trash {
   background-image: url(sprite_24.png);
   background-position: -1104px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_undelete {
+.st_icon_24_trashCan {
   background-image: url(sprite_24.png);
   background-position: -1128px 0px;
   width: 24px;
   height: 24px;
 }
-.st_icon_24_viewCellGray {
+.st_icon_24_unavailable {
   background-image: url(sprite_24.png);
   background-position: -1152px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_undelete {
+  background-image: url(sprite_24.png);
+  background-position: -1176px 0px;
+  width: 24px;
+  height: 24px;
+}
+.st_icon_24_viewCellGray {
+  background-image: url(sprite_24.png);
+  background-position: -1200px 0px;
   width: 24px;
   height: 24px;
 }
