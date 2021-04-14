@@ -2,21 +2,30 @@ import * as ST from '../common'
 import React from 'react';
 import './Checkbox.css'
 
-export class CheckboxFldLayoutEdit extends React.Component{
+
+interface ICheckboxFldLayoutEditProps {
+  onChange: (val: boolean) => void;
+  readOnly: boolean;
+  val: boolean | undefined;
+}
+
+// checkbox layout component
+export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEditProps>{
     
+    private _val: boolean;
+
     /**
     * @constructor
     * @param {type} data
     */
-    constructor(props)
+    constructor(props: ICheckboxFldLayoutEditProps)
     {
       super(props);
-      this.props = props;
       this.onClickHandle = this.onClickHandle.bind(this);
       this._val = false;
-    };
+    }
       
-    onClickHandle(e)
+    onClickHandle(): void
     {      
         if(this._val == true)
         {
@@ -24,26 +33,24 @@ export class CheckboxFldLayoutEdit extends React.Component{
         }else{
           this._val = true;
         }
-        
+ 
         if(ST.isFunction(this.props.onChange))
         {
           this.props.onChange(this._val);
         }
     }
 
-    render()
+    render(): React.ReactNode
     {
-      
-      let style ={
-        backgroundPosition: '30px 15px'
+      const style ={
+        backgroundPosition: '30px 15px',
+        opacity: ''
       };
 
       if(this.props.readOnly === true)
       {
-        //снимаем клик
         style.opacity = '0.5';
       }else{
-        //устанавливаем клик
         style.opacity = '1';
       }
 
@@ -57,14 +64,7 @@ export class CheckboxFldLayoutEdit extends React.Component{
           this._val = false;
           style.backgroundPosition = '30px 15px';
           break;
-        /*case undefined:
-          this._val = 'indeterminate';
-          style.backgroundPosition = '15px 15px';
-          break;*/
       }
-
-      
-
       return (<div className="pr-checkbox-imgCont" onClick = {this.onClickHandle} style={style}></div>);
     }
-};
+}

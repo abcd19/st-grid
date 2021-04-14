@@ -39,8 +39,19 @@ module.exports = {
 					presets: ["@babel/preset-env", "@babel/preset-react" /*,{ "targets": { "node": "current" } }*/]
 				}
 			}
+		},
+		{
+			test: /\.(ts|tsx)?$/,
+			use: {
+				loader: 'ts-loader'
+			},
+			exclude: /node_modules/
 		}]
+		
 	},
+	resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 	//watch: true,
 	devtool: 'source-map',
 	devServer:{
