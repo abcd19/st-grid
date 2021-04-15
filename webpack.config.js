@@ -19,9 +19,8 @@ module.exports = {
 
 	module:{
 		rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      { test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader,  'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -42,6 +41,7 @@ module.exports = {
 		},
 		{
 			test: /\.(ts|tsx)?$/,
+			exclude: /\.test.tsx?$/,
 			use: {
 				loader: 'ts-loader'
 			},

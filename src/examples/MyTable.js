@@ -65,7 +65,10 @@ export class MyTable extends React.Component {
         alias: "verified",
         widthPix: 200,
         type: {
-          constr: CheckboxFldCell
+          constr: CheckboxFldCell,
+          settings: {
+            //readOnly: true
+          }
         }
       },
 
@@ -78,7 +81,7 @@ export class MyTable extends React.Component {
           settings: {
             items: list,
             listWidthPix: 200,
-            clearBtnFlag: true
+            clearBtnFlag: true,
           }
         }
       }

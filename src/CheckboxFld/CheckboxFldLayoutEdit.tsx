@@ -1,6 +1,5 @@
-import * as ST from '../common'
 import React from 'react';
-import './Checkbox.css'
+import './Checkbox.scss';
 
 
 interface ICheckboxFldLayoutEditProps {
@@ -14,6 +13,12 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
     
     private _val: boolean;
 
+    static defaultProps: ICheckboxFldLayoutEditProps = {
+      readOnly: false,
+      onChange: ( /* val: boolean */) => { /* do nothing */ },
+      val: false
+    }
+
     /**
     * @constructor
     * @param {type} data
@@ -25,19 +30,20 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
       this._val = false;
     }
       
-    onClickHandle(): void
+    onClickHandle(/* e: React.MouseEvent<HTMLDivElement> */): void
     {      
-        if(this._val == true)
-        {
-          this._val = false;
-        }else{
-          this._val = true;
-        }
- 
-        if(ST.isFunction(this.props.onChange))
-        {
-          this.props.onChange(this._val);
-        }
+      if(this._val == true)
+      {
+        this._val = false;
+      }else{
+        this._val = true;
+      }
+      
+      if(this.props.readOnly === false)
+      {
+        this.props.onChange(this._val);
+      }
+      
     }
 
     render(): React.ReactNode
@@ -46,7 +52,7 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
         backgroundPosition: '30px 15px',
         opacity: ''
       };
-
+      
       if(this.props.readOnly === true)
       {
         style.opacity = '0.5';
@@ -54,7 +60,7 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
         style.opacity = '1';
       }
 
-      switch(this.props.val)
+      switch (this.props.val)
       {
         case true:
           this._val = true;
