@@ -77,7 +77,7 @@
   },
   "scripts": {
     "updateSnapshot": "jest --updateSnapshot",
-    "test": "jest CheckboxLayout",
+    "test": "jest  --coverage CheckboxLayout",
     "testAll": "jest",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.config.build.js",

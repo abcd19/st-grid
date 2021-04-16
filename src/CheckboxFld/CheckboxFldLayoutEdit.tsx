@@ -2,22 +2,24 @@ import React from 'react';
 import './Checkbox.scss';
 
 
-interface ICheckboxFldLayoutEditProps {
-  onChange: (val: boolean) => void;
-  readOnly: boolean;
-  val: boolean | undefined;
+type onChangeType = (val: boolean) => void;
+
+export interface ICheckboxFldLayoutEditProps {
+  onChange?: onChangeType;
+  readOnly?: boolean;
+  val?: boolean | undefined;
 }
 
 // checkbox layout component
 export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEditProps>{
     
-    private _val: boolean;
+  static defaultProps: ICheckboxFldLayoutEditProps = {
+    readOnly: false,
+    onChange: ( /* val: boolean */) => { /* do nothing */ },
+    val: false
+  }
 
-    static defaultProps: ICheckboxFldLayoutEditProps = {
-      readOnly: false,
-      onChange: ( /* val: boolean */) => { /* do nothing */ },
-      val: false
-    }
+    private _val: boolean;
 
     /**
     * @constructor
@@ -39,15 +41,18 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
         this._val = true;
       }
       
+      const onChange: onChangeType = (this.props.onChange as onChangeType);
       if(this.props.readOnly === false)
       {
-        this.props.onChange(this._val);
+        onChange(this._val);
       }
       
     }
 
     render(): React.ReactNode
     {
+      console.dir(this.props.onChange)
+      
       const style ={
         backgroundPosition: '30px 15px',
         opacity: ''
@@ -73,4 +78,6 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
       }
       return (<div className="pr-checkbox-imgCont" onClick = {this.onClickHandle} style={style}></div>);
     }
+
+
 }

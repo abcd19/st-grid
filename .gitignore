@@ -3,6 +3,8 @@ nbproject
 dev/**/*.map
 dev/**/*.min.css
 dev/**/*.min.js
+/coverage.data
+/coverage/
 prod
 /dev/assets/grid.bundle.js
 /dev/assets/main.bundle.js
