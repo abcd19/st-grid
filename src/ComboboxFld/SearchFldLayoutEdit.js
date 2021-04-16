@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit'
+import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit.tsx'
 import * as ST from '../common'
 
 export class SearchFldLayoutEdit extends React.Component {

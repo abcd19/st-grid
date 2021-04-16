@@ -1,17 +1,20 @@
 
 import * as ST from '../common'
 import React from 'react';
-import './assets/LinearGroupLayout.css'
+import './assets/LinearGroupLayout.scss'
 
-/**
- * Линейная группа элементов
- */
-export class LinearGroupLayout extends React.Component {
+interface ILinearGroupLayoutProps {
+  children?: any,
+  height?: any,
+  prepareGridDisplay?: boolean
+}
 
-  constructor(props)
+// linear group of different elements (e.g. inputs, image buttons)
+export class LinearGroupLayout extends React.Component<ILinearGroupLayoutProps> {
+
+  constructor(props: ILinearGroupLayoutProps)
   {
-    super(props);
-    this.props = props;    
+    super(props);  
   }
   
   render() {
@@ -19,7 +22,7 @@ export class LinearGroupLayout extends React.Component {
     
     for (let i = 0; i < this.props.children.length; i++) 
     {
-      let styleTd = {
+      let styleTd: React.CSSProperties = {
         padding: '0px',
         margin: '0px'
       };
@@ -46,21 +49,16 @@ export class LinearGroupLayout extends React.Component {
     let freeTd = <td key="freeSpaceSpring" style={{padding: '0px', margin: '0px'}}></td>
     items.push(freeTd);
 
-
-
-    var style ={
+    let style: React.CSSProperties ={
       padding: '0px',
       margin: '0px',
       borderSpacing: '0px'
     };
 
 
-
     if(this.props.prepareGridDisplay === true)
     {
-      var style ={
-        border: 'none'
-      };
+      style['border']  = 'none';
     }
 
     //если только пружинка, других элементов нет

@@ -1,14 +1,23 @@
 import * as ST from '../common'
 import React from 'react';
-import './assets/InputLinear.css'
+import './assets/InputLinear.scss'
 
+export interface IInputLayoutEditProps {
+  onChangeDelay?: any,
+  onChange?: any,
+  val?: string,
+  readOnly?: boolean, 
+  placeholder?: 'string',
+}
 
-/**
- * Инупт типа text (Шаблон)
- */
- class InputLayout extends React.Component {
+// line input
+export class InputLayout extends React.Component<IInputLayoutEditProps> {
 
-  constructor(props)
+  private onChangeDelayTimer: any;
+
+  private inputRef: any;
+
+  constructor(props: IInputLayoutEditProps)
   {
     super(props);
     
@@ -18,10 +27,10 @@ import './assets/InputLinear.css'
     }
     this.onChangeDelayTimer = undefined;
     this.onChange = this.onChange.bind(this);
-    this.inputRef =React.createRef();
+    this.inputRef = React.createRef()
   }
 
-  onChange(event)
+  onChange(event: React.ChangeEvent<HTMLInputElement>): void
   {    
 
     if(ST.isFunction(this.props['onChangeDelay']))
@@ -53,7 +62,7 @@ import './assets/InputLinear.css'
 
   render() {
 
-    let {canUserSelectFlag, val, readOnly, placeholder} = this.props;
+    let {val, readOnly, placeholder} = this.props;
     
     if(ST.isUndefined(val))
     {
@@ -62,7 +71,7 @@ import './assets/InputLinear.css'
       val = String(val);
     }
     
-    let _baseStyle = {
+    let _baseStyle: React.CSSProperties = {
       whiteSpace: 'nowrap',
       lineHeight: 'normal',
       fontKerning: 'auto',
@@ -83,5 +92,3 @@ import './assets/InputLinear.css'
       );
   }
 }
-
-export {InputLayout};

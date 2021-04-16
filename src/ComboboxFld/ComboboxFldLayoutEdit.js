@@ -1,6 +1,6 @@
 import * as ST from '../common';
 import React from 'react';
-import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit';
+import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit.tsx';
 import {ListLayout} from './ListLayout'
 
 

@@ -3,17 +3,30 @@ import React from 'react';
 import './assets/sprite_24.css'
 import './assets/sprite_32.css'
 
+export interface IImgButtonLayoutProps {
+  size?: number,
+  imageName?: string,
+  title?: string,
+  handler: {
+    click?: any| undefined,
+    mousedown?: any| undefined,
+    mouseup?: any| undefined,
+  },
+  readOnly?: boolean
+}
 
-/**
- * Кнопка - картинка (Шаблон)
- */
-export class ImgButtonLayout extends React.Component {
+interface IImgButtonLayoutState {
+  className: string,
+  backgroundColor: string
+}
 
-	constructor(props)
+// image button
+export class ImgButtonLayout extends React.Component<IImgButtonLayoutProps, IImgButtonLayoutState> {
+
+	constructor(props: IImgButtonLayoutProps)
   {
     super(props);
-    
-    this.props = props;
+
     let size =  this.props['size'];
     let imageName = this.props['imageName'];
 
@@ -39,7 +52,7 @@ export class ImgButtonLayout extends React.Component {
     this.handlerClick = this.handlerClick.bind(this);
   }
 
-  handlerClick(e)
+  handlerClick(e: React.MouseEvent<HTMLDivElement>)
   {    
     if(ST.has(this.props, 'handler.click'))
     {
@@ -48,7 +61,7 @@ export class ImgButtonLayout extends React.Component {
   }
 
 
-  handlerMouseDown(e)
+  handlerMouseDown(e: React.MouseEvent<HTMLDivElement>)
   {
     this.setState(function(state, props) {
       
@@ -64,7 +77,7 @@ export class ImgButtonLayout extends React.Component {
     }
   }
 
-  handlerMouseUp(e)
+  handlerMouseUp(e: React.MouseEvent<HTMLDivElement>)
   {
     this.setState(function(state, props) {
       

@@ -1,6 +1,6 @@
 import * as ST from '../common'
 import React from 'react';
-import {FieldLayoutEdit} from './FieldLayoutEdit';
+import {FieldLayoutEdit} from './FieldLayoutEdit.tsx';
 
 /**
  * Строковое поле с кнопкой очистить

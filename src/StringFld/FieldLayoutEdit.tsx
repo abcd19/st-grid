@@ -4,16 +4,30 @@ import {LinearGroupLayout} from "./LinearGroupLayout";
 import {InputLayout} from "./InputLayout";
 import {ImgButtonLayout} from "./ImgButtonLayout";
 
+export interface IFieldLayoutEditProps {
+  readOnly?: boolean,
+  inputReadOnly?: boolean,
+  canUserSelectFlag?: boolean,
+  inputVal?: string,
+  onChange: any,
+  onChangeDelay: any,
+  buttons: {
+    items: Array<any>
+  },
+  clearBtnFlag: boolean,
+  prepareGridDisplay: boolean
+}
+
 /**
  * Инпут с произвольным набором кнопок. Кнопка очисить включается отдельно по флагу
  */
-export const FieldLayoutEdit = (props) => {
+export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLayoutEditProps) => {
   
   
     //Массив с потомками. Первый идет инпут.
     let items = [
-        <InputLayout name='input' canUserSelectFlag={props.canUserSelectFlag} readOnly= {props.readOnly || props.inputReadOnly} val ={props['inputVal']} key="input" onChange = {
-            function(val){  
+        <InputLayout   readOnly= {props.readOnly || props.inputReadOnly} val ={props['inputVal']} key="input" onChange = {
+            function(val:any){  
               if(ST.isFunction(props['onChange']))
               {
                 props['onChange'](val)
@@ -21,7 +35,7 @@ export const FieldLayoutEdit = (props) => {
             }
         }  
         onChangeDelay = {
-            function(val){  
+            function(val: any){  
               
               if(ST.isFunction(props['onChangeDelay']))
               {
@@ -45,11 +59,10 @@ export const FieldLayoutEdit = (props) => {
                 title = {buttons['items'][i]['settings']['title']} 
                 imageName = {buttons['items'][i]['settings']['imageName']} 
                 handler = {buttons['items'][i]['settings']['handler']} 
-                key={buttons['items'][i]['name']} 
-                widthPix="24" 
-                size = "24"
+                key={buttons['items'][i]['name']}  
+                size = {24}
                 readOnly = {buttons['items'][i]['settings']['readOnly']}
-                name={buttons['items'][i]['name']} 
+                
           />);
       }
     }
@@ -71,9 +84,7 @@ export const FieldLayoutEdit = (props) => {
             readOnly= {props.readOnly}
             key='clearCellGray'
             imageName = 'clearCellGray'
-            widthPix="24" 
-            size = "24"
-            name = 'clearCellGray'
+            size = {24}
         />
       );
     }; 
