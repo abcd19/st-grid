@@ -77,12 +77,13 @@
   },
   "scripts": {
     "updateSnapshot": "jest --updateSnapshot",
-    "test": "jest  --coverage CheckboxLayout",
+    "test": "jest  --coverage",
     "testAll": "jest",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.config.build.js",
     "start": "webpack-dev-server",
-    "lint": "eslint  --ext .tsx src"
+    "lint": "eslint --ext  .tsx src",
+    "lint-fix": "eslint --fix --ext  .tsx src"
   },
   "repository": {
     "type": "git",

@@ -51,7 +51,6 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
 
     render(): React.ReactNode
     {
-      console.dir(this.props.onChange)
       
       const style ={
         backgroundPosition: '30px 15px',

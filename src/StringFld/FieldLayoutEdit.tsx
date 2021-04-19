@@ -1,43 +1,44 @@
 import * as ST from '../common'
 import React from 'react';
 import {LinearGroupLayout} from "./LinearGroupLayout";
-import {InputLayout} from "./InputLayout";
-import {ImgButtonLayout} from "./ImgButtonLayout";
+import {InputLayout, onChangeType} from "./InputLayout";
+import {ImgButtonLayout, IImgButtonLayoutProps} from "./ImgButtonLayout";
+
 
 export interface IFieldLayoutEditProps {
-  readOnly?: boolean,
-  inputReadOnly?: boolean,
-  canUserSelectFlag?: boolean,
-  inputVal?: string,
-  onChange: any,
-  onChangeDelay: any,
-  buttons: {
-    items: Array<any>
+  readOnly?: boolean;
+  inputReadOnly?: boolean;
+  inputVal?: string;
+  onChange?: onChangeType;
+  onChangeDelay?: onChangeType;
+  buttons?: {
+    items: Array<{
+      name: string,
+      settings: IImgButtonLayoutProps
+    }>
   },
-  clearBtnFlag: boolean,
-  prepareGridDisplay: boolean
+  clearBtnFlag?: boolean;
+  prepareGridDisplay?: boolean;
 }
 
-/**
- * Инпут с произвольным набором кнопок. Кнопка очисить включается отдельно по флагу
- */
+// input & buttons
 export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLayoutEditProps) => {
   
   
-    //Массив с потомками. Первый идет инпут.
-    let items = [
+    // input first
+    const items = [
         <InputLayout   readOnly= {props.readOnly || props.inputReadOnly} val ={props['inputVal']} key="input" onChange = {
-            function(val:any){  
-              if(ST.isFunction(props['onChange']))
+            function(val: string | undefined){  
+              if(typeof props['onChange'] == 'function')
               {
                 props['onChange'](val)
               }
             }
         }  
         onChangeDelay = {
-            function(val: any){  
+            function(val: string | undefined){  
               
-              if(ST.isFunction(props['onChangeDelay']))
+              if(typeof props['onChangeDelay'] == 'function')
               {
                 props['onChangeDelay'](val)
               }
@@ -46,35 +47,37 @@ export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLa
         />
       ];
 
-    let {buttons} = props;
+    const {buttons} = props;
     
     
-    if(ST.isObject(buttons) && ST.isArray(buttons['items']))
+    if(typeof buttons == 'object' && ST.isArray(buttons['items']))
     {
         
-      //Далее кнопки
+      // buttons
       for(let i = 0; i < buttons['items'].length; i++)
       {
+        const {settings, name} = buttons.items[i];
+        
         items.push(<ImgButtonLayout 
-                title = {buttons['items'][i]['settings']['title']} 
-                imageName = {buttons['items'][i]['settings']['imageName']} 
-                handler = {buttons['items'][i]['settings']['handler']} 
-                key={buttons['items'][i]['name']}  
-                size = {24}
-                readOnly = {buttons['items'][i]['settings']['readOnly']}
+                title = {settings.title} 
+                imageName = {settings.imageName} 
+                handler = {settings.handler} 
+                key={name}  
+                widthPix = {24}
+                readOnly = {settings.readOnly}
                 
           />);
       }
     }
 
-    //последняя кнопка кнопка очистки
+    //last is clear button
     if(props['clearBtnFlag'])
     {
 
       items.push(<ImgButtonLayout 
             handler = {{
-              click: function(){
-                if(ST.isFunction(props['onChange']))
+              click: function(/*e: React.MouseEvent<HTMLDivElement>*/){
+                if(typeof props['onChange'] == 'function')
                 {
                   props['onChange']('')
                 }
@@ -84,10 +87,10 @@ export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLa
             readOnly= {props.readOnly}
             key='clearCellGray'
             imageName = 'clearCellGray'
-            size = {24}
+            widthPix = {24}
         />
       );
-    }; 
+    } 
     
     return(
       <LinearGroupLayout prepareGridDisplay = { props.prepareGridDisplay }>

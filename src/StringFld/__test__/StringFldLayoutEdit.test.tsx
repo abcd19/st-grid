@@ -1,15 +1,39 @@
 import React from 'react';
-import {StringFldLayoutEdit} from './../StringFldLayoutEdit'
+import {StringFldLayoutEdit, IStringFldLayoutEditProps} from '../StringFldLayoutEdit'
+import {FieldLayoutEdit, IFieldLayoutEditProps} from '../FieldLayoutEdit';
+import {InputLayout, IInputLayoutProps} from '../InputLayout'
+import {LinearGroupLayout} from '../LinearGroupLayout';
 import { shallow, render, mount } from 'enzyme';
-import { unmountComponentAtNode } from "react-dom";
+//import { unmountComponentAtNode } from "react-dom";
 
-//для таймеров внутри StringFldLayoutEdit
-jest.useFakeTimers();
+describe('FieldLayoutEdit tests', () => {
+  const setUp = (props?: IFieldLayoutEditProps) => shallow(<FieldLayoutEdit {...props}  />);
+  it('should created successfully (empty props)', () => {
+    const component = setUp();
+    expect(component.find(LinearGroupLayout)).toHaveLength(1);
+  });
+});
 
-describe('StringFld', () => {
- 
 
-  it ('Инициализация без падений', ()=>{
+describe('StringFld tests', () => {
+  
+  // for setTimeOut inside StringFld
+  //jest.useFakeTimers();
+  
+  const setUp = (props?: IStringFldLayoutEditProps) => shallow(<StringFldLayoutEdit {...props}  />);
+  
+  it('should created successfully (empty props)', () => {
+    const component = setUp();
+    expect(component.find(FieldLayoutEdit)).toHaveLength(1);
+  });
+
+  /*it('should prop readOnly works', () => {
+    const component = setUp({readOnly: true});
+    console.dir(component.debug())
+    //expect(component.find(FieldLayoutEdit)).toHaveLength(1);
+  });
+
+ /* it ('Инициализация без падений', ()=>{
     const wrapper = mount(<StringFldLayoutEdit />);
     expect(wrapper.find('input')).toHaveLength(1);
   
@@ -66,7 +90,7 @@ describe('StringFld', () => {
     //как проверить аргументы????
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 500);
     
-  });
+  });*/
 
 
 })

@@ -2,76 +2,72 @@ import * as ST from '../common'
 import React from 'react';
 import './assets/InputLinear.scss'
 
-export interface IInputLayoutEditProps {
-  onChangeDelay?: any,
-  onChange?: any,
-  val?: string,
-  readOnly?: boolean, 
-  placeholder?: 'string',
+
+export type onChangeType = (val: string | undefined) => void;
+
+export interface IInputLayoutProps {
+  onChangeDelay?: onChangeType;
+  onChange?: onChangeType;
+  val?: string;
+  readOnly?: boolean;
+  placeholder?: string;
 }
 
 // line input
-export class InputLayout extends React.Component<IInputLayoutEditProps> {
+export class InputLayout extends React.Component<IInputLayoutProps> {
 
-  private onChangeDelayTimer: any;
+  static defaultProps: IInputLayoutProps = {
+    readOnly: false,
+    onChange: ( /* val: string */) => { /* do nothing */ },
+    onChangeDelay: ( /* val: string */) => { /* do nothing */ }, 
+    placeholder: '',
+    val: '',
+  }
 
-  private inputRef: any;
+  private onChangeDelayTimer: number | undefined;
 
-  constructor(props: IInputLayoutEditProps)
+
+  private inputRef: React.RefObject<HTMLInputElement>;
+
+  constructor(props: IInputLayoutProps)
   {
     super(props);
-    
-    this.state = {
-      type: 'text',
-      value: '',
-    }
     this.onChangeDelayTimer = undefined;
     this.onChange = this.onChange.bind(this);
-    this.inputRef = React.createRef()
+    this.inputRef = React.createRef();
+    this.onChangeDelayTimerFunc = this.onChangeDelayTimerFunc.bind(this);
+  }
+
+  onChangeDelayTimerFunc(): void
+  {
+    if(this.inputRef.current != null)
+    {
+      const onChangeDelay: onChangeType = (this.props.onChangeDelay as onChangeType);
+      onChangeDelay.apply(this, [this?.inputRef?.current?.value]);
+    }
   }
 
   onChange(event: React.ChangeEvent<HTMLInputElement>): void
   {    
 
-    if(ST.isFunction(this.props['onChangeDelay']))
+    if(typeof this.props['onChangeDelay'] == 'function')
     {
         if(this.onChangeDelayTimer != undefined)
         {
           clearTimeout(this.onChangeDelayTimer);
         }
-
-        let self= this;
-
-         this.onChangeDelayTimer = setTimeout(function(){
-
-          if(ST.isObject(self.inputRef.current))
-          {
-            self.props['onChangeDelay'].apply(self, [self.inputRef.current.value]);
-          }
-          
-        //задержка в пол секунды    
-        },500);
+        this.onChangeDelayTimer = window.setTimeout(this.onChangeDelayTimerFunc, 500);
     }
    
-    //onChange происходит сразу
-    if(ST.isFunction(this.props['onChange']))
-    {
-      this.props['onChange'].apply(this, [event.target.value]);
-    }
+    const onChange: onChangeType = (this.props['onChange'] as onChangeType);
+    onChange.apply(this, [event.target.value]);
   }
 
-  render() {
+  render(): React.ReactElement  {
 
-    let {val, readOnly, placeholder} = this.props;
+    const {val, readOnly, placeholder} = this.props;
     
-    if(ST.isUndefined(val))
-    {
-      val = '';
-    }else{
-      val = String(val);
-    }
-    
-    let _baseStyle: React.CSSProperties = {
+    const _baseStyle: React.CSSProperties = {
       whiteSpace: 'nowrap',
       lineHeight: 'normal',
       fontKerning: 'auto',
@@ -88,7 +84,7 @@ export class InputLayout extends React.Component<IInputLayoutEditProps> {
 					readOnly = {readOnly}
 					onChange = { this.onChange }
           className = "st-core-input-input" 
-          placeholder={placeholder} />
+          placeholder = {placeholder} />
       );
   }
 }

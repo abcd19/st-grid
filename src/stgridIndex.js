@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom'
 export const MyStringFld = () =>
 {
   const [val, setVal] = useState('');
-  return (<StringFldLayoutEdit />)
+  return (<StringFldLayoutEdit onChange = {setVal} val = {val} clearBtnFlag={true}/>)
 }
 
 
@@ -33,7 +33,7 @@ export const MyCheckbox = () =>
 export function run()
 {    
     ReactDOM.render(      
-        <StringFldLayoutEdit  />
+        <MyStringFld    />
     , document.getElementById('myTbl1'));
 
 } 

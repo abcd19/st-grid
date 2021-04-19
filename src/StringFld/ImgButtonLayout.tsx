@@ -1,18 +1,15 @@
-import * as ST from '../common';
 import React from 'react';
 import './assets/sprite_24.css'
 import './assets/sprite_32.css'
 
 export interface IImgButtonLayoutProps {
-  size?: number,
-  imageName?: string,
-  title?: string,
+  widthPix?: number;
+  imageName?: string;
+  title?: string;
   handler: {
-    click?: any| undefined,
-    mousedown?: any| undefined,
-    mouseup?: any| undefined,
-  },
-  readOnly?: boolean
+    click: (e: React.MouseEvent<HTMLDivElement>) => void
+  };
+  readOnly?: boolean;
 }
 
 interface IImgButtonLayoutState {
@@ -23,25 +20,25 @@ interface IImgButtonLayoutState {
 // image button
 export class ImgButtonLayout extends React.Component<IImgButtonLayoutProps, IImgButtonLayoutState> {
 
+  static defaultProps: IImgButtonLayoutProps = {
+    readOnly: false,
+    imageName: 'idea',
+    title: 'button',
+    widthPix: 24,
+    handler: {
+      click: (/*e: React.MouseEvent<HTMLDivElement>*/) => { /** do nothing */}
+    }
+  }
+
 	constructor(props: IImgButtonLayoutProps)
   {
     super(props);
 
-    let size =  this.props['size'];
-    let imageName = this.props['imageName'];
-
-    if(ST.isUndefined(size))    
-    {
-      size = 24;
-    }
-
-    if(ST.isUndefined(imageName))
-    {
-      imageName = 'idea';
-    }
+    const size =  this.props['widthPix'];
+    const imageName = this.props['imageName'];
 
 		this.state = {
-			 'className': 'st_icon_'+size+'_' + imageName,
+			 'className': `st_icon_${size}_${imageName}`,
 			 'backgroundColor': 'transparent'
     };
     
@@ -52,51 +49,37 @@ export class ImgButtonLayout extends React.Component<IImgButtonLayoutProps, IImg
     this.handlerClick = this.handlerClick.bind(this);
   }
 
-  handlerClick(e: React.MouseEvent<HTMLDivElement>)
+  handlerClick(e: React.MouseEvent<HTMLDivElement>): void
   {    
-    if(ST.has(this.props, 'handler.click'))
-    {
-      this.props['handler']['click'].apply(this, [e]);
-    }
+    this.props.handler.click.apply(this, [e]);
   }
 
 
-  handlerMouseDown(e: React.MouseEvent<HTMLDivElement>)
+  handlerMouseDown(/*e: React.MouseEvent<HTMLDivElement>*/): void
   {
-    this.setState(function(state, props) {
+    this.setState(function(/*state, props*/) {
       
       return {
         backgroundColor: 'gray'
       }
 
     });
-
-    if(ST.has(this.props, 'handler.mousedown'))
-    {
-      this.props['handler']['mousedown'].apply(this, [e]);
-    }
   }
 
-  handlerMouseUp(e: React.MouseEvent<HTMLDivElement>)
+  handlerMouseUp(/*e: React.MouseEvent<HTMLDivElement>*/): void
   {
-    this.setState(function(state, props) {
+    this.setState(function(/*state, props */) {
       
       return {
         backgroundColor: 'transparent'
       }
 
     });
-
-    if(ST.has(this.props, 'handler.mouseup'))
-    {
-      this.props['handler']['mouseup'].apply(this, [e]);
-    }
-    
   }
   
-  handleLayoutLeave()
+  handleLayoutLeave(): void
   {
-    this.setState(function(state, props) {
+    this.setState(function(/*state, props */) {
       
       return {
         backgroundColor: 'transparent'
@@ -105,10 +88,10 @@ export class ImgButtonLayout extends React.Component<IImgButtonLayoutProps, IImg
     })
   }
 
-  handleLayoutEnter()
+  handleLayoutEnter(): void
   {
 
-    this.setState(function(state, props) {
+    this.setState(function(/*state, props */) {
 
       return {
             backgroundColor: 'lightgray'
@@ -117,10 +100,10 @@ export class ImgButtonLayout extends React.Component<IImgButtonLayoutProps, IImg
 
   }
 
-	render() {
+	render(): React.ReactElement {
     
-    //если установлен флаг readOnly то снимаем все хендлеры
-    let onClick,onMouseLeave, onMouseEnter,onMouseDown,onMouseUp;
+    let onClick, onMouseLeave, onMouseEnter, onMouseDown, onMouseUp;
+
     if(this.props.readOnly !== true)
     {
       onClick = this.handlerClick 
@@ -133,8 +116,8 @@ export class ImgButtonLayout extends React.Component<IImgButtonLayoutProps, IImg
 		return (
 			<div 
 				style = {{ 
-          width: this.props.size+'px',
-          height: this.props.size+'px',
+          width: this.props.widthPix + 'px',
+          height: this.props.widthPix + 'px',
           backgroundColor: this.state.backgroundColor
         }}
         title = {this.props.title}

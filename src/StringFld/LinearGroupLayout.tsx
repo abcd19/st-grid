@@ -2,11 +2,12 @@
 import * as ST from '../common'
 import React from 'react';
 import './assets/LinearGroupLayout.scss'
-
+import {IInputLayoutProps} from './InputLayout';
+import {IImgButtonLayoutProps} from './ImgButtonLayout';
 interface ILinearGroupLayoutProps {
-  children?: any,
-  height?: any,
-  prepareGridDisplay?: boolean
+  children:  Array<React.ReactElement<IImgButtonLayoutProps | IInputLayoutProps>>;
+  height?: number;
+  prepareGridDisplay?: boolean;
 }
 
 // linear group of different elements (e.g. inputs, image buttons)
@@ -17,39 +18,36 @@ export class LinearGroupLayout extends React.Component<ILinearGroupLayoutProps> 
     super(props);  
   }
   
-  render() {
-    var items = [];
+  render(): React.ReactElement {
+    const items = [];
     
     for (let i = 0; i < this.props.children.length; i++) 
     {
-      let styleTd: React.CSSProperties = {
+      const styleTd: React.CSSProperties = {
         padding: '0px',
         margin: '0px'
       };
       
       if(ST.isNumber(this.props.height))
       {
-        styleTd.height = this.props.height+'px';
+        styleTd.height = this.props.height + 'px';
       }
 
       if(ST.isUndefined(this.props.children[i].props['widthPix']) == false)
       {
-        styleTd['width'] = this.props.children[i].props['widthPix']+'px';
+        styleTd['width'] = this.props.children[i].props['widthPix'] + 'px';
       }
 
-      var newItem = <td align="center"  style={styleTd} key={ i } >
+      const newItem = <td align="center"  style={styleTd} key={ i } >
                         {this.props.children[i]}
                      </td>;
       items.push(newItem);
     }
     
-
-
-    //пружинка, которая съедает оставшееся растояние
-    let freeTd = <td key="freeSpaceSpring" style={{padding: '0px', margin: '0px'}}></td>
+    const freeTd = <td key="freeSpaceSpring" style={{padding: '0px', margin: '0px'}}></td>
     items.push(freeTd);
 
-    let style: React.CSSProperties ={
+    const style: React.CSSProperties ={
       padding: '0px',
       margin: '0px',
       borderSpacing: '0px'

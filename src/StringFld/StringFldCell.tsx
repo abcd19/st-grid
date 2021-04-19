@@ -2,11 +2,24 @@ import * as ST from '../common';
 import React from 'react';
 import {StringFldLayoutEdit} from './StringFldLayoutEdit';
 
-export const StringFldCell = (props) =>
+export interface StringFldCellProps {
+  layoutMode: string; 
+  style: React.CSSProperties;
+  onMouseDownItem: () => void;
+  onChangeItem: () => void;
+  className: string; 
+  val: string | undefined;
+  onMouseEnterItem: () => void;
+  onDoubleClickItem: () => void;
+  onMouseLeaveItem: () => void;
+  onClickItem: () => void;
+}
+
+export const StringFldCell : React.FC<StringFldCellProps> = (
+  {layoutMode, style, onMouseDownItem, onChangeItem, className, val = undefined,
+      onMouseEnterItem, onDoubleClickItem, onMouseLeaveItem, onClickItem}: StringFldCellProps) =>
 {
-  let {layoutMode, style, onMouseDownItem, onChangeItem, className, val,
-    onMouseEnterItem, onDoubleClickItem, onMouseLeaveItem, onClickItem, settings, handler} = props;
-  
+ 
   
   if(layoutMode == 'edit')
   {
@@ -21,7 +34,7 @@ export const StringFldCell = (props) =>
     {
       val  = '';
     }else{
-      val = String(props.val)
+      val = String(val)
     }
      
   return (
