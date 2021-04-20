@@ -1,30 +1,63 @@
 import React from 'react';
 import {StringFldLayoutEdit, IStringFldLayoutEditProps} from '../StringFldLayoutEdit'
 import {FieldLayoutEdit, IFieldLayoutEditProps} from '../FieldLayoutEdit';
+import { shallow, render, mount } from 'enzyme';
 import {InputLayout, IInputLayoutProps} from '../InputLayout'
 import {LinearGroupLayout} from '../LinearGroupLayout';
-import { shallow, render, mount } from 'enzyme';
+import {ImgButtonLayout, IImgButtonLayoutProps} from '../ImgButtonLayout';
+
 //import { unmountComponentAtNode } from "react-dom";
-
-describe('FieldLayoutEdit tests', () => {
-  const setUp = (props?: IFieldLayoutEditProps) => shallow(<FieldLayoutEdit {...props}  />);
-  it('should created successfully (empty props)', () => {
-    const component = setUp();
-    expect(component.find(LinearGroupLayout)).toHaveLength(1);
-  });
-});
-
+const setUp = (props?: IStringFldLayoutEditProps) => shallow(<StringFldLayoutEdit {...props}  />);
 
 describe('StringFld tests', () => {
   
   // for setTimeOut inside StringFld
   //jest.useFakeTimers();
   
-  const setUp = (props?: IStringFldLayoutEditProps) => shallow(<StringFldLayoutEdit {...props}  />);
+
   
   it('should created successfully (empty props)', () => {
     const component = setUp();
     expect(component.find(FieldLayoutEdit)).toHaveLength(1);
+    expect(component.find(FieldLayoutEdit).dive().find(InputLayout)).toHaveLength(1);
+  });
+
+  it('callback onChange works', () => {
+    const onChange =  jest.fn((val) => val)
+    const component = setUp({onChange: onChange});
+    component.find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').simulate('change', {target: {value: 'blabla'}});
+    expect(onChange.mock.calls.length).toBe(1);
+    expect(onChange.mock.results[0].value).toBe('blabla');
+  });
+
+  it('callback onChangeDelay works', () => {
+    const onChange =  jest.fn((val) => val)
+    const component = setUp({onChangeDelay: onChange});
+    jest.useFakeTimers();
+    component.find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').simulate('change', {target: {value: 'blabla'}});
+    jest.runAllTimers();
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 500);
+    jest.clearAllTimers();
+  });
+
+  it('clearBtnFlag works', () => {
+    const onChange =  jest.fn((val) => val)
+    const component = setUp({onChange: onChange, clearBtnFlag: true});
+    const clearBtn = component.find(FieldLayoutEdit).dive().find(ImgButtonLayout);
+    expect(clearBtn).toHaveLength(1);
+    clearBtn.dive().find('div').simulate('click');
+    expect(onChange.mock.calls.length).toBe(1);
+    expect(onChange.mock.results[0].value).toBe('');
+  });
+
+  it('readOnly works', () =>{
+    const component = setUp({readOnly: true});
+    const input = component.find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').get(0);
+    expect(input.props).toHaveProperty(
+      'readOnly',
+      true,
+    )
   });
 
   /*it('should prop readOnly works', () => {

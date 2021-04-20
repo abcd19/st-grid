@@ -3,19 +3,17 @@ import {FieldLayoutEdit} from './FieldLayoutEdit';
 
 
 export interface IStringFldLayoutEditProps {
-  handler?:{
-    changeDelay: () => void,
-  };
+  onChangeDelay?: (val: string | undefined) => void,
   val?: string | undefined;
   clearBtnFlag?: boolean;
-  onChange?: () => void;
+  onChange?: (val: string | undefined) => void;
   readOnly?: boolean;
   prepareGridDisplay?: boolean;
 }
 
 // string linear input & clear button
 export const StringFldLayoutEdit : React.FC<IStringFldLayoutEditProps> = (
-  {handler = {changeDelay:  () => { /** do nothing */}}, val = undefined, clearBtnFlag = false, onChange = () => {/** do nothing */}, readOnly = false, prepareGridDisplay = false}: IStringFldLayoutEditProps) => {
+  {onChangeDelay=  () => { /** do nothing */}, val = undefined, clearBtnFlag = false, onChange = () => {/** do nothing */}, readOnly = false, prepareGridDisplay = false}: IStringFldLayoutEditProps) => {
 
   return(
       <FieldLayoutEdit 
@@ -24,7 +22,7 @@ export const StringFldLayoutEdit : React.FC<IStringFldLayoutEditProps> = (
         readOnly = {readOnly}
         inputVal = {val} 
         buttons = {{items: []}} 
-        onChangeDelay = { handler['changeDelay'] }
+        onChangeDelay = { onChangeDelay }
         onChange = { onChange }
        />
     );
