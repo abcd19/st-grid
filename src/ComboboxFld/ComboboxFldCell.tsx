@@ -1,22 +1,26 @@
-import * as ST from '../common';
 import React, { CSSProperties } from 'react';
 import {ComboboxFldLayoutEdit} from './ComboboxFldLayoutEdit';
-
+import {typeComboValue} from './ListLayout'
 
 export interface IComboboxFldCellProps {
-  layoutMode: string;
-  style: CSSProperties; 
-  onMouseDownItem: any;
-  onChangeItem: any;
-  className: any;
-  val: any;
-  settings: any;
+  layoutMode?: string;
+  style?: CSSProperties; 
+  onMouseDownItem?: ()=>void;
+  onChangeItem?: (val?: typeComboValue)=>void;
+  className?: string;
+  val?: typeComboValue;
+  settings: {
+    listWidthPix: number,
+    items:  typeComboValue[],
+    clearBtnFlag: boolean
+  };
 }
 
 export const ComboboxFldCell: React.FC<IComboboxFldCellProps> = (props: IComboboxFldCellProps) =>
 {
-  let {layoutMode, style, onMouseDownItem, onChangeItem, className, val, settings} = props;
-  const{listWidthPix, items,  clearBtnFlag} = settings;
+  const {layoutMode, style, onMouseDownItem, onChangeItem, className, val, settings} = props;
+
+  const {listWidthPix, items,  clearBtnFlag} = settings;
   
   if(layoutMode == 'edit')
   {
@@ -28,17 +32,14 @@ export const ComboboxFldCell: React.FC<IComboboxFldCellProps> = (props: ICombobo
       );
   }
 
-
-  if(ST.has(val, 'display'))
+  let valTemp: string | number | boolean | typeComboValue = '';
+  if(val && typeof val == 'object' && val.display)
   {
-    
-    val = val['display'];
-  }else{
-    val = '';
+    valTemp = val.display;
   }
 
   return (
-    <td  style={style} onMouseDown = {onMouseDownItem} className={className}> { val }</td>
+    <td  style={style} onMouseDown = {onMouseDownItem} className={className}> { valTemp }</td>
   );
   
 }

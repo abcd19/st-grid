@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, useRef, MouseEvent, SyntheticEvent } from 'react';
+import React, { useEffect, useState, useRef, SyntheticEvent } from 'react';
 
 export type typeVal = {
   raw?: string | number | boolean;
@@ -14,10 +14,8 @@ export interface IListItemLayoutProps {
   val?: typeVal;
 }
 
-/**
- * Элемент списка
- */
-export const ListItemLayout = (props: IListItemLayoutProps) => {
+// combobox list element
+export const ListItemLayout: React.FC<IListItemLayoutProps> = (props: IListItemLayoutProps) => {
   const [mouseOver, setMouseOver] = useState(false);
 
   const div = useRef<HTMLDivElement>(null);

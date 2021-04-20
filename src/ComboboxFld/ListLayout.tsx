@@ -1,7 +1,7 @@
 import * as ST from '../common'
 import React from 'react';
-import {ListItemLayout} from './ListItemLayout.tsx'
-import {SearchFldLayoutEdit} from './SearchFldLayoutEdit.tsx'
+import {ListItemLayout} from './ListItemLayout'
+import {SearchFldLayoutEdit} from './SearchFldLayoutEdit'
 import {calcRank} from '../findWords';
 
 //ширина списка при котрытии
@@ -11,28 +11,32 @@ export const LIST_ITEM_WIDTH = WIDTH-5;
 //максимальная высота списка
 export const MAXHEIGHT = 250;
 
+export type typeComboValue = {
+  raw?: string | number | boolean,
+  display?: string | number | boolean,
+}
 
 export interface IListLayoutProps {
-  handler: any;
-  items: any;
-  cordBtnLeft: any;
-  cordBtnTop: any;
-  listWidthPix: any;
-  disableSearch: any;
-  selectedVal: any;
+  handler: {
+    change: (val?: typeComboValue) => void
+  };
+  items: typeComboValue[];
+  cordBtnLeft: number;
+  cordBtnTop: number;
+  listWidthPix: number;
+  disableSearch?: boolean;
+  selectedVal?: string | number | boolean;
 }
 
 export interface IListLayoutState {
-  isFiltred: any;
-  filterdItems: any;
+  isFiltred: boolean;
+  filterdItems: typeComboValue[];
 }
 
-/**
- * Список
- */
+// combobox list
 export class ListLayout extends React.Component<IListLayoutProps, IListLayoutState>{
     
-    private genDiv: any;
+    private genDiv: React.RefObject<HTMLDivElement>;
 
     /**
      * @constructor
@@ -46,15 +50,12 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
 
       this.changeSearchHandle = this.changeSearchHandle.bind(this);
       this.state ={
-        //массив с отфильтрованными строками при поиске
         filterdItems: [],
-        //флаг фильтр пременен
         isFiltred: false
       }
-      //this.onWheelHandle = this.onWheelHandle.bind(this);
     }
 
-    clickItemHandle(val: any)
+    clickItemHandle(val?: typeComboValue): void
     {
       if(ST.has(this.props,'handler.change'))
       {
@@ -62,50 +63,30 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
       }
     }
 
-    /*onWheelHandle(e)
+    changeSearchHandle(val?: string): void
     {
-      //при скроллинге листа скроллится только он
-      //Если убрать то скроллиться грид      
-      e.stopPropagation();
-    }*/
-
-    //фильтрация элементов при поиске
-    changeSearchHandle(val: any)
-    {
-      //ищем по значениям для отображения
       const ar = [];
-      for(var i = 0;  i < this.props.items.length; i++)
+      for(let i = 0;  i < this.props.items.length; i++)
       {
         ar[i] = this.props.items[i]['display'];
       }
 
-      //ранжируем массив
       const ranked = calcRank(ar,  val,{
-        deleteElementByRankZero: true //удаляем элементы с нулевым рангом
+        deleteElementByRankZero: true
       });
 
-      //создаем новый массив элементов, который удовлетворяет поиску
       const newItems = [];
 
-      //Если ничего не найдено
-      /*if(ranked.length === 0)
-      {
-        //newItems = this.props.items;
-        this.setState({filterdItems: [], isFiltred: false});
-        return;
-      }*/
-
-      for(var i = 0; i < ranked.length; i++)
+      for(let i = 0; i < ranked.length; i++)
       {
           const elem = ranked[i]['elemLink'];
           newItems.push(this.props.items[elem]);
       }
 
       this.setState({filterdItems: newItems, isFiltred: true});
-      //console.dir(newItems);
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
       let {cordBtnLeft, cordBtnTop, listWidthPix} = this.props;
       
       if(ST.isNumber(listWidthPix) == false)
@@ -113,22 +94,17 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
         listWidthPix = WIDTH;
       }
 
-      //если один из парентов имеет позицию fixed или absolute то позицию нужно считать от него
-      if(this.genDiv.current.offsetParent && this.genDiv.current.offsetParent.nodeName != 'BODY')
+      if(this.genDiv && this.genDiv.current 
+        && this.genDiv.current.offsetParent && this.genDiv.current.offsetParent.nodeName != 'BODY')
       {
-        //console.dir(this.genDiv.current.offsetParent)
         const offsetParent = this.genDiv.current.offsetParent.getBoundingClientRect();
         
         cordBtnLeft =  cordBtnLeft - offsetParent.left;
         cordBtnTop =  cordBtnTop - offsetParent.top;
       }
 
-      //слева отнимаем ширину ячейки таблицы + небольшая виличина для красоты
       const left = cordBtnLeft - listWidthPix + 30;
-      //снизу высоту инпута + небольшая виличина для красоты
       let top = cordBtnTop + 30;
-
-      //console.dir(this.genDiv.current.offsetParent.getBoundingClientRect());
       function getBodyScrollTop()
       {
         return (document.documentElement && document.documentElement.scrollTop) || 
@@ -148,34 +124,35 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
         top = top - MAXHEIGHT;
       }
 
-      // у потомка берем его отступ и прибавляем размер скролла страницы
-      this.genDiv.current.style.left = left + getBodyScrollLeft() + 'px';
-      this.genDiv.current.style.top = top + 'px';
-
-          //чтобы не крутилась страница в chrom дисеблим скролл с флагом  passive: false
-      const prevDef = (e: any) => e.stopPropagation();
-      
-      if ('onwheel' in document)
+      if(this.genDiv && this.genDiv.current)
       {
-        // IE9+, FF17+, Ch31+
-        this.genDiv.current.addEventListener("wheel", prevDef, { passive: false });
-      } else if ('onmousewheel' in document) {
-        // устаревший вариант события
-        this.genDiv.current.addEventListener("mousewheel", prevDef, { passive: false });
-      } else {
-        // Firefox < 17
-        this.genDiv.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
+        this.genDiv.current.style.left = left + getBodyScrollLeft() + 'px';
+        this.genDiv.current.style.top = top + 'px';
       }
+      
+      const prevDef = (e: Event) => { e.stopPropagation() };
 
+      if(this.genDiv && this.genDiv.current)
+      {
+        if ('onwheel' in document)
+        {
+          // IE9+, FF17+, Ch31+
+          this.genDiv.current.addEventListener("wheel", prevDef, { passive: false });
+        } else if ('onmousewheel' in document) {
+          this.genDiv.current.addEventListener("mousewheel", prevDef, { passive: false});
+        } else {
+          // Firefox < 17
+          this.genDiv.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false});
+        }
+      }
 
     }
 
-    render(){
+    render(): React.ReactElement {
       
       const items = [];
       let {listWidthPix} = this.props;
       
-      //ширина элемента списка при открытии
       let itemsListWidthPix;
       if(ST.isNumber(listWidthPix) == false)
       {
@@ -185,8 +162,6 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
         itemsListWidthPix = listWidthPix-5;
       }
       
-            
-      //Если нет фильтрации
       if(this.state.isFiltred == false)
       {
 
@@ -202,7 +177,7 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
           
           items.push(newItem);
         }
-      }else{ //Если есть фильтрация
+      }else{ 
 
         for(let i = 0; i < this.state.filterdItems.length; i++)
         {
@@ -211,7 +186,6 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
           {
             isSelected = true;
           }
-          //при поиске скролим на первый элемент
           const newItem = <ListItemLayout setScroll = {i == 0?true: false}  isSelected= {isSelected} key ={i} val ={ this.state.filterdItems[i] } onClick = { this.clickItemHandle } />;
           
           items.push(newItem);
@@ -220,7 +194,6 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
       }
 
       let searchBlock;
-      //поле поиска показываем только если айтемов больше 12
       if(!this.props.disableSearch && this.props.items.length > 12)
       {
         searchBlock = <tr>
@@ -231,7 +204,7 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
       }
       
       return(
-        <div id="ListLayout" ref={this.genDiv}  style= {{background: 'white', width: listWidthPix,  boxSizing: 'border-box', zIndex:100, position: 'absolute', border: '1px solid gray'}}>
+        <div id="ListLayout" ref = {this.genDiv}  style= {{background: 'white', width: listWidthPix,  boxSizing: 'border-box', zIndex:100, position: 'absolute', border: '1px solid gray'}}>
           <table style={{borderSpacing: '2px', width: listWidthPix, borderCollapse: 'separate'}}>
             <tbody>
               {searchBlock}

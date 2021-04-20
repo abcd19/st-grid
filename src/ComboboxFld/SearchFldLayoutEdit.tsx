@@ -1,23 +1,22 @@
 
 import React from 'react';
-import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit'
-import * as ST from '../common'
-
+import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit';
+import {onChangeType} from './../StringFld/InputLayout';
+import {IImgFieldLayoutEditBtn} from './../StringFld/FieldLayoutEdit';
 
 export interface ISearchFldLayoutEditProps {
-  onSearchBtnClick?: any;
-  onChangeDelay: any;
-  val?: any;
+  onSearchBtnClick?: onChangeType;
+  onChangeDelay?: onChangeType;
+  val?: string;
 }
 
 export interface ISearchFldLayoutEditState  {
-  val: any;
+  val?: string;
 }
-
 
 export class SearchFldLayoutEdit extends React.Component<ISearchFldLayoutEditProps, ISearchFldLayoutEditState> {
     
-  private buttons: {items : any[]};
+    private buttons: IImgFieldLayoutEditBtn;
 
     constructor(props: ISearchFldLayoutEditProps)
     {
@@ -26,18 +25,16 @@ export class SearchFldLayoutEdit extends React.Component<ISearchFldLayoutEditPro
         val: undefined,
       };
       
-      const self = this;
       this.buttons = {
         items: []
       };
       this.buttons['items'].push({
-            imageName: 'search',
             name: 'search',
             settings: { 
               imageName: 'search',
               handler:{
-                click: () =>{
-                  if(ST.isFunction(this.props.onSearchBtnClick))
+                click: () => {
+                  if(typeof this.props.onSearchBtnClick == 'function')
                   {
                     this.props.onSearchBtnClick(this.state.val);
                   }
@@ -50,17 +47,15 @@ export class SearchFldLayoutEdit extends React.Component<ISearchFldLayoutEditPro
       this.onChange = this.onChange.bind(this);
     }
 
-    onChange(newVal: any): void
+    onChange(newVal?: string): void
     {
       this.setState({
         val: newVal
       })
     }
 
-    render()
+    render(): React.ReactElement
     {
-      
-      const {val} = this.props;
       return(<FieldLayoutEdit inputVal = {this.state.val} onChange = {this.onChange} onChangeDelay = {this.props['onChangeDelay']} prepareGridDisplay = { false } buttons ={ this.buttons } />)
     }
 }

@@ -4,6 +4,13 @@ import {LinearGroupLayout} from "./LinearGroupLayout";
 import {InputLayout, onChangeType} from "./InputLayout";
 import {ImgButtonLayout, IImgButtonLayoutProps} from "./ImgButtonLayout";
 
+export interface IImgFieldLayoutEditBtn {
+    items: Array<{
+      name: string,
+      settings: IImgButtonLayoutProps
+    }>
+}
+
 
 export interface IFieldLayoutEditProps {
   readOnly?: boolean;
@@ -11,12 +18,7 @@ export interface IFieldLayoutEditProps {
   inputVal?: string;
   onChange?: onChangeType;
   onChangeDelay?: onChangeType;
-  buttons?: {
-    items: Array<{
-      name: string,
-      settings: IImgButtonLayoutProps
-    }>
-  },
+  buttons?: IImgFieldLayoutEditBtn,
   clearBtnFlag?: boolean;
   prepareGridDisplay?: boolean;
 }

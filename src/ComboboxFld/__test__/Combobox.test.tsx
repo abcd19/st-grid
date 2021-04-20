@@ -1,19 +1,32 @@
 import React from 'react';
-import {ComboboxFldLayoutEdit} from '../ComboboxFldLayoutEdit'
-import {ListLayout} from '../ListLayout';
-import {ListItemLayout } from '../ListItemLayout';
-import { mount } from 'enzyme';
-
-let list = undefined;
+import {ComboboxFldLayoutEdit, IComboboxFldLayoutEditProps} from '../ComboboxFldLayoutEdit'
+import {FieldLayoutEdit} from './../../StringFld/FieldLayoutEdit';
+import {InputLayout} from './../../StringFld/InputLayout';
+import { shallow} from 'enzyme';
+/*let list = undefined;
 beforeEach(() => {
   list = [
     {raw: 'raw1', display: 'display1'},
     {raw: 'raw2', display: 'display2'}];
-});
+});*/
+const setUp = (props?: IComboboxFldLayoutEditProps) => {
+  
+  let list = [
+    {raw: 'raw1', display: 'display1'},
+    {raw: 'raw2', display: 'display2'}];
+  
+  return shallow(<ComboboxFldLayoutEdit items = {list} { ...props}  />);
+} 
 
 describe('Combobox', () => {
 
+  it('should created successfully (empty props)', () => {
+    const component = setUp();
+    expect(component.find(FieldLayoutEdit)).toHaveLength(1);
+    expect(component.find(FieldLayoutEdit).dive().find(InputLayout)).toHaveLength(1);
+  });
 
+/*
  
   it('Инициализация без падений', ()=>{
     const wrapper = mount(<ComboboxFldLayoutEdit />);
@@ -71,6 +84,6 @@ describe('Combobox', () => {
     //cписок закрылся
     expect(wrapper.find(ListLayout)).toHaveLength(0);
   });
-
+*/
 
  })

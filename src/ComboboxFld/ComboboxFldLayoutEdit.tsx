@@ -1,15 +1,15 @@
 import * as ST from '../common';
 import React from 'react';
 import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit';
-import {ListLayout} from './ListLayout'
-
+import {ListLayout, typeComboValue} from './ListLayout'
+import {IImgFieldLayoutEditBtn} from './../StringFld/FieldLayoutEdit';
 
 export interface IComboboxFldLayoutEditProps {
   disableSearch?: boolean;
-  onChange: any;
-  items: any;
-  val: any;
-  listWidthPix: any;
+  onChange?: (val?: typeComboValue) => void;
+  items: typeComboValue[];
+  val?: typeComboValue;
+  listWidthPix?: number;
   clearBtnFlag?: boolean;
   prepareGridDisplay?: boolean;
 }
@@ -25,9 +25,9 @@ export interface IComboboxFldLayoutEditState {
 
 export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEditProps, IComboboxFldLayoutEditState>{
     
-    private buttons: {items : any[]};
+    private buttons: IImgFieldLayoutEditBtn;
     
-    private refTable: any;
+    private refTable: React.RefObject<HTMLTableElement>;
 
     /**
      * @constructor
@@ -55,13 +55,6 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
         settings: { 
           handler:{
             click: this.onClickChoiceHandle.bind(this),
-            //останавливаем всплытие ивентов 
-            //при нажатии на нопку выбора
-            //считаем что если пользователь нажал на копку, 
-            //то он будет выбирать
-            /*mousedown: function(e){
-             // e.stopPropagation();
-            },*/
           },
           imageName: 'combobox'
         }
@@ -72,52 +65,52 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
     }
 
 
-    onClickChoiceHandle(e: any): void
+    onClickChoiceHandle(e?: React.MouseEvent): void
     {
       
       if(this.state.listIsOpened == true)
       {
         this.setState({listIsOpened: false})
       }else{
-        const {left, top} = e.currentTarget.getBoundingClientRect();
-        this.setState({
-          cordBtnLeft: left,
-          cordBtnTop: top,
-          listIsOpened: true})
-      }
+        if(e)
+        {
+          const {left, top} = e.currentTarget.getBoundingClientRect();
+          this.setState({
+            cordBtnLeft: left,
+            cordBtnTop: top,
+            listIsOpened: true})
+          }
+        }
+        
     }
 
-    onClickListElement(val: any)
+    onClickListElement(val?: typeComboValue): void
     {
       this.onClickChoiceHandle(undefined);
-      if(ST.isFunction(this.props.onChange))
+      if(typeof this.props.onChange == 'function')
       {
         this.props.onChange(val)
       }
     }
 
-    //закрыть список
-    runClose(e: any)
+    runClose(e: Event): void
     {
-      //в любом случае отписываем события, что бы ивент не завис
       window.document.body.removeEventListener("mousewheel", this.runClose);
       window.document.body.removeEventListener("mousedown", this.runClose);
-      //Если кликаем гдето в документе или скролим, то закрываем список
-      if(e.target && this.refTable.current && this.refTable.current.contains(e.target) == false)
+      if(e.target && this.refTable.current && this.refTable.current.contains(e.target as Element) == false)
       {
         this.setState({listIsOpened: false})
       }
     }
 
-    //находит значение в виде {raw,display} по сырому значению raw
-    findValByRawVal(rawVal: any)
+    findValByRawVal(rawVal: string | boolean | number): typeComboValue | undefined
     {
       if(ST.isUndefined(this.props.items))
       {
         return undefined;
       }
-
-      const val = this.props.items.filter((item: any) =>{
+      
+      const val = this.props.items.filter((item: typeComboValue) =>{
         return item['raw'] == rawVal;
       });
       
@@ -125,26 +118,26 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
     }
 
 
-    render()
+    render(): React.ReactElement
     {
-      let {val, items, listWidthPix} = this.props;
+      let {items} = this.props;
       
+      const {val, listWidthPix} = this.props;
+
       if(ST.isUndefined(items))
       {
         items = [];
       }
 
-      let realVal ={
+      let realVal: typeComboValue= {
         raw: undefined,
         display: ''
       };
       
-      if(ST.isObject(val))
+      if(val && val.raw)
       {
-        
-          //по сырому значению ищем значение в массиве
-          const temp = this.findValByRawVal(val['raw']);
-          if(ST.isObject(temp))
+          const temp = this.findValByRawVal(val.raw);
+          if(temp != undefined)
           {
             realVal = temp;
           }
@@ -157,8 +150,8 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
       const fieldLayout = <FieldLayoutEdit 
                           clearBtnFlag = {this.props['clearBtnFlag']}
                           prepareGridDisplay = { this.props.prepareGridDisplay }  
-                          inputVal = {  realVal['display'] } 
-                          onChange = { this.props['onChange'] }
+                          inputVal = {  String(realVal['display']) } 
+                          //onChange = { this.props['onChange'] }
                           buttons ={ this.buttons } 
                         />
 
@@ -173,6 +166,12 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
         window.document.body.addEventListener("mousewheel", this.runClose);
         window.document.body.addEventListener("mousedown", this.runClose);
 
+        let w = 0
+        if(listWidthPix != undefined)
+        {
+          w = listWidthPix;
+        }
+
         return(
         <table ref ={this.refTable} cellPadding="0" cellSpacing="0" style={{padding: '0px', height:'25px', width: '100%'}}>
           <tbody>
@@ -183,7 +182,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
             </tr>
             <tr>
               <td>
-                <ListLayout cordBtnLeft={this.state.cordBtnLeft} listWidthPix={listWidthPix} cordBtnTop={this.state.cordBtnTop} disableSearch={this.props.disableSearch}  selectedVal = {realVal['raw'] } handler={handler}  items={items} />
+                <ListLayout cordBtnLeft={this.state.cordBtnLeft} listWidthPix={w} cordBtnTop={this.state.cordBtnTop} disableSearch={this.props.disableSearch}  selectedVal = {realVal['raw'] } handler={handler}  items={items} />
               </td>
             </tr>
           </tbody>  
