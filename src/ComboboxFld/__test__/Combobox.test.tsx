@@ -2,6 +2,7 @@ import React from 'react';
 import {ComboboxFldLayoutEdit, IComboboxFldLayoutEditProps} from '../ComboboxFldLayoutEdit'
 import {FieldLayoutEdit} from './../../StringFld/FieldLayoutEdit';
 import {InputLayout} from './../../StringFld/InputLayout';
+import {ImgButtonLayout} from './../../StringFld/ImgButtonLayout'
 import { shallow} from 'enzyme';
 /*let list = undefined;
 beforeEach(() => {
@@ -10,7 +11,7 @@ beforeEach(() => {
     {raw: 'raw2', display: 'display2'}];
 });*/
 const setUp = (props?: IComboboxFldLayoutEditProps) => {
-  
+
   let list = [
     {raw: 'raw1', display: 'display1'},
     {raw: 'raw2', display: 'display2'}];
@@ -20,10 +21,18 @@ const setUp = (props?: IComboboxFldLayoutEditProps) => {
 
 describe('Combobox', () => {
 
-  it('should created successfully (empty props)', () => {
+  it('should created successfully', () => {
     const component = setUp();
     expect(component.find(FieldLayoutEdit)).toHaveLength(1);
     expect(component.find(FieldLayoutEdit).dive().find(InputLayout)).toHaveLength(1);
+    expect(component.find(FieldLayoutEdit).dive().find(ImgButtonLayout)).toHaveLength(1);
+  });
+
+
+  test('open list', () => {
+    const component = setUp();
+    component.find(FieldLayoutEdit).dive().find(ImgButtonLayout).dive().find('div').simulate('click');
+    console.dir(component.debug())
   });
 
 /*

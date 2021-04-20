@@ -29,13 +29,23 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
     
     private refTable: React.RefObject<HTMLTableElement>;
 
+
+    static defaultProps: IComboboxFldLayoutEditProps = {
+      disableSearch: false,
+      onChange: () => {},
+      items: [],
+      listWidthPix: 250,
+      prepareGridDisplay: false,
+      clearBtnFlag: false,
+      val: undefined
+    }
+
     /**
      * @constructor
      */
     constructor(props: IComboboxFldLayoutEditProps)
     {
       super(props);
-      
       this.state = {
         listIsOpened: false,
         cordLeft: 0,
@@ -122,7 +132,9 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
     {
       let {items} = this.props;
       
-      const {val, listWidthPix} = this.props;
+      const listWidthPix = this.props!.listWidthPix;
+
+      const {val} = this.props;
 
       if(ST.isUndefined(items))
       {
@@ -151,26 +163,16 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
                           clearBtnFlag = {this.props['clearBtnFlag']}
                           prepareGridDisplay = { this.props.prepareGridDisplay }  
                           inputVal = {  String(realVal['display']) } 
-                          //onChange = { this.props['onChange'] }
                           buttons ={ this.buttons } 
                         />
 
-      // При скроллинге страницы или клике-где-то нужно закрыть список
-      //todo: придумать как сделать красивее
       window.document.body.removeEventListener("mousewheel", this.runClose);
       window.document.body.removeEventListener("mousedown", this.runClose);
 
-      //если нужно открыть
       if(this.state.listIsOpened == true && ST.isArray(items) && items.length > 0)
       {        
         window.document.body.addEventListener("mousewheel", this.runClose);
         window.document.body.addEventListener("mousedown", this.runClose);
-
-        let w = 0
-        if(listWidthPix != undefined)
-        {
-          w = listWidthPix;
-        }
 
         return(
         <table ref ={this.refTable} cellPadding="0" cellSpacing="0" style={{padding: '0px', height:'25px', width: '100%'}}>
@@ -182,7 +184,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
             </tr>
             <tr>
               <td>
-                <ListLayout cordBtnLeft={this.state.cordBtnLeft} listWidthPix={w} cordBtnTop={this.state.cordBtnTop} disableSearch={this.props.disableSearch}  selectedVal = {realVal['raw'] } handler={handler}  items={items} />
+                <ListLayout cordBtnLeft={this.state.cordBtnLeft} listWidthPix = {listWidthPix as number} cordBtnTop={this.state.cordBtnTop} disableSearch={this.props.disableSearch}  selectedVal = {realVal['raw'] } handler={handler}  items={items} />
               </td>
             </tr>
           </tbody>  

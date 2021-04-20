@@ -28,7 +28,7 @@ export const MyCombobox = () =>
   const [val, setVal] = useState(list[0]);
 
   return (
-      <div style={{width: 420, height:100,}}> 
+      <div style={{width: 420, height: 100,}}> 
         <ComboboxFldLayoutEdit items={list} val={val} onChange={setVal} />
       </div>)
 }
@@ -43,7 +43,7 @@ export const MyCheckbox = () =>
 export function run()
 {    
     ReactDOM.render(      
-        <MyTable    />
+        <MyCombobox    />
     , document.getElementById('myTbl1'));
 
 } 
