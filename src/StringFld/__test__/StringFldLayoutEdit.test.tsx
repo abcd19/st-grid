@@ -1,20 +1,14 @@
 import React from 'react';
 import {StringFldLayoutEdit, IStringFldLayoutEditProps} from '../StringFldLayoutEdit'
-import {FieldLayoutEdit, IFieldLayoutEditProps} from '../FieldLayoutEdit';
-import { shallow, render, mount } from 'enzyme';
-import {InputLayout, IInputLayoutProps} from '../InputLayout'
-import {LinearGroupLayout} from '../LinearGroupLayout';
-import {ImgButtonLayout, IImgButtonLayoutProps} from '../ImgButtonLayout';
+import {FieldLayoutEdit} from '../FieldLayoutEdit';
+import { shallow} from 'enzyme';
+import {InputLayout} from '../InputLayout'
+import {ImgButtonLayout} from '../ImgButtonLayout';
 
-//import { unmountComponentAtNode } from "react-dom";
+
 const setUp = (props?: IStringFldLayoutEditProps) => shallow(<StringFldLayoutEdit {...props}  />);
 
 describe('StringFld tests', () => {
-  
-  // for setTimeOut inside StringFld
-  //jest.useFakeTimers();
-  
-
   
   it('should created successfully (empty props)', () => {
     const component = setUp();

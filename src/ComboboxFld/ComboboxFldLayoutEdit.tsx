@@ -1,22 +1,47 @@
 import * as ST from '../common';
 import React from 'react';
-import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit.tsx';
+import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit';
 import {ListLayout} from './ListLayout'
 
 
-export class ComboboxFldLayoutEdit extends React.Component{
+export interface IComboboxFldLayoutEditProps {
+  disableSearch?: boolean;
+  onChange: any;
+  items: any;
+  val: any;
+  listWidthPix: any;
+  clearBtnFlag?: boolean;
+  prepareGridDisplay?: boolean;
+}
+
+export interface IComboboxFldLayoutEditState {
+  listIsOpened: boolean;
+  cordLeft: number;
+  cordTop: number;
+  cordBtnLeft: number;
+  cordBtnTop: number;
+  
+}
+
+export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEditProps, IComboboxFldLayoutEditState>{
     
+    private buttons: {items : any[]};
+    
+    private refTable: any;
+
     /**
      * @constructor
      */
-    constructor(props)
+    constructor(props: IComboboxFldLayoutEditProps)
     {
       super(props);
       
       this.state = {
         listIsOpened: false,
         cordLeft: 0,
-        cordTop: 0
+        cordTop: 0,
+        cordBtnLeft: 0,
+        cordBtnTop: 0,
       };
       
       this.buttons = {
@@ -44,17 +69,17 @@ export class ComboboxFldLayoutEdit extends React.Component{
 
       this.onClickListElement = this.onClickListElement.bind(this);
       this.runClose = this.runClose.bind(this);
-    };
+    }
 
 
-    onClickChoiceHandle(e)
+    onClickChoiceHandle(e: any): void
     {
       
       if(this.state.listIsOpened == true)
       {
         this.setState({listIsOpened: false})
       }else{
-        let {left, top} = e.currentTarget.getBoundingClientRect();
+        const {left, top} = e.currentTarget.getBoundingClientRect();
         this.setState({
           cordBtnLeft: left,
           cordBtnTop: top,
@@ -62,9 +87,9 @@ export class ComboboxFldLayoutEdit extends React.Component{
       }
     }
 
-    onClickListElement(val)
+    onClickListElement(val: any)
     {
-      this.onClickChoiceHandle();
+      this.onClickChoiceHandle(undefined);
       if(ST.isFunction(this.props.onChange))
       {
         this.props.onChange(val)
@@ -72,7 +97,7 @@ export class ComboboxFldLayoutEdit extends React.Component{
     }
 
     //закрыть список
-    runClose(e)
+    runClose(e: any)
     {
       //в любом случае отписываем события, что бы ивент не завис
       window.document.body.removeEventListener("mousewheel", this.runClose);
@@ -85,14 +110,14 @@ export class ComboboxFldLayoutEdit extends React.Component{
     }
 
     //находит значение в виде {raw,display} по сырому значению raw
-    findValByRawVal(rawVal)
+    findValByRawVal(rawVal: any)
     {
       if(ST.isUndefined(this.props.items))
       {
         return undefined;
       }
 
-      let val = this.props.items.filter((item) =>{
+      const val = this.props.items.filter((item: any) =>{
         return item['raw'] == rawVal;
       });
       
@@ -118,18 +143,18 @@ export class ComboboxFldLayoutEdit extends React.Component{
       {
         
           //по сырому значению ищем значение в массиве
-          let temp = this.findValByRawVal(val['raw']);
+          const temp = this.findValByRawVal(val['raw']);
           if(ST.isObject(temp))
           {
             realVal = temp;
           }
       }
 
-      let handler = {
+      const handler = {
         change: this.onClickListElement
       }
 
-      let fieldLayout = <FieldLayoutEdit 
+      const fieldLayout = <FieldLayoutEdit 
                           clearBtnFlag = {this.props['clearBtnFlag']}
                           prepareGridDisplay = { this.props.prepareGridDisplay }  
                           inputVal = {  realVal['display'] } 
@@ -168,4 +193,4 @@ export class ComboboxFldLayoutEdit extends React.Component{
 
       return (fieldLayout)
     }          
-};
+}

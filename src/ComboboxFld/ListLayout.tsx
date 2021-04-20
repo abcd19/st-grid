@@ -1,7 +1,7 @@
 import * as ST from '../common'
 import React from 'react';
-import {ListItemLayout} from './ListItemLayout'
-import {SearchFldLayoutEdit} from './SearchFldLayoutEdit'
+import {ListItemLayout} from './ListItemLayout.tsx'
+import {SearchFldLayoutEdit} from './SearchFldLayoutEdit.tsx'
 import {calcRank} from '../findWords';
 
 //ширина списка при котрытии
@@ -11,16 +11,34 @@ export const LIST_ITEM_WIDTH = WIDTH-5;
 //максимальная высота списка
 export const MAXHEIGHT = 250;
 
+
+export interface IListLayoutProps {
+  handler: any;
+  items: any;
+  cordBtnLeft: any;
+  cordBtnTop: any;
+  listWidthPix: any;
+  disableSearch: any;
+  selectedVal: any;
+}
+
+export interface IListLayoutState {
+  isFiltred: any;
+  filterdItems: any;
+}
+
 /**
  * Список
  */
-export class ListLayout extends React.Component{
+export class ListLayout extends React.Component<IListLayoutProps, IListLayoutState>{
     
+    private genDiv: any;
+
     /**
      * @constructor
      * @param {type} data
      */
-    constructor(props)
+    constructor(props: IListLayoutProps)
     {
       super(props);
       this.clickItemHandle = this.clickItemHandle.bind(this);
@@ -34,9 +52,9 @@ export class ListLayout extends React.Component{
         isFiltred: false
       }
       //this.onWheelHandle = this.onWheelHandle.bind(this);
-    };
+    }
 
-    clickItemHandle(val)
+    clickItemHandle(val: any)
     {
       if(ST.has(this.props,'handler.change'))
       {
@@ -52,22 +70,22 @@ export class ListLayout extends React.Component{
     }*/
 
     //фильтрация элементов при поиске
-    changeSearchHandle(val)
+    changeSearchHandle(val: any)
     {
       //ищем по значениям для отображения
-      let ar = [];
+      const ar = [];
       for(var i = 0;  i < this.props.items.length; i++)
       {
         ar[i] = this.props.items[i]['display'];
       }
 
       //ранжируем массив
-      var ranked = calcRank(ar,  val,{
+      const ranked = calcRank(ar,  val,{
         deleteElementByRankZero: true //удаляем элементы с нулевым рангом
       });
 
       //создаем новый массив элементов, который удовлетворяет поиску
-      let newItems = [];
+      const newItems = [];
 
       //Если ничего не найдено
       /*if(ranked.length === 0)
@@ -79,7 +97,7 @@ export class ListLayout extends React.Component{
 
       for(var i = 0; i < ranked.length; i++)
       {
-          var elem = ranked[i]['elemLink'];
+          const elem = ranked[i]['elemLink'];
           newItems.push(this.props.items[elem]);
       }
 
@@ -99,14 +117,14 @@ export class ListLayout extends React.Component{
       if(this.genDiv.current.offsetParent && this.genDiv.current.offsetParent.nodeName != 'BODY')
       {
         //console.dir(this.genDiv.current.offsetParent)
-        var offsetParent = this.genDiv.current.offsetParent.getBoundingClientRect();
+        const offsetParent = this.genDiv.current.offsetParent.getBoundingClientRect();
         
         cordBtnLeft =  cordBtnLeft - offsetParent.left;
         cordBtnTop =  cordBtnTop - offsetParent.top;
       }
 
       //слева отнимаем ширину ячейки таблицы + небольшая виличина для красоты
-      let left = cordBtnLeft - listWidthPix + 30;
+      const left = cordBtnLeft - listWidthPix + 30;
       //снизу высоту инпута + небольшая виличина для красоты
       let top = cordBtnTop + 30;
 
@@ -124,7 +142,7 @@ export class ListLayout extends React.Component{
       }
 
       top = top + getBodyScrollTop(); 
-      let r = document.documentElement.clientHeight-Math.ceil(top)-20;
+      const r = document.documentElement.clientHeight-Math.ceil(top)-20;
       if(r <= MAXHEIGHT)
       {
         top = top - MAXHEIGHT;
@@ -135,7 +153,7 @@ export class ListLayout extends React.Component{
       this.genDiv.current.style.top = top + 'px';
 
           //чтобы не крутилась страница в chrom дисеблим скролл с флагом  passive: false
-      const prevDef = (e) => e.stopPropagation();
+      const prevDef = (e: any) => e.stopPropagation();
       
       if ('onwheel' in document)
       {
@@ -154,7 +172,7 @@ export class ListLayout extends React.Component{
 
     render(){
       
-      let items = [];
+      const items = [];
       let {listWidthPix} = this.props;
       
       //ширина элемента списка при открытии
@@ -180,7 +198,7 @@ export class ListLayout extends React.Component{
             isSelected = true;
           }
 
-          let newItem = <ListItemLayout setScroll = {isSelected} itemsListWidthPix={itemsListWidthPix} isSelected= {isSelected} key ={i} val ={ this.props.items[i] } onClick = { this.clickItemHandle } />;
+          const newItem = <ListItemLayout setScroll = {isSelected} itemsListWidthPix={itemsListWidthPix} isSelected= {isSelected} key ={i} val ={ this.props.items[i] } onClick = { this.clickItemHandle } />;
           
           items.push(newItem);
         }
@@ -194,7 +212,7 @@ export class ListLayout extends React.Component{
             isSelected = true;
           }
           //при поиске скролим на первый элемент
-          let newItem = <ListItemLayout setScroll = {i == 0?true: false}  isSelected= {isSelected} key ={i} val ={ this.state.filterdItems[i] } onClick = { this.clickItemHandle } />;
+          const newItem = <ListItemLayout setScroll = {i == 0?true: false}  isSelected= {isSelected} key ={i} val ={ this.state.filterdItems[i] } onClick = { this.clickItemHandle } />;
           
           items.push(newItem);
         }
@@ -213,8 +231,8 @@ export class ListLayout extends React.Component{
       }
       
       return(
-        <div id="ListLayout" ref={this.genDiv}  style= {{background: 'white', width: listWidthPix,  boxSizing: 'border-box', zIndex:'100', position: 'absolute', border: '1px solid gray'}}>
-          <table style={{borderSpacing: '2px', width: listWidthPix, borderCollapse: 'separate', width: '100%'}}>
+        <div id="ListLayout" ref={this.genDiv}  style= {{background: 'white', width: listWidthPix,  boxSizing: 'border-box', zIndex:100, position: 'absolute', border: '1px solid gray'}}>
+          <table style={{borderSpacing: '2px', width: listWidthPix, borderCollapse: 'separate'}}>
             <tbody>
               {searchBlock}
               <tr>
@@ -228,4 +246,4 @@ export class ListLayout extends React.Component{
           </table>
       </div>);
     }
-};
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {ImgButtonLayout, IImgButtonLayoutProps} from '../ImgButtonLayout';
+import {ImgButtonLayout} from '../ImgButtonLayout';
 
 const setUp = (props?: ImgButtonLayout) => shallow(<ImgButtonLayout {...props}  />);
 

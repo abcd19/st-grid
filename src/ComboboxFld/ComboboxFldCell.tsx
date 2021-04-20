@@ -1,11 +1,22 @@
 import * as ST from '../common';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import {ComboboxFldLayoutEdit} from './ComboboxFldLayoutEdit';
 
-export const ComboboxFldCell = (props) =>
+
+export interface IComboboxFldCellProps {
+  layoutMode: string;
+  style: CSSProperties; 
+  onMouseDownItem: any;
+  onChangeItem: any;
+  className: any;
+  val: any;
+  settings: any;
+}
+
+export const ComboboxFldCell: React.FC<IComboboxFldCellProps> = (props: IComboboxFldCellProps) =>
 {
   let {layoutMode, style, onMouseDownItem, onChangeItem, className, val, settings} = props;
-  let{listWidthPix, items,  clearBtnFlag} = settings;
+  const{listWidthPix, items,  clearBtnFlag} = settings;
   
   if(layoutMode == 'edit')
   {

@@ -1,19 +1,32 @@
 
 import React from 'react';
-import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit.tsx'
+import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit'
 import * as ST from '../common'
 
-export class SearchFldLayoutEdit extends React.Component {
+
+export interface ISearchFldLayoutEditProps {
+  onSearchBtnClick?: any;
+  onChangeDelay: any;
+  val?: any;
+}
+
+export interface ISearchFldLayoutEditState  {
+  val: any;
+}
+
+
+export class SearchFldLayoutEdit extends React.Component<ISearchFldLayoutEditProps, ISearchFldLayoutEditState> {
     
-    constructor(props)
+  private buttons: {items : any[]};
+
+    constructor(props: ISearchFldLayoutEditProps)
     {
       super(props);
-      this.props = props;
       this.state = {
         val: undefined,
       };
       
-      var self = this;
+      const self = this;
       this.buttons = {
         items: []
       };
@@ -37,7 +50,7 @@ export class SearchFldLayoutEdit extends React.Component {
       this.onChange = this.onChange.bind(this);
     }
 
-    onChange(newVal)
+    onChange(newVal: any): void
     {
       this.setState({
         val: newVal
@@ -47,7 +60,7 @@ export class SearchFldLayoutEdit extends React.Component {
     render()
     {
       
-      let {val} = this.props;
-      return(<FieldLayoutEdit inputVal = {this.state.val} onChange = {this.onChange} onChangeDelay = {this.props['onChangeDelay']} prepareGridDisplay = { this.props.prepareGridDisplay } buttons ={ this.buttons } />)
+      const {val} = this.props;
+      return(<FieldLayoutEdit inputVal = {this.state.val} onChange = {this.onChange} onChangeDelay = {this.props['onChangeDelay']} prepareGridDisplay = { false } buttons ={ this.buttons } />)
     }
-};
+}
