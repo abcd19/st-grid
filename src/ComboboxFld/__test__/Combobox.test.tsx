@@ -3,7 +3,19 @@ import {ComboboxFldLayoutEdit, IComboboxFldLayoutEditProps} from '../ComboboxFld
 import {FieldLayoutEdit} from './../../StringFld/FieldLayoutEdit';
 import {InputLayout} from './../../StringFld/InputLayout';
 import {ImgButtonLayout} from './../../StringFld/ImgButtonLayout'
+import {ListLayout} from './../ListLayout';
+import {ListItemLayout} from './../ListItemLayout';
+import {SearchFldLayoutEdit} from './../SearchFldLayoutEdit';
 import { shallow} from 'enzyme';
+
+const items = [
+  {raw: 'raw1', display: 'display1'},
+  {raw: 'raw2', display: 'display2'}];
+
+let mockOpenList = { currentTarget: {
+  getBoundingClientRect: () => { return {left: 100, top: 100}}
+  }}
+
 /*let list = undefined;
 beforeEach(() => {
   list = [
@@ -12,11 +24,11 @@ beforeEach(() => {
 });*/
 const setUp = (props?: IComboboxFldLayoutEditProps) => {
 
-  let list = [
+  let items = [
     {raw: 'raw1', display: 'display1'},
     {raw: 'raw2', display: 'display2'}];
   
-  return shallow(<ComboboxFldLayoutEdit items = {list} { ...props}  />);
+  return shallow(<ComboboxFldLayoutEdit items={items} { ...props}  />);
 } 
 
 describe('Combobox', () => {
@@ -29,10 +41,44 @@ describe('Combobox', () => {
   });
 
 
-  test('open list', () => {
-    const component = setUp();
-    component.find(FieldLayoutEdit).dive().find(ImgButtonLayout).dive().find('div').simulate('click');
-    console.dir(component.debug())
+  test('select value by user click', () => {
+    const onChange =  jest.fn((val) => val)
+    const component = setUp({onChange: onChange, items: items});
+    component.find(FieldLayoutEdit).dive().find(ImgButtonLayout).dive().find('div').simulate('click', mockOpenList );
+    expect(component.find(ListLayout)).toHaveLength(1);
+    expect(component.find(ListLayout).dive().find(ListItemLayout)).toHaveLength(2);
+    component.find(ListLayout).dive().find(ListItemLayout).first().dive().find('div').simulate('click', {stopPropagation: () => true});
+    expect(component.find(FieldLayoutEdit)).toHaveLength(1);
+    expect(onChange.mock.calls.length).toBe(1);
+    expect(onChange.mock.results[0].value).toStrictEqual({"display": "display1", "raw": "raw1"});
+  });
+
+  
+  test('value prop', () => {
+    const component = setUp({val: items[0], items: items});
+    expect(component.find(FieldLayoutEdit).dive().find(InputLayout).get(0).props.val).toBe(items[0].display);
+  });
+
+
+  test('search test', () => {
+
+    let list = [];
+    for(let i = 0; i < 20; i++)
+    {
+      list.push({ raw: "text" + i, display: "text" + i })
+    }
+    const component = setUp({items: list});
+    component.find(FieldLayoutEdit).dive().find(ImgButtonLayout).dive().find('div').simulate('click', mockOpenList);
+    expect(component.find(ListLayout).dive().find(ListItemLayout)).toHaveLength(20);
+    expect(component.find(ListLayout).dive().find(SearchFldLayoutEdit)).toHaveLength(1);
+    //jest.useFakeTimers();
+    component.find(ListLayout).dive().find(SearchFldLayoutEdit).dive()
+        .find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').simulate('change', {target: {value: '1'}});
+    //jest.runAllTimers();
+    //jest.advanceTimersByTime(1000);
+    //jest.clearAllTimers();
+    //expect(component.find(ListLayout).dive().find(ListItemLayout)).toHaveLength(11);
+    //jest.clearAllTimers();
   });
 
 /*

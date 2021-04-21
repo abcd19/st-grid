@@ -59,7 +59,7 @@ export const ListItemLayout: React.FC<IListItemLayoutProps> = (props: IListItemL
 
   const onClick = (e: SyntheticEvent<HTMLDivElement>) => {
     if (typeof props.onClick == 'function' && props.val != undefined) {
-      6
+     
       props.onClick(props.val);
     }
 

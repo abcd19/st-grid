@@ -136,11 +136,6 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
 
       const {val} = this.props;
 
-      if(ST.isUndefined(items))
-      {
-        items = [];
-      }
-
       let realVal: typeComboValue= {
         raw: undefined,
         display: ''
