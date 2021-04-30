@@ -2,15 +2,28 @@ import * as ST from '../../../common'
 import {CellLayout} from '../Cell/CellLayout';
 import React from 'react';
 
-/**
- * Строка
- */
-export class RowLayout extends React.Component {
-    
-  constructor(props)
+
+export interface IRowLayoutProps {
+  onChangeItem: (rowObject: any, cellAlias: string, val: any)=>void,
+  onMouseEnterItem: (rowObject: any, cellAlias: string) => void,
+  onMouseLeaveItem: (rowObject: any, cellAlias: string)=>void,
+  onMouseDownItem: (rowObject:any, cellAlias:string) =>void,
+  onDoubleClickItem: (rowObject:any, cellAlias:string) =>void,
+  onClickItem: (rowObject:any, cellAlias:string) =>void,
+  item: any,
+  defaultColor: string,
+  columns: any[],
+  rowNum: number,
+}
+
+/* row of the table */
+export class RowLayout extends React.Component<IRowLayoutProps> {
+  
+  private cells: any;
+
+  constructor(props: IRowLayoutProps)
   {
-    super(props);
-    this.props = props;    
+    super(props);  
     this.cells = {};
 
     this.onChangeItem = this.onChangeItem.bind(this);
@@ -21,7 +34,7 @@ export class RowLayout extends React.Component {
     this.onClickItem = this.onClickItem.bind(this);
   };
   
-  onChangeItem(cellAlias, val)
+  onChangeItem(cellAlias: string, val: any)
   {
     if(ST.isFunction(this.props['onChangeItem']))
     {
@@ -31,7 +44,7 @@ export class RowLayout extends React.Component {
     }
   }
 
-  onMouseEnterItem(cellAlias)
+  onMouseEnterItem(cellAlias: string)
   {
     if(ST.isFunction(this.props['onMouseEnterItem']))
     {
@@ -41,7 +54,7 @@ export class RowLayout extends React.Component {
     }
   }
 
-  onMouseLeaveItem(cellAlias)
+  onMouseLeaveItem(cellAlias: string)
   {
     if(ST.isFunction(this.props['onMouseLeaveItem']))
     {
@@ -51,7 +64,7 @@ export class RowLayout extends React.Component {
     }
   }
 
-  onMouseDownItem(cellAlias)
+  onMouseDownItem(cellAlias: string)
   {
     if(ST.isFunction(this.props['onMouseDownItem']))
     {
@@ -61,7 +74,7 @@ export class RowLayout extends React.Component {
     }
   }
 
-  onDoubleClickItem(cellAlias)
+  onDoubleClickItem(cellAlias: string)
   {
     if(ST.isFunction(this.props['onDoubleClickItem']))
     {
@@ -71,7 +84,7 @@ export class RowLayout extends React.Component {
     }
   }
 
-  onClickItem(cellAlias)
+  onClickItem(cellAlias: string)
   {
     if(ST.isFunction(this.props['onClickItem']))
     {

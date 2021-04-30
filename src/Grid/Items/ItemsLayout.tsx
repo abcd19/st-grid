@@ -2,16 +2,29 @@ import * as ST from '../../common';
 import {renderRows} from './renderRows';
 import React from 'react';
 
-/**
- * Общий набора строк таблицы (или вершин  дерева)
- */
-class ItemsLayout extends React.Component {
 
-  constructor(props)
+export interface IItemsLayoutProps{
+  columns: any[],
+  firstVisibleRowI: any,
+  height: any,
+  items: any[],
+  onChangeItem: any,
+  onMouseDownItem: any,
+  onMouseEnterItem: any,
+  onMouseLeaveItem: any,
+  onDoubleClickItem: any
+}
+
+
+// set of rows
+class ItemsLayout extends React.Component<IItemsLayoutProps> {
+
+  private renderRows: any;
+  public onClickItem: any;
+
+  constructor(props: IItemsLayoutProps)
   {
     super(props);
-    this.state ={};
-    this.props = props;
     this.renderRows = renderRows.bind(this);
   };
 

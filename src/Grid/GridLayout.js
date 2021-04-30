@@ -2,7 +2,7 @@ import * as ST from '../common';
 import React from 'react';
 
 import {HeaderLayout} from './Header/HeaderLayout';
-import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout';
+import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout.tsx';
 import {ToolbarLayout} from './Toolbar/ToolbarLayout'
 import {StringFldCell  as StringFldCell} from './../StringFld/StringFldCell'
 import {calcSumColumnsWidth} from './calcSumColumnsWidth';
