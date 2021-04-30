@@ -1,21 +1,20 @@
 import {HeaderCellLayout} from './HeaderCellLayout'
 import React from 'react';
 
-/**
- * Строка заголовка грида
- */
-class HeaderRowLayout extends React.Component {
+
+export interface IeaderRowLayoutProps {
+  columns: any[];
+  handler: any;
+  sortingFlag: boolean;
+}
+
+/* header row */
+export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
   
-  /**
-   * @constructor
-   * @param {type} data
-   */
-  constructor(props)
+
+  constructor(props: IeaderRowLayoutProps)
   {
     super(props);
-    this.props = props;
-    this.state = {};
-
   };
 
 
@@ -47,6 +46,4 @@ class HeaderRowLayout extends React.Component {
   }
   
 };
-
-export {HeaderRowLayout}
 

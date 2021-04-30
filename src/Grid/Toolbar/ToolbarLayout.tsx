@@ -1,20 +1,26 @@
-import * as ST from './../../common'
+import * as ST from '../../common'
 import React from 'react';
 import {LinearGroupLayout} from '../../StringFld/LinearGroupLayout';
 import {ImgButtonLayout} from "../../StringFld/ImgButtonLayout";
+
+
+export interface IToolbarLayoutProps {
+  items: any[]
+}
+
+
 /**
  * group of image buttons and other elements
  */
-class ToolbarLayout extends React.Component{
+ export class ToolbarLayout extends React.Component<IToolbarLayoutProps>{
   
   /**
    * @constructor
    * @param {type} data
    */
-  constructor(props)
+  constructor(props: IToolbarLayoutProps)
   {
     super(props);
-    this.props = props;
     this.state = {};
   };
   
@@ -40,12 +46,10 @@ class ToolbarLayout extends React.Component{
 
     
     return(
-        <LinearGroupLayout height={32} prepareGridDisplay={true} items={ this.props['items'] } >
+        <LinearGroupLayout height={32} prepareGridDisplay={true}  >
           {nItems}
         </LinearGroupLayout>
       )
   }
-
 };
-export {ToolbarLayout}
 

@@ -1,6 +1,7 @@
 
-//подсчет суммартной ширины столбцов
-export const calcSumColumnsWidth = (columns) =>
+
+
+export const calcSumColumnsWidth = (columns: any[]) =>
 {
   let sum = 0;
   for(let i = 0; i < columns.length; i++)

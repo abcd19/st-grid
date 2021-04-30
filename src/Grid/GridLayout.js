@@ -1,11 +1,11 @@
 import * as ST from '../common';
 import React from 'react';
 
-import {HeaderLayout} from './Header/HeaderLayout';
+import {HeaderLayout} from './Header/HeaderLayout.tsx';
 import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout.tsx';
-import {ToolbarLayout} from './Toolbar/ToolbarLayout'
+import {ToolbarLayout} from './Toolbar/ToolbarLayout.tsx'
 import {StringFldCell  as StringFldCell} from './../StringFld/StringFldCell'
-import {calcSumColumnsWidth} from './calcSumColumnsWidth';
+import {calcSumColumnsWidth} from './calcSumColumnsWidth.ts';
 import './GridLayout.css'
 import {onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth} from './handle'
 
