@@ -5,13 +5,13 @@ import * as ST from '../common';
 //при этом удаляются всякие системыне переменные типа layoutmode, color и проч
 export const cloneData = (data: any) =>
 { 
-  let res: any = [];
+  const res: any = [];
   data.forEach((item: any)=>{
-    let n = {
+    const n = {
       data:  ST.clone(item['data'])
     };
     res.push(n);
   });
-;
+
   return res;
 }

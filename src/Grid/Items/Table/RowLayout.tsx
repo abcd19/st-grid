@@ -32,13 +32,13 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
     this.onMouseLeaveItem = this.onMouseLeaveItem.bind(this);
     this.onDoubleClickItem = this.onDoubleClickItem.bind(this);
     this.onClickItem = this.onClickItem.bind(this);
-  };
+  }
   
   onChangeItem(cellAlias: string, val: any)
   {
     if(ST.isFunction(this.props['onChangeItem']))
     {
-      let rowObject = this.props.item;
+      const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onChangeItem'].apply(self,[rowObject, cellAlias, val])
     }
@@ -48,7 +48,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
   {
     if(ST.isFunction(this.props['onMouseEnterItem']))
     {
-      let rowObject = this.props.item;
+      const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onMouseEnterItem'].apply(self,[rowObject, cellAlias])
     }
@@ -58,7 +58,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
   {
     if(ST.isFunction(this.props['onMouseLeaveItem']))
     {
-      let rowObject = this.props.item;
+      const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onMouseLeaveItem'].apply(self,[rowObject, cellAlias])
     }
@@ -68,7 +68,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
   {
     if(ST.isFunction(this.props['onMouseDownItem']))
     {
-      let rowObject = this.props.item;
+      const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onMouseDownItem'].apply(this,[rowObject, cellAlias])
     }
@@ -78,7 +78,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
   {
     if(ST.isFunction(this.props['onDoubleClickItem']))
     {
-      let rowObject = this.props.item;
+      const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onDoubleClickItem'].apply(this,[rowObject, cellAlias])
     }
@@ -88,7 +88,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
   {
     if(ST.isFunction(this.props['onClickItem']))
     {
-      let rowObject = this.props.item;
+      const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onClickItem'].apply(this,[rowObject, cellAlias])
     }
@@ -97,22 +97,22 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
 
   render()
   {
-    let cells = [];  
-    for(var i = 0; i < this.props.columns.length; i++)
+    const cells = [];  
+    for(let i = 0; i < this.props.columns.length; i++)
     {            
-      let {visible, type, alias, widthPix} = this.props['columns'][i];
+      const {visible, type, alias, widthPix} = this.props['columns'][i];
       
       if(visible === false)
       {
         continue
       }
 
-      let layoutMode = this.props.item ? this.props.item.layoutMode: 'view';
-      let color = this.props.item ? this.props.item.color: undefined;
-      let itemData = this.props.item ?  this.props.item['data']: undefined;
-      let val = itemData ?  this.props.item['data'][ alias ]: undefined;
+      const layoutMode = this.props.item ? this.props.item.layoutMode: 'view';
+      const color = this.props.item ? this.props.item.color: undefined;
+      const itemData = this.props.item ?  this.props.item['data']: undefined;
+      const val = itemData ?  this.props.item['data'][ alias ]: undefined;
       //Создаем ячейки
-      let newCell = <CellLayout 
+      const newCell = <CellLayout 
         color = {color}
         onChangeItem = {this.onChangeItem}
         onMouseDownItem = {this.onMouseDownItem}

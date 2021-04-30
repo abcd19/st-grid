@@ -22,17 +22,17 @@ export interface IToolbarLayoutProps {
   {
     super(props);
     this.state = {};
-  };
+  }
   
   render()
   {
-    let nItems = [];
+    const nItems = [];
     //console.dir(this.props['items'])
     for(let i = 0; i < this.props['items'].length; i++)
     {
-      let Constr = this.props['items'][i]['type']['constr'];
-      let settings = this.props['items'][i]['type']['settings'];
-      let {name, widthPix} = this.props['items'][i]
+      const Constr = this.props['items'][i]['type']['constr'];
+      const settings = this.props['items'][i]['type']['settings'];
+      const {name, widthPix} = this.props['items'][i]
       nItems.push(<Constr
               //imageName={imageName} 
               //handler ={handler} 
@@ -51,5 +51,5 @@ export interface IToolbarLayoutProps {
         </LinearGroupLayout>
       )
   }
-};
+}
 

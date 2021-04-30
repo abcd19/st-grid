@@ -52,8 +52,8 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
 
   render()
   {
-    let {height, width, columns, sortingFlag} = this.props;
-    let {scrollToLastItem, sorting, selItemNum} = this.state;
+    const {height, width, columns, sortingFlag} = this.props;
+    const {scrollToLastItem, sorting, selItemNum} = this.state;
 
     let items = this.props.items;
     // очищаем выбор

@@ -55,7 +55,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
 
     this.startChord = 0;
     this.width = this.props.width;
-  };
+  }
 
 
 
@@ -64,7 +64,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
       return;
     }
 
-    let { sortBadge } = this.state;
+    const { sortBadge } = this.state;
     let newSortBadge = ARR_NONE;
 
     switch (sortBadge) {
@@ -124,8 +124,8 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     }
 
     if (typeof (this.props['handler']['changeHeaderCellWidth']) == 'function') {
-      let moveX = e.pageX - this.state.startChord;
-      let newWidth = this.state.clientWidth + moveX;
+      const moveX = e.pageX - this.state.startChord;
+      const newWidth = this.state.clientWidth + moveX;
       if (this.state.clientWidth + moveX > 20) {
         this.props['handler']['changeHeaderCellWidth'](this.props.settings.alias, newWidth);
       }
@@ -133,11 +133,11 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
   }
 
   render() {
-    let cellHeight = String(this.CELL_HEIGHT - 1) + 'px';
+    const cellHeight = String(this.CELL_HEIGHT - 1) + 'px';
     this.width = this.props.width;
 
 
-    let { sortBadge } = this.state;
+    const { sortBadge } = this.state;
 
     let sortState = undefined;
     let bagWidthCoef = 12;
@@ -156,5 +156,5 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
         </div>
       </td>)
   }
-};
+}
 

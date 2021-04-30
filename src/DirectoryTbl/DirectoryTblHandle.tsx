@@ -7,12 +7,12 @@ import {calcOriginal} from './Sorting/sortItems'
 export function onChangeItem(this: any, item: any, cellAlias: string, newVal: any)
 {
   
-  let newItems = cloneData(this.props.items);
+  const newItems = cloneData(this.props.items);
   let selNum = item.rowNum;
   
   if(ST.isObject(this.state.sorting) && ST.isString(this.state.sorting.order))
   {
-    let selItemNumLink = calcOriginal(item.rowNum, newItems, this.state.sorting.cellAlias, this.state.sorting.order);
+    const selItemNumLink = calcOriginal(item.rowNum, newItems, this.state.sorting.cellAlias, this.state.sorting.order);
     selNum = selItemNumLink;
   }
 
@@ -29,7 +29,7 @@ export function onChangeItem(this: any, item: any, cellAlias: string, newVal: an
  */
 export function onClickHeaderCell(this: any, sortingCellAlias: string, orderSorting: string)
 { 
-  let newSorting = {
+  const newSorting = {
     order: orderSorting,
     cellAlias: sortingCellAlias
   };
@@ -51,7 +51,7 @@ export function onMouseDownItem(this: any, item: any, cellAlias: string)
   let selNum = item.rowNum;
   if(ST.isObject(this.state.sorting) && ST.isString(this.state.sorting.order))
   {
-    let selItemNumLink = calcOriginal(item.rowNum, this.props.items, this.state.sorting.cellAlias, this.state.sorting.order);
+    const selItemNumLink = calcOriginal(item.rowNum, this.props.items, this.state.sorting.cellAlias, this.state.sorting.order);
     selNum = selItemNumLink;
   }
   this.setState({selItemNum: selNum},() => {

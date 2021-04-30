@@ -18,16 +18,16 @@ export class HeaderLayout extends React.Component<IHeaderLayoutProps> {
   constructor(props: IHeaderLayoutProps)
   {
     super(props);
-  };
+  }
   
   render()
   {  
-    let handler= {
+    const handler= {
       changeHeaderCellWidth: this.props.onChangeHeaderCellWidth,
       clickHeaderCell: this.props.clickHeaderCell,
    };
 
-   let columns = this.props['columns'];
+   const columns = this.props['columns'];
 
     return(
       <table cellPadding="0" cellSpacing="0" className="st-innerTableLayout-table" style={{borderCollapse: "collapse"}}>
@@ -36,8 +36,8 @@ export class HeaderLayout extends React.Component<IHeaderLayoutProps> {
         </tbody>
       </table>
     )
-  };
+  }
 
-};
+}
 
 

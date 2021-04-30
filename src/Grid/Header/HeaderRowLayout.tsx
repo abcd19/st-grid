@@ -15,12 +15,12 @@ export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
   constructor(props: IeaderRowLayoutProps)
   {
     super(props);
-  };
+  }
 
 
   render(){
 
-    let items = [];
+    const items = [];
     
     for(let i = 0; i < this.props['columns'].length; i++)
     {
@@ -29,7 +29,7 @@ export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
         continue
       }
       
-      let newItem = <HeaderCellLayout 
+      const newItem = <HeaderCellLayout 
                           key = {i} 
                           sortingFlag={this.props.sortingFlag}
                           width = {this.props['columns'][i]['widthPix']}
@@ -45,5 +45,5 @@ export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
           </tr>)
   }
   
-};
+}
 

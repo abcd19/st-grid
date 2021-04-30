@@ -27,15 +27,15 @@ class ItemsLayout extends React.Component<IItemsLayoutProps> {
   {
     super(props);
     this.renderRows = renderRows.bind(this);
-  };
+  }
 
   render()
   {
-    let items = this.renderRows(this.props);
+    const items = this.renderRows(this.props);
 
     //добавляем пустую последнюю строку для красоты, чтобы последний айтем не уходил за границу таблицы
     //за счет этой строки таблицу можно проскролить чуть ниже
-    let springRow = <tr className="free-spaceTr" key="free-spaceTr">
+    const springRow = <tr className="free-spaceTr" key="free-spaceTr">
                       <td colSpan={this.props['columns'].length} style={{height: CELL_HEIGHT}}></td>
                     </tr>;
     items.push(springRow);
@@ -48,12 +48,12 @@ class ItemsLayout extends React.Component<IItemsLayoutProps> {
       </table>
     )
 
-  };
-};
+  }
+}
 
 
-let CELL_HEIGHT = 30;
-let SCROLL_PLACE = 20;
-let MIN_COL_WIDTH = 100;
+const CELL_HEIGHT = 30;
+const SCROLL_PLACE = 20;
+const MIN_COL_WIDTH = 100;
 export {ItemsLayout, CELL_HEIGHT, SCROLL_PLACE, MIN_COL_WIDTH}
 

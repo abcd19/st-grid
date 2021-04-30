@@ -12,7 +12,7 @@ const items = [
   {raw: 'raw1', display: 'display1'},
   {raw: 'raw2', display: 'display2'}];
 
-let mockOpenList = { currentTarget: {
+const mockOpenList = { currentTarget: {
   getBoundingClientRect: () => { return {left: 100, top: 100}}
   }}
 
@@ -24,7 +24,7 @@ beforeEach(() => {
 });*/
 const setUp = (props?: IComboboxFldLayoutEditProps) => {
 
-  let items = [
+  const items = [
     {raw: 'raw1', display: 'display1'},
     {raw: 'raw2', display: 'display2'}];
   
@@ -62,7 +62,7 @@ describe('Combobox', () => {
 
   test('search test', () => {
 
-    let list = [];
+    const list = [];
     for(let i = 0; i < 20; i++)
     {
       list.push({ raw: "text" + i, display: "text" + i })

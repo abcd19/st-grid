@@ -8,14 +8,14 @@ import { ItemsLayout } from './ItemsLayout'
 // reder rows
 export function renderRows(this: ItemsLayout): any[] {
   const { props, onClickItem } = this;
-  let items = [];
-  let height = props.height;
+  const items = [];
+  const height = props.height;
   let rowViewStart = props.firstVisibleRowI;
   if (ST.isUndefined(rowViewStart) || rowViewStart < 0) {
     rowViewStart = 0;
   }
 
-  let visibleRowsCount = Math.ceil(height / CELL_HEIGHT);
+  const visibleRowsCount = Math.ceil(height / CELL_HEIGHT);
 
   let rowViewEnd = rowViewStart + visibleRowsCount;
 
@@ -30,7 +30,7 @@ export function renderRows(this: ItemsLayout): any[] {
       defaultColor = 'st-grid-body-cell-project-two';
     }
 
-    let newItem: any = <RowLayout
+    const newItem: any = <RowLayout
       defaultColor={defaultColor}
       onChangeItem={props.onChangeItem}
       onMouseDownItem={props.onMouseDownItem}

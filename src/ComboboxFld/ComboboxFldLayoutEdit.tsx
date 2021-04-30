@@ -130,7 +130,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
 
     render(): React.ReactElement
     {
-      let {items} = this.props;
+      const {items} = this.props;
       
       const listWidthPix = this.props!.listWidthPix;
 

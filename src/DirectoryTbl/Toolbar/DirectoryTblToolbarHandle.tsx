@@ -10,8 +10,8 @@ export function onRemoveBtnClick(this: any)
   {
     return;
   }
-  let newItems = cloneData(this.props.items);
-  let  removedItem = ST.clone(newItems[ this.state.selItemNum ]);
+  const newItems = cloneData(this.props.items);
+  const  removedItem = ST.clone(newItems[ this.state.selItemNum ]);
   newItems.splice(this.state.selItemNum, 1);
   this.setState({selItemNum: undefined}, () => {
     
@@ -33,7 +33,7 @@ export function onRemoveBtnClick(this: any)
 //клик по кнопке добавить строку
 export function onAddBtnClick(this: any)
 {
-  let newItems = cloneData(this.props.items);
+  const newItems = cloneData(this.props.items);
   newItems.push({ data: {}});  
   if(ST.isFunction(this.props.onChange))
   {

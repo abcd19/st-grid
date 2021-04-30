@@ -53,7 +53,7 @@ class CellLayout extends React.Component<ICellLayoutProps> {
       boxSizing: 'border-box',
       paddingLeft: '0px',
     }
-  };
+  }
 
   onMouseEnterItem() {
     if (ST.has(this.props, 'onMouseEnterItem')) {
@@ -100,7 +100,7 @@ class CellLayout extends React.Component<ICellLayoutProps> {
     }
 
     //Если строка выделена, то создаем компонент
-    let style = {
+    const style = {
       width: this.props.widthPix + 'px', //на ширину левого падднинга
       maxWidth: this.props.widthPix + 'px', //на ширину левого падднинга
       display: this.props.display,
@@ -116,7 +116,7 @@ class CellLayout extends React.Component<ICellLayoutProps> {
 
 
 
-    let className = 'st-grid-body-cell ' + this.props.defaultColor;
+    const className = 'st-grid-body-cell ' + this.props.defaultColor;
 
     //создаем ячейку
     return (<this.props.type.constr
@@ -135,7 +135,7 @@ class CellLayout extends React.Component<ICellLayoutProps> {
       className={className} />)
   }
 
-};
+}
 
 export { CellLayout }
 

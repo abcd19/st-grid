@@ -76,7 +76,7 @@ class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
     this.onChangeHeaderCellWidth = onChangeHeaderCellWidth.bind(this);
 
     this.onClickHeaderCell = this.onClickHeaderCell.bind(this);
-  };
+  }
   
 
   onClickHeaderCell(alias: string, order: string)
@@ -135,7 +135,7 @@ class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
   render()
   {
     //запролняем дефолтные значения
-    let {columns, items} =  this.props;
+    const {columns, items} =  this.props;
     for(let i = 0; i < this.props.columns.length; i++)
     {
       ST.defaults(columns[i],
@@ -159,16 +159,16 @@ class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
 
 
     //ширина таблицы целиком
-    let width = this.props.width - this.SCROLL;
+    const width = this.props.width - this.SCROLL;
     
     //высота правого скролла расчитывается на основе колва ячеек
     let rightScrollHeight = items.length*CELL_HEIGHT;
 
     //высота контентной части таблицы
-    let bodyContentHeight = this.props.height - this.SCROLL - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
+    const bodyContentHeight = this.props.height - this.SCROLL - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
     //console.log(this.HEADER_HEIGHT)
     //ширина контентной части таблицы
-    let bodyContentWidth = calcSumColumnsWidth(this.props.columns);
+    const bodyContentWidth = calcSumColumnsWidth(this.props.columns);
 
     //к этой высоте можно прибавить одну строку тк для красоты отображения вконце строк 
     //в тело добавляется еще одна строка
@@ -183,7 +183,7 @@ class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
     {
       //расчитываем сколько строк еще влезает высоту тела
       //округляем в большую сторону
-      let visibleRowsCount = Math.ceil(bodyContentHeight / CELL_HEIGHT);
+      const visibleRowsCount = Math.ceil(bodyContentHeight / CELL_HEIGHT);
       
      this.firstVisibleRowI = items.length-visibleRowsCount +1;
 
