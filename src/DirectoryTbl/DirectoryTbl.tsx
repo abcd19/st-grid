@@ -1,13 +1,35 @@
 import React from 'react'
-import {GridLayout} from './../Grid/GridLayout.tsx'
+import {GridLayout} from './../Grid/GridLayout'
 import {onChangeItem, onMouseDownItem, onClickHeaderCell} from './DirectoryTblHandle'
 import {sortItems} from './Sorting/sortItems';
-import * as ST from './../common'
+import * as ST from '../common'
 import {createDirectoryTableToolbar} from './Toolbar/createDirectoryTableToolbar';
 
-export class DirectoryTbl extends React.Component
-{
-  constructor(props)
+
+
+export interface IDirectoryTblProps {
+  height: number; 
+  width: number;
+  columns: any[];
+  sortingFlag: boolean;
+  items: any[]
+}
+
+
+export interface IDirectoryTblState {
+  scrollToLastItem: any;
+  sorting: any; 
+  selItemNum: any;
+}
+
+export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectoryTblState>{
+
+  private onChangeItem: any;
+  private onMouseDownItem: any;
+  private onClickHeaderCell: any;
+  private toolbar: any
+
+  constructor(props: IDirectoryTblProps)
   {
     super(props);
     
@@ -67,6 +89,10 @@ export class DirectoryTbl extends React.Component
       onChangeItem = {this.onChangeItem}
       onMouseDownItem = {this.onMouseDownItem}
       onClickHeaderCell ={this.onClickHeaderCell}
+      onMouseEnterItem = {()=>{}}
+      onMouseLeaveItem = {()=>{}}
+      onDoubleClickItem = {()=>{}}
+      onClickItem = {()=>{}}
       sortingFlag = {sortingFlag}
       toolbar = {this.toolbar}
       items = {items}

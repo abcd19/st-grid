@@ -1,10 +1,10 @@
 
-import * as ST from './../common'
+import * as ST from '../common'
 import {cloneData} from './DirectoryTblFunctions'
 import {calcOriginal} from './Sorting/sortItems'
 
 //изменение айтема
-export function onChangeItem(item, cellAlias, newVal)
+export function onChangeItem(this: any, item: any, cellAlias: string, newVal: any)
 {
   
   let newItems = cloneData(this.props.items);
@@ -27,7 +27,7 @@ export function onChangeItem(item, cellAlias, newVal)
 /**
  * Клик по заголовку ячейки
  */
-export function onClickHeaderCell(sortingCellAlias, orderSorting)
+export function onClickHeaderCell(this: any, sortingCellAlias: string, orderSorting: string)
 { 
   let newSorting = {
     order: orderSorting,
@@ -46,7 +46,7 @@ export function onClickHeaderCell(sortingCellAlias, orderSorting)
 
 
 // клик по строке
-export function onMouseDownItem(item, cellAlias)
+export function onMouseDownItem(this: any, item: any, cellAlias: string)
 {
   let selNum = item.rowNum;
   if(ST.isObject(this.state.sorting) && ST.isString(this.state.sorting.order))

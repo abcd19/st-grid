@@ -1,10 +1,10 @@
 
-import * as ST from './../../common'
-import {cloneData} from './../DirectoryTblFunctions'
-import {sortItems, calcOriginal} from './../Sorting/sortItems';
+import * as ST from '../../common'
+import {cloneData} from '../DirectoryTblFunctions'
+import {sortItems, calcOriginal} from '../Sorting/sortItems';
 
 //клик по кнопке удалить строку
-export function onRemoveBtnClick()
+export function onRemoveBtnClick(this: any)
 {  
   if(ST.isNumber(this.state.selItemNum) == false)
   {
@@ -31,7 +31,7 @@ export function onRemoveBtnClick()
 
 
 //клик по кнопке добавить строку
-export function onAddBtnClick()
+export function onAddBtnClick(this: any)
 {
   let newItems = cloneData(this.props.items);
   newItems.push({ data: {}});  

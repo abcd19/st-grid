@@ -3,14 +3,14 @@ import {ImgButtonLayout} from '../../StringFld/ImgButtonLayout'
 import {onRemoveBtnClick, onAddBtnClick} from './DirectoryTblToolbarHandle'
 
 //создать тулбар для дерева
-export const createDirectoryTableToolbar = ($this) =>
+export const createDirectoryTableToolbar = ($this: any) =>
 {
   let {addBtnFlag, removeBtnFlag, searchFldFlag, removeAllBtnFlag, onRemoveAllItems} = $this.props;
   
   $this.onRemoveBtnClick = onRemoveBtnClick.bind($this);
   $this.onAddBtnClick = onAddBtnClick.bind($this);
 
-  let toolbar =  {items:[]};
+  let toolbar: any =  {items:[]};
 
   if(addBtnFlag === true)
   { 
