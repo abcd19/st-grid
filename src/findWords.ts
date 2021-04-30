@@ -1,4 +1,4 @@
-import isUndefined from 'lodash/isUndefined'
+
 /**
  * calc rank elements of string array by input string
  * @param {type} str
@@ -9,10 +9,10 @@ import isUndefined from 'lodash/isUndefined'
  *  'elemLink': 1
  * }
  */
-export function calcRank(arrayWords, word,  flags)
+export function calcRank(arrayWords: any[], word: any,  flags: any)
 {
   
-  function calcRankWords(word,  str)
+  function calcRankWords(word: string,  str: number)
   {
     var word_t = String(word).toUpperCase();
     var str_t = String(str).toUpperCase();
@@ -48,14 +48,14 @@ export function calcRank(arrayWords, word,  flags)
   }
   
   
-  function hasFlag(flags, flagName)
+  function hasFlag(flags: any, flagName: any)
   {
       if(typeof(flags) != 'object')
       {
          return false; 
       }
       
-      return !isUndefined(flags[flagName])
+      return flags[flagName] != undefined;
   }
   
   var ranks = []; 
@@ -76,7 +76,7 @@ export function calcRank(arrayWords, word,  flags)
       elemLink: i,
     });
   }
-  var sortByRank = ranks.sort(function(a, b){
+  var sortByRank = ranks.sort(function(a: any, b: any){
     return b['rank'] - a['rank'];
   });
   
