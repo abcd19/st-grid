@@ -10,6 +10,24 @@ import './GridLayout.scss'
 import {onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth} from './handle'
 
 
+
+export type typeColumn = {
+    title: string,
+    alias: string,
+    widthPix: any,
+    type: any,
+    visible: any
+}
+
+
+export type typeItem = {
+  data: any,
+  rowNum: any,
+  layoutMode: any,
+  color: any
+}
+
+
 export interface IGridLayoutProps {
   onClickHeaderCell: (alias: string, order: string) => void;
   scrollToLastItem: boolean;

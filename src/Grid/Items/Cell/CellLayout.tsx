@@ -2,7 +2,13 @@
 
 import * as ST from '../../../common.js'
 import React from 'react';
-import './Cell.scss'
+import './Cell.scss';
+import {tyepStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
+import {typeComboValue} from './../../../ComboboxFld/ListLayout';
+import {tyepCheckboxFldVal} from './../../../CheckboxFld/CheckboxFldLayoutEdit'
+
+export type tyepCellVal = tyepStringFldVal | typeComboValue |  tyepCheckboxFldVal; 
+
 
 export interface ICellLayoutProps {
   onMouseEnterItem: (alias: string) => void,

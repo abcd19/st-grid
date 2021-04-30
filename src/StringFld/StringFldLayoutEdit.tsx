@@ -2,9 +2,11 @@ import React from 'react';
 import {FieldLayoutEdit} from './FieldLayoutEdit';
 
 
+export type tyepStringFldVal = string | undefined;
+
 export interface IStringFldLayoutEditProps {
   onChangeDelay?: (val: string | undefined) => void,
-  val?: string | undefined;
+  val?: tyepStringFldVal;
   clearBtnFlag?: boolean;
   onChange?: (val: string | undefined) => void;
   readOnly?: boolean;

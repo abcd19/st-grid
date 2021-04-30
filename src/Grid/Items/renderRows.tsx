@@ -6,7 +6,7 @@ import { ItemsLayout } from './ItemsLayout'
 
 
 // reder rows
-export function renderRows(this: ItemsLayout): any[] {
+export function renderRows(this: ItemsLayout): React.ReactElement[] {
   const { props, onClickItem } = this;
   const items = [];
   const height = props.height;
@@ -30,7 +30,7 @@ export function renderRows(this: ItemsLayout): any[] {
       defaultColor = 'st-grid-body-cell-project-two';
     }
 
-    const newItem: any = <RowLayout
+    const newItem: React.ReactElement = <RowLayout
       defaultColor={defaultColor}
       onChangeItem={props.onChangeItem}
       onMouseDownItem={props.onMouseDownItem}

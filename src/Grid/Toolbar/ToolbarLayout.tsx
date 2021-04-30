@@ -1,45 +1,43 @@
-import * as ST from '../../common'
 import React from 'react';
 import {LinearGroupLayout} from '../../StringFld/LinearGroupLayout';
-import {ImgButtonLayout} from "../../StringFld/ImgButtonLayout";
+import {IImgButtonLayoutProps} from './../../StringFld/ImgButtonLayout'
 
+
+export interface IToolbarItem {
+  name: string;
+  widthPix: number;
+  type: {
+    constr: React.ComponentType<IImgButtonLayoutProps>;
+    settings: IImgButtonLayoutProps
+  } 
+}
 
 export interface IToolbarLayoutProps {
-  items: any[]
+  items: IToolbarItem[]
 }
 
 
-/**
- * group of image buttons and other elements
- */
+
+// group of image buttons and other elements
  export class ToolbarLayout extends React.Component<IToolbarLayoutProps>{
   
-  /**
-   * @constructor
-   * @param {type} data
-   */
+
   constructor(props: IToolbarLayoutProps)
   {
     super(props);
-    this.state = {};
   }
   
-  render()
+  render(): React.ReactElement
   {
     const nItems = [];
-    //console.dir(this.props['items'])
     for(let i = 0; i < this.props['items'].length; i++)
     {
-      const Constr = this.props['items'][i]['type']['constr'];
-      const settings = this.props['items'][i]['type']['settings'];
+      const Constr  = this.props.items[i].type.constr;
+      const settings = this.props.items[i].type.settings;
       const {name, widthPix} = this.props['items'][i]
       nItems.push(<Constr
-              //imageName={imageName} 
-              //handler ={handler} 
               key={name} 
-              widthPix = { widthPix ?  widthPix: "32" }
-             // size = "32"
-              name={name} 
+              widthPix = { widthPix ?  widthPix: 32 }
               {...settings}
               />);
     }
