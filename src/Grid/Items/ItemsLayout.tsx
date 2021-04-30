@@ -4,15 +4,16 @@ import React from 'react';
 
 
 export interface IItemsLayoutProps{
-  columns: any[],
-  firstVisibleRowI: any,
-  height: any,
-  items: any[],
-  onChangeItem: any,
-  onMouseDownItem: any,
-  onMouseEnterItem: any,
-  onMouseLeaveItem: any,
-  onDoubleClickItem: any
+  columns: any[];
+  firstVisibleRowI: any;
+  height: any;
+  items: any[];
+  onChangeItem: any;
+  onMouseDownItem: any;
+  onMouseEnterItem: any;
+  onMouseLeaveItem: any;
+  onDoubleClickItem: any;
+  onClickItem: any;
 }
 
 

@@ -4,8 +4,8 @@ import React from 'react';
 
 
 export interface IHeaderLayoutProps {
-  onChangeHeaderCellWidth: ()=>void;
-  clickHeaderCell: ()=>void;
+  onChangeHeaderCellWidth: (this: any, cellAlias: string, width: number)=>void;
+  clickHeaderCell: (alias: string, order: string) => void
   columns: any[];
   sortingFlag: boolean;
 }

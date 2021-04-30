@@ -1,35 +1,66 @@
 import * as ST from '../common';
 import React from 'react';
 
-import {HeaderLayout} from './Header/HeaderLayout.tsx';
-import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout.tsx';
-import {ToolbarLayout} from './Toolbar/ToolbarLayout.tsx'
-import {StringFldCell  as StringFldCell} from './../StringFld/StringFldCell'
-import {calcSumColumnsWidth} from './calcSumColumnsWidth.ts';
-import './GridLayout.css'
+import {HeaderLayout} from './Header/HeaderLayout';
+import {ItemsLayout, CELL_HEIGHT} from './Items/ItemsLayout';
+import {ToolbarLayout} from './Toolbar/ToolbarLayout'
+import {StringFldCell  as StringFldCell} from '../StringFld/StringFldCell'
+import {calcSumColumnsWidth} from './calcSumColumnsWidth';
+import './GridLayout.scss'
 import {onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth} from './handle'
+
+
+export interface IGridLayoutProps {
+  onClickHeaderCell: (alias: string, order: string) => void;
+  scrollToLastItem: boolean;
+  columns: any[];
+  items: any[];
+  height: number;
+  width: number;
+  sortingFlag: boolean;
+  toolbar: any;
+  onMouseDownItem: any;
+  onMouseEnterItem: any;
+  onMouseLeaveItem: any;
+  onDoubleClickItem: any;
+  onClickItem: any;
+  onChangeItem: any;  
+}
+
+export interface IGridLayoutState {
+  scrollToLastItem: boolean;
+}
 
 /**
  * Шаблон для таблицы/дерева
  */
-class GridLayout extends React.Component {
-  
+class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
+
+  private SCROLL: number;
+  private HEADER_HEIGHT: number;
+  private TOOLBAR_HEIGHT: number;
+  private scrollBottomRef: React.RefObject<HTMLDivElement>;
+  private scrollRightRef: React.RefObject<HTMLDivElement>;
+  private bodyDivRef: React.RefObject<HTMLDivElement>;
+  private headerDivRef: React.RefObject<HTMLDivElement>;
+  private onItemScrollX:()=>void;
+  private onItemMouseWheelScrollingY:(this: any, e: any)=>void;
+  private onItemScrollY: ()=>void;
+  private onChangeHeaderCellWidth: (this: any, cellAlias: string, width: number)=>void;
+  private firstVisibleRowI: number;
+
   /**
    * @constructor
    * @param {type} data
    */
-  constructor(props)
+  constructor(props: IGridLayoutProps)
   {
     super(props);
-    this.props = props;
-    this.state = {};
     this.SCROLL =  20;
     this.TOOLBAR_HEIGHT = 34;
     this.HEADER_HEIGHT = 30;
-
+    this.firstVisibleRowI = 0;
     this.state = {
-      //номер первой видимой строки в items
-      firstVisibleRowI: 0,
       //флаг скролла до последнего айтема
       scrollToLastItem: false,
     }
@@ -48,7 +79,7 @@ class GridLayout extends React.Component {
   };
   
 
-  onClickHeaderCell(alias, order)
+  onClickHeaderCell(alias: string, order: string)
   {
     if(ST.isFunction(this.props.onClickHeaderCell))
     {
@@ -60,19 +91,23 @@ class GridLayout extends React.Component {
   {
     
     //чтобы не крутилась страница в chrom дисеблим скролл с флагом  passive: false
-    const prevDef = (e) => e.preventDefault ? e.preventDefault(): (e.returnValue = false);
+    const prevDef = (e: any) => e.preventDefault ? e.preventDefault(): (e.returnValue = false);
     
-    if ('onwheel' in document)
+    if(this.bodyDivRef && this.bodyDivRef.current)
     {
-      // IE9+, FF17+, Ch31+
-      this.bodyDivRef.current.addEventListener("wheel", prevDef, { passive: false });
-    } else if ('onmousewheel' in document) {
-      // устаревший вариант события
-      this.bodyDivRef.current.addEventListener("mousewheel", prevDef, { passive: false });
-    } else {
-      // Firefox < 17
-      this.bodyDivRef.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
+      if ('onwheel' in document)
+      {
+        // IE9+, FF17+, Ch31+
+        this.bodyDivRef.current.addEventListener("wheel", prevDef, { passive: false });      
+      } else if ('onmousewheel' in document) {
+        // устаревший вариант события
+        this.bodyDivRef.current.addEventListener("mousewheel", prevDef, { passive: false });
+      } else {
+        // Firefox < 17
+        this.bodyDivRef.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
+      }
     }
+    
 
     
     this.prepareScrollToLastItem();
@@ -87,9 +122,9 @@ class GridLayout extends React.Component {
   prepareScrollToLastItem()
   {
     //Если передан флаг скроллинга до последнего айтема
-    if(this.props.scrollToLastItem === true)
+    if(this.props.scrollToLastItem === true && this.scrollRightRef && this.scrollRightRef.current)
     {
-      let newScroll = this.state.firstVisibleRowI * CELL_HEIGHT;
+      let newScroll = this.firstVisibleRowI * CELL_HEIGHT;
       //за счет отступа вконце строк в виде еще одной скрытой строки таблицу можно проскролить еще больше
       newScroll = newScroll + CELL_HEIGHT;
       this.scrollRightRef.current.scrollTop = newScroll;  
@@ -150,14 +185,14 @@ class GridLayout extends React.Component {
       //округляем в большую сторону
       let visibleRowsCount = Math.ceil(bodyContentHeight / CELL_HEIGHT);
       
-      this.state.firstVisibleRowI = items.length-visibleRowsCount +1;
+     this.firstVisibleRowI = items.length-visibleRowsCount +1;
 
     }
     
     //случай когда изменили высоту таблицы и влезли все строки
     if(bodyContentHeight > rightScrollHeight)
     {
-      this.state.firstVisibleRowI = 0;
+      this.firstVisibleRowI = 0;
     }
 
     return(<table className="st-grid-layout">
@@ -194,7 +229,7 @@ class GridLayout extends React.Component {
                   onChangeItem = {this.props.onChangeItem}  
                   items = {items} 
                   height={bodyContentHeight} 
-                  firstVisibleRowI= {this.state.firstVisibleRowI} />
+                  firstVisibleRowI= {this.firstVisibleRowI} />
               </div>
             </div>
           </td>

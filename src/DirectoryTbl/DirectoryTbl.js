@@ -1,5 +1,5 @@
 import React from 'react'
-import {GridLayout} from './../Grid/GridLayout'
+import {GridLayout} from './../Grid/GridLayout.tsx'
 import {onChangeItem, onMouseDownItem, onClickHeaderCell} from './DirectoryTblHandle'
 import {sortItems} from './Sorting/sortItems';
 import * as ST from './../common'
