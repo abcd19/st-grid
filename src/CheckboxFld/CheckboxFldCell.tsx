@@ -1,7 +1,7 @@
 import React from 'react';
 import {CheckboxFldLayoutEdit} from './CheckboxFldLayoutEdit';
 
-interface ICheckboxFldCellProps {
+export interface ICheckboxFldCellProps {
   layoutMode: string;
   style: React.CSSProperties;
   onMouseDownItem: (e: React.MouseEvent<HTMLTableCellElement>) => void;

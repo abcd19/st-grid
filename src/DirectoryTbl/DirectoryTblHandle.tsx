@@ -2,21 +2,31 @@
 import * as ST from '../common'
 import {cloneData} from './DirectoryTblFunctions'
 import {calcOriginal} from './Sorting/sortItems'
+import {DirectoryTbl} from './DirectoryTbl';
+import {typeItem} from './../Grid/GridLayout';
+import {tyepCellVal} from './../Grid/Items/Cell/CellLayout';
 
-//изменение айтема
-export function onChangeItem(this: any, item: any, cellAlias: string, newVal: any)
+//change item
+export function onChangeItem(this: DirectoryTbl, item: typeItem, cellAlias: string, newVal: tyepCellVal): void
 {
   
   const newItems = cloneData(this.props.items);
   let selNum = item.rowNum;
   
-  if(ST.isObject(this.state.sorting) && ST.isString(this.state.sorting.order))
+  if(this.state.sorting && ST.isString(this.state.sorting.order))
   {
     const selItemNumLink = calcOriginal(item.rowNum, newItems, this.state.sorting.cellAlias, this.state.sorting.order);
-    selNum = selItemNumLink;
+    if(selItemNumLink)
+    {
+      selNum = selItemNumLink;
+    }
+    
   }
-
-  newItems[selNum].data[cellAlias] = newVal;
+  if(typeof(selNum) == 'number')
+  {
+    newItems[selNum].data[cellAlias] = newVal;
+  }
+  
 
   if(ST.isFunction(this.props.onChange))
   {
@@ -24,10 +34,8 @@ export function onChangeItem(this: any, item: any, cellAlias: string, newVal: an
   }
 }
 
-/**
- * Клик по заголовку ячейки
- */
-export function onClickHeaderCell(this: any, sortingCellAlias: string, orderSorting: string)
+// click header cell
+export function onClickHeaderCell(this: DirectoryTbl, sortingCellAlias: string, orderSorting?: string): void
 { 
   const newSorting = {
     order: orderSorting,
@@ -46,18 +54,26 @@ export function onClickHeaderCell(this: any, sortingCellAlias: string, orderSort
 
 
 // клик по строке
-export function onMouseDownItem(this: any, item: any, cellAlias: string)
+export function onMouseDownItem(this: DirectoryTbl, item: typeItem /*, cellAlias: string*/): void
 {
   let selNum = item.rowNum;
-  if(ST.isObject(this.state.sorting) && ST.isString(this.state.sorting.order))
+  if(this.state.sorting && ST.isString(this.state.sorting.order))
   {
     const selItemNumLink = calcOriginal(item.rowNum, this.props.items, this.state.sorting.cellAlias, this.state.sorting.order);
-    selNum = selItemNumLink;
+    if(selItemNumLink)
+    {
+      selNum = selItemNumLink;
+    }
+    
   }
   this.setState({selItemNum: selNum},() => {
     if(ST.isFunction(this.props.onSelectItem))
     {
-      this.props.onSelectItem(this.props.items[ this.state.selItemNum ], this.state.selItemNum);
+      if(typeof(this.state.selItemNum) == 'number')
+      {
+        this.props.onSelectItem(this.props.items[ this.state.selItemNum ], this.state.selItemNum);
+      }
+      
     }
   })
 

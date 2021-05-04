@@ -1,13 +1,14 @@
 
 import * as ST from '../common';
+import {typeItem} from './../Grid/GridLayout';
 
-//копирует массив айтемов
-//при этом удаляются всякие системыне переменные типа layoutmode, color и проч
-export const cloneData = (data: any) =>
+// copies an array of items
+// this removes any system variables such as layoutmode, color, etc.
+export const cloneData = (data: typeItem[]): typeItem[] =>
 { 
-  const res: any = [];
-  data.forEach((item: any)=>{
-    const n = {
+  const res: typeItem[] = [];
+  data.forEach((item: typeItem)=>{
+    const n: typeItem = {
       data:  ST.clone(item['data'])
     };
     res.push(n);

@@ -1,10 +1,11 @@
 import {HeaderCellLayout} from './HeaderCellLayout'
 import React from 'react';
-
+import {typeColumn} from './../../Grid/GridLayout'
+import {typeHandler} from './HeaderLayout';
 
 export interface IeaderRowLayoutProps {
-  columns: any[];
-  handler: any;
+  columns: typeColumn[];
+  handler: typeHandler;
   sortingFlag: boolean;
 }
 
@@ -18,7 +19,8 @@ export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
   }
 
 
-  render(){
+  render(): React.ReactElement
+  {
 
     const items = [];
     

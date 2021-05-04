@@ -7,7 +7,7 @@ import { ItemsLayout } from './ItemsLayout'
 
 // reder rows
 export function renderRows(this: ItemsLayout): React.ReactElement[] {
-  const { props, onClickItem } = this;
+  const { props } = this;
   const items = [];
   const height = props.height;
   let rowViewStart = props.firstVisibleRowI;
@@ -37,7 +37,7 @@ export function renderRows(this: ItemsLayout): React.ReactElement[] {
       onMouseEnterItem={props.onMouseEnterItem}
       onMouseLeaveItem={props.onMouseLeaveItem}
       onDoubleClickItem={props.onDoubleClickItem}
-      onClickItem={onClickItem}
+      onClickItem={props.onClickItem}
       rowNum={i}
       columns={ST.clone(props.columns)}
       item={props.items[i]} key={i} />

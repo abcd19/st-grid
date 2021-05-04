@@ -1,16 +1,18 @@
 
 import {ImgButtonLayout} from '../../StringFld/ImgButtonLayout'
 import {onRemoveBtnClick, onAddBtnClick} from './DirectoryTblToolbarHandle'
+import {IToolbarLayoutProps} from './../../Grid/Toolbar/ToolbarLayout'
+import {DirectoryTbl} from './../DirectoryTbl';
 
-//создать тулбар для дерева
-export const createDirectoryTableToolbar = ($this: any) =>
+// create toolbar
+export const createDirectoryTableToolbar = ($this: DirectoryTbl): IToolbarLayoutProps =>
 {
-  const {addBtnFlag, removeBtnFlag, searchFldFlag, removeAllBtnFlag, onRemoveAllItems} = $this.props;
+  const {addBtnFlag, removeBtnFlag, removeAllBtnFlag, onRemoveAllItems} = $this.props;
   
   $this.onRemoveBtnClick = onRemoveBtnClick.bind($this);
   $this.onAddBtnClick = onAddBtnClick.bind($this);
 
-  const toolbar: any =  {items:[]};
+  const toolbar: IToolbarLayoutProps =  {items:[]};
 
   if(addBtnFlag === true)
   { 
@@ -20,7 +22,6 @@ export const createDirectoryTableToolbar = ($this: any) =>
       type: {
         constr: ImgButtonLayout,
         settings: { 
-          size: 32,
           imageName: 'plus',
           title: 'Добавить',
           handler:{
@@ -41,7 +42,6 @@ export const createDirectoryTableToolbar = ($this: any) =>
         settings: { 
           imageName: 'remove',
           title: 'Удалить',
-          size: 32,
           handler:{
             click: $this.onRemoveBtnClick,
           }
@@ -60,7 +60,6 @@ export const createDirectoryTableToolbar = ($this: any) =>
         settings: { 
           title: 'Удалить всё',
           imageName: 'removeAll',
-          size: 32,
           handler:{
             click: onRemoveAllItems,
           }

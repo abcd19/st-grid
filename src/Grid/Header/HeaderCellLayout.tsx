@@ -1,6 +1,7 @@
 import * as ST from '../../common'
 import React from 'react';
 import './Header.scss'
+import {typeHandler} from './HeaderLayout';
 
 const ARR_DOWN = '&#8595;', ARR_UP = '&#8593;', ARR_NONE = '';
 
@@ -9,10 +10,7 @@ export interface IHeaderCellLayoutProps {
   width: number;
   text: string;
   sortingFlag: boolean;
-  handler: {
-    clickHeaderCell: (alias: string, mark?: string) => void,
-    changeHeaderCellWidth: any,
-  };
+  handler: typeHandler;
   settings: {
     alias: string
   }
@@ -31,6 +29,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
   private CELL_HEIGHT: number;
   private startChord: number;
   private width: number;
+
 
   /**
    * @constructor
@@ -59,7 +58,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
 
 
 
-  clickHeaderCellHandle() {
+  clickHeaderCellHandle(): void {
     if (this.props.sortingFlag !== true) {
       return;
     }
@@ -99,7 +98,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
 
 
 
-  anchorMouseDownHandle(e: any) {
+  anchorMouseDownHandle(e: React.MouseEvent): void {
     window.document.addEventListener('mousemove', this.anchorMouseMoveHandle);
     window.document.addEventListener('mouseup', this.anchorMouseUpHandle);
 
@@ -110,7 +109,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     });
   }
 
-  anchorMouseUpHandle() {
+  anchorMouseUpHandle(): void {
     window.document.removeEventListener('mousemove', this.anchorMouseMoveHandle);
     window.document.removeEventListener('mouseup', this.anchorMouseUpHandle);
     this.setState({
@@ -118,7 +117,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     });
   }
 
-  anchorMouseMoveHandle(e: any) {
+  anchorMouseMoveHandle(e: MouseEvent): void {
     if (this.state.cellWidthChangingNow == false) {
       return;
     }
@@ -132,7 +131,8 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     }
   }
 
-  render() {
+  render(): React.ReactElement
+  {
     const cellHeight = String(this.CELL_HEIGHT - 1) + 'px';
     this.width = this.props.width;
 

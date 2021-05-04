@@ -33,7 +33,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
 
     static defaultProps: IComboboxFldLayoutEditProps = {
       disableSearch: false,
-      onChange: () => {},
+      onChange: () => {/* */},
       items: [],
       listWidthPix: 250,
       prepareGridDisplay: false,
@@ -133,7 +133,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
     {
       const {items} = this.props;
       
-      const listWidthPix = this.props!.listWidthPix;
+      const listWidthPix = this.props.listWidthPix;
 
       const {val} = this.props;
 

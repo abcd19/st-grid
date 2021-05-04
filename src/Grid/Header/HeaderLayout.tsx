@@ -1,12 +1,18 @@
 
 import {HeaderRowLayout} from './HeaderRowLayout';
 import React from 'react';
+import {typeColumn} from './../../Grid/GridLayout'
+import {GridLayout} from './../GridLayout';
 
+export type typeHandler = {
+  changeHeaderCellWidth: (cellAlias: string, width: number)=>void,
+  clickHeaderCell: (alias: string, order?: string)=>void
+}
 
 export interface IHeaderLayoutProps {
-  onChangeHeaderCellWidth: (this: any, cellAlias: string, width: number)=>void;
-  clickHeaderCell: (alias: string, order: string) => void
-  columns: any[];
+  onChangeHeaderCellWidth: (this: GridLayout, cellAlias: string, width: number)=>void;
+  clickHeaderCell: (alias: string, order?: string) => void
+  columns: typeColumn[];
   sortingFlag: boolean;
 }
 
@@ -20,9 +26,9 @@ export class HeaderLayout extends React.Component<IHeaderLayoutProps> {
     super(props);
   }
   
-  render()
+  render(): React.ReactElement
   {  
-    const handler= {
+    const handler: typeHandler = {
       changeHeaderCellWidth: this.props.onChangeHeaderCellWidth,
       clickHeaderCell: this.props.clickHeaderCell,
    };

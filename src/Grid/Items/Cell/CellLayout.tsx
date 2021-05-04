@@ -6,7 +6,7 @@ import './Cell.scss';
 import {tyepStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
 import {typeComboValue} from './../../../ComboboxFld/ListLayout';
 import {tyepCheckboxFldVal} from './../../../CheckboxFld/CheckboxFldLayoutEdit'
-
+import { typeItem, typeTypeColumn } from './../../GridLayout'
 export type tyepCellVal = tyepStringFldVal | typeComboValue |  tyepCheckboxFldVal; 
 
 
@@ -14,19 +14,19 @@ export interface ICellLayoutProps {
   onMouseEnterItem: (alias: string) => void,
   onMouseLeaveItem: (alias: string) => void,
   onMouseDownItem: (alias: string) => void,
-  onChangeItem: any,
-  color: any,
+  onChangeItem: (cellAlias: string, val: tyepCellVal) => void,
+  color?: string,
   widthPix: number,
-  onDoubleClickItem: any,
-  onClickItem: any,
-  val: any,
-  rowItem: any,
+  onDoubleClickItem: (cellAlias: string)=>void,
+  onClickItem: (cellAlias: string) => void,
+  val: tyepCellVal,
+  rowItem: typeItem,
   rowNum: number,
-  type: any,
+  type: typeTypeColumn,
   alias: string,
-  display?: any,
-  defaultColor: any,
-  layoutMode: string
+  display?: string,
+  defaultColor: string,
+  layoutMode?: string
  }
 
 
@@ -61,43 +61,43 @@ class CellLayout extends React.Component<ICellLayoutProps> {
     }
   }
 
-  onMouseEnterItem() {
+  onMouseEnterItem(): void {
     if (ST.has(this.props, 'onMouseEnterItem')) {
       this.props['onMouseEnterItem'](this.props.alias);
     }
   }
 
-  onMouseLeaveItem() {
+  onMouseLeaveItem(): void {
     if (ST.has(this.props, 'onMouseLeaveItem')) {
       this.props['onMouseLeaveItem'](this.props.alias);
     }
   }
 
-  onMouseDownItem() {
+  onMouseDownItem(): void {
     if (ST.has(this.props, 'onMouseDownItem')) {
       this.props['onMouseDownItem'](this.props.alias);
     }
   }
 
-  onChangeItem(val: any) {
+  onChangeItem(/*cellAlias: string,*/ val: tyepCellVal): void {
     if (ST.has(this.props, 'onChangeItem')) {
       this.props['onChangeItem'](this.props.alias, val);
     }
   }
 
-  onDoubleClickItem() {
+  onDoubleClickItem(/*cellAlias: string*/): void {
     if (ST.has(this.props, 'onDoubleClickItem')) {
       this.props['onDoubleClickItem'](this.props.alias);
     }
   }
 
-  onClickItem() {
+  onClickItem(/*cellAlias: string*/): void {
     if (ST.has(this.props, 'onClickItem')) {
       this.props['onClickItem'](this.props.alias);
     }
   }
 
-  render() {
+  render(): React.ReactElement {
 
     //определяем цвет
     let color = undefined;

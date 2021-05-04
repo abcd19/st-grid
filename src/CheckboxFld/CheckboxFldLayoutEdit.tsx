@@ -23,10 +23,6 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
 
     private _val: boolean;
 
-    /**
-    * @constructor
-    * @param {type} data
-    */
     constructor(props: ICheckboxFldLayoutEditProps)
     {
       super(props);
