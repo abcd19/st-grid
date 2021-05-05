@@ -3,7 +3,7 @@ import { CellLayout } from '../Cell/CellLayout';
 import React from 'react';
 import { tyepCellVal } from './../Cell/CellLayout'
 import { typeColumn, typeItem } from './../../../Grid/GridLayout'
-
+import {StringFldCell} from './../../../StringFld/StringFldCell'
 
 
 export interface IRowLayoutProps {
@@ -98,8 +98,22 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
       const itemData = this.props.item ? this.props.item['data'] : undefined;
       const val = itemData ? this.props.item['data'][alias] : undefined;
 
-     
-      //Создаем ячейки
+      let cWidthPix: number = 100;
+      if(typeof(widthPix) =='number' && widthPix >=0)
+      {
+        cWidthPix = widthPix;
+      }
+
+      let cType = type;
+      if(!cType)
+      {
+        cType = {
+          constr: StringFldCell,
+          settings: {}
+        };
+        
+      }
+
       const newCell = <CellLayout
         color={color}
         onChangeItem={this.onChangeItem}
@@ -109,13 +123,13 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
         onDoubleClickItem={this.onDoubleClickItem}
         onClickItem={this.onClickItem}
         layoutMode={layoutMode}
-        type={type}
+        type={cType}
         alias={alias}
         rowItem={this.props.item}
         rowNum={this.props.rowNum}
         val={val}
         defaultColor={this.props.defaultColor}
-        widthPix={widthPix}
+        widthPix={cWidthPix}
         key={alias} />;
 
       cells.push(newCell);

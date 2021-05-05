@@ -4,7 +4,7 @@ import {typeItem} from './../Grid/GridLayout';
 
 // copies an array of items
 // this removes any system variables such as layoutmode, color, etc.
-export const cloneData = (data: typeItem[]): typeItem[] =>
+export const cloneData = (data: typeItem[] = []): typeItem[] =>
 { 
   const res: typeItem[] = [];
   data.forEach((item: typeItem)=>{

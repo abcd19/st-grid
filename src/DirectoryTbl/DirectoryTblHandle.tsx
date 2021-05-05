@@ -44,7 +44,7 @@ export function onClickHeaderCell(this: DirectoryTbl, sortingCellAlias: string, 
 
   this.setState({sorting: newSorting, selItemNum: undefined}, () => {
     
-    if(ST.isFunction(this.props.onSelectItem))
+    if(this.props.onSelectItem)
     {
       this.props.onSelectItem();
     }
@@ -67,9 +67,9 @@ export function onMouseDownItem(this: DirectoryTbl, item: typeItem /*, cellAlias
     
   }
   this.setState({selItemNum: selNum},() => {
-    if(ST.isFunction(this.props.onSelectItem))
+    if(this.props.onSelectItem)
     {
-      if(typeof(this.state.selItemNum) == 'number')
+      if(typeof(this.state.selItemNum) == 'number' && this.props.items)
       {
         this.props.onSelectItem(this.props.items[ this.state.selItemNum ], this.state.selItemNum);
       }

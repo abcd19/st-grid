@@ -18,28 +18,16 @@ import {tyepCellVal} from './Items/Cell/CellLayout'
 
 
 export type typeTypeColumn = {
-  constr: React.ComponentType<
-  {
-    layoutMode?: string; style: React.CSSProperties; widthPix: number; val: tyepCellVal;
-    settings: IStringFldLayoutEditProps | IComboboxFldLayoutEditProps | ICheckboxFldLayoutEditProps ;
-    onChangeItem: (val: tyepCellVal) => void;
-    onMouseDownItem: ()=>void;
-    onMouseLeaveItem: ()=>void;
-    onMouseEnterItem: ()=> void;
-    onDoubleClickItem: ()=>void;
-    onClickItem: ()=>void;
-    rowItem: typeItem;
-    className: string
-  }>;
+  constr: any;
   settings: IStringFldLayoutEditProps | IComboboxFldLayoutEditProps | ICheckboxFldLayoutEditProps 
 }
 
 export type typeColumn = {
   title: string,
   alias: string,
-  widthPix: number,
-  type: typeTypeColumn,
-  visible: boolean
+  widthPix?: number,
+  type?: typeTypeColumn,
+  visible?: boolean
 }
 
 
@@ -156,15 +144,6 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
   render(): React.ReactElement {
     const { columns, items } = this.props;
     for (let i = 0; i < this.props.columns.length; i++) {
-      ST.defaults(columns[i],
-        {
-          widthPix: 100,
-          visible: true,
-          type: {
-            constr: StringFldCell,
-            settings: {}
-          }
-        });
 
       if (columns[i]['visible'] == false) {
         columns[i]['widthPix'] = 0;

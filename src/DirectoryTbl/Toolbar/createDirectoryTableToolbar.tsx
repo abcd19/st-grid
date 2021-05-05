@@ -7,7 +7,8 @@ import {DirectoryTbl} from './../DirectoryTbl';
 // create toolbar
 export const createDirectoryTableToolbar = ($this: DirectoryTbl): IToolbarLayoutProps =>
 {
-  const {addBtnFlag, removeBtnFlag, removeAllBtnFlag, onRemoveAllItems} = $this.props;
+  const {addBtnFlag = true, 
+    removeBtnFlag = true, removeAllBtnFlag = false, onRemoveAllItems = ()=>{/* do nothing  */}} = $this.props;
   
   $this.onRemoveBtnClick = onRemoveBtnClick.bind($this);
   $this.onAddBtnClick = onAddBtnClick.bind($this);

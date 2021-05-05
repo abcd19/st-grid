@@ -77,7 +77,7 @@
   },
   "scripts": {
     "updateSnapshot": "jest --updateSnapshot",
-    "test": "jest  --coverage",
+    "test": "jest --coverage",
     "testAll": "jest",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.config.build.js",

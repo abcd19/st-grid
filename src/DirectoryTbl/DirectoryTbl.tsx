@@ -9,17 +9,17 @@ import {tyepCellVal} from './../Grid/Items/Cell/CellLayout';
 import {IToolbarLayoutProps} from './../Grid/Toolbar/ToolbarLayout';
 
 export interface IDirectoryTblProps {
-  height: number; 
-  width: number;
-  columns: typeColumn[];
-  sortingFlag: boolean;
-  items: typeItem[];
-  addBtnFlag: boolean;
-  removeBtnFlag: boolean;
-  removeAllBtnFlag: boolean;
+  height?: number; 
+  width?: number;
+  sortingFlag?: boolean;
+  items?: typeItem[];
+  addBtnFlag?: boolean;
+  removeBtnFlag?: boolean;
+  removeAllBtnFlag?: boolean;
+  onRemoveAllItems?: ()=>void;
+  onSelectItem?: (item?:typeItem, num?: number)=>void;
   onChange: (newItems: typeItem[], obj: {event: string,  removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal})=> void;
-  onSelectItem: (item?:typeItem, num?: number)=>void;
-  onRemoveAllItems: ()=>void;
+  columns: typeColumn[];
 }
 
 
@@ -33,6 +33,13 @@ export interface IDirectoryTblState {
 }
 
 export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectoryTblState>{
+
+  static defaultProps  = {
+    height: 200,
+    width: 400,
+    sortingFlag: true,
+    items: []
+  };
 
   private onChangeItem: (rowObject: typeItem, cellAlias: string, val: tyepCellVal) => void;
   public onChange: ()=>void = ()=>{/* do nothing */};
@@ -64,10 +71,9 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
 
   render(): React.ReactElement
   {
-    const {height, width, columns, sortingFlag} = this.props;
+    const {height = 200, width = 400, columns, sortingFlag = true} = this.props;
     const {scrollToLastItem, sorting, selItemNum} = this.state;
-
-    let items = this.props.items;
+    let {items = []} = this.props
 
     for(const item of items)
     {
@@ -92,6 +98,8 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
     {
       items = sortItems(ST.clone(items), sorting.cellAlias, sorting.order);
     }
+
+
 
     return <GridLayout   
       scrollToLastItem = {scrollToLastItem}

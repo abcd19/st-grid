@@ -31,13 +31,21 @@ export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
         continue
       }
       
+      let {widthPix, title} = this.props['columns'][i];
+
+      let cWidthPix: number = 100;
+      if(typeof(widthPix) =='number' && widthPix >=0)
+      {
+        cWidthPix = widthPix;
+      }
+
       const newItem = <HeaderCellLayout 
                           key = {i} 
                           sortingFlag={this.props.sortingFlag}
-                          width = {this.props['columns'][i]['widthPix']}
+                          width = {cWidthPix}
                           handler={this.props['handler']}  
                           settings={this.props['columns'][i]} 
-                          text={this.props['columns'][i]['title']} />;
+                          text={title} />;
                   
       items.push(newItem);
     }

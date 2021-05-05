@@ -17,7 +17,7 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
       this.props.onChange(newItems, { event: 'removeItem', removedItem });
     }
 
-    if (ST.isFunction(this.props.onSelectItem)) {
+    if (this.props.onSelectItem) {
       this.props.onSelectItem();
     }
 
@@ -34,8 +34,8 @@ export function onAddBtnClick(this: DirectoryTbl): void {
     this.props.onChange(newItems, { event: 'addItem' });
     this.setState({ scrollToLastItem: true, selItemNum: newItems.length - 1 }, () => {
 
-      if (ST.isFunction(this.props.onSelectItem)) {
-        if(typeof(this.state.selItemNum) == 'number')
+      if (this.props.onSelectItem) {
+        if(typeof(this.state.selItemNum) == 'number' && this.props.items)
           this.props.onSelectItem(this.props.items[this.state.selItemNum], this.state.selItemNum);
       }
 
