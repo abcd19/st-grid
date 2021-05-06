@@ -13,7 +13,7 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
   newItems.splice(this.state.selItemNum, 1);
   this.setState({ selItemNum: undefined }, () => {
 
-    if (ST.isFunction(this.props.onChange)) {
+    if (this.props.onChange) {
       this.props.onChange(newItems, { event: 'removeItem', removedItem });
     }
 
@@ -30,7 +30,7 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
 export function onAddBtnClick(this: DirectoryTbl): void {
   const newItems = cloneData(this.props.items);
   newItems.push({ data: {} });
-  if (ST.isFunction(this.props.onChange)) {
+  if (this.props.onChange) {
     this.props.onChange(newItems, { event: 'addItem' });
     this.setState({ scrollToLastItem: true, selItemNum: newItems.length - 1 }, () => {
 

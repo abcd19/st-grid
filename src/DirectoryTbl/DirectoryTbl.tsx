@@ -18,7 +18,7 @@ export interface IDirectoryTblProps {
   removeAllBtnFlag?: boolean;
   onRemoveAllItems?: ()=>void;
   onSelectItem?: (item?:typeItem, num?: number)=>void;
-  onChange: (newItems: typeItem[], obj: {event: string,  removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal})=> void;
+  onChange?: (newItems: typeItem[], obj: {event: string,  removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal})=> void;
   columns: typeColumn[];
 }
 

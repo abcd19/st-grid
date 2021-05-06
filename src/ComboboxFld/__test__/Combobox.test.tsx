@@ -71,15 +71,25 @@ describe('Combobox', () => {
     component.find(FieldLayoutEdit).dive().find(ImgButtonLayout).dive().find('div').simulate('click', mockOpenList);
     expect(component.find(ListLayout).dive().find(ListItemLayout)).toHaveLength(20);
     expect(component.find(ListLayout).dive().find(SearchFldLayoutEdit)).toHaveLength(1);
-    //jest.useFakeTimers();
+    jest.useFakeTimers();
     component.find(ListLayout).dive().find(SearchFldLayoutEdit).dive()
-        .find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').simulate('change', {target: {value: '1'}});
-    //jest.runAllTimers();
+        .find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').simulate('change', {target: {value: '10'}});
+        jest.advanceTimersByTime(500);
+   // jest.runAllTimers();
     //jest.advanceTimersByTime(1000);
     //jest.clearAllTimers();
-    //expect(component.find(ListLayout).dive().find(ListItemLayout)).toHaveLength(11);
+    
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 500);
+
+    
+   // console.dir(component.find(ListLayout).dive().find(SearchFldLayoutEdit).dive()
+   // .find(FieldLayoutEdit).dive().find(InputLayout).dive().find('input').debug())
+   // expect(component.find(ListLayout).dive().find(ListItemLayout)).toHaveLength(11);
     //jest.clearAllTimers();
   });
+
+ 
 
 /*
  

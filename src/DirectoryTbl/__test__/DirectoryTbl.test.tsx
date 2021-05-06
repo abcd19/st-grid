@@ -3,7 +3,7 @@ import {DirectoryTbl, IDirectoryTblProps} from './../DirectoryTbl';
 import {ComboboxFldCell} from './../../ComboboxFld/ComboboxFldCell';
 import {CheckboxFldCell} from './../../CheckboxFld/CheckboxFldCell';
 import {StringFldCell} from './../../StringFld/StringFldCell';
-import { shallow} from 'enzyme';
+import { shallow, mount} from 'enzyme';
 import { typeColumn } from '../../Grid/GridLayout';
 import {GridLayout} from './../../Grid/GridLayout';
 import {ItemsLayout} from './../../Grid/Items/ItemsLayout';
@@ -17,6 +17,9 @@ import {ImgButtonLayout} from './../../StringFld/ImgButtonLayout';
 import {columns, items} from './setUp'
 
 import {setUp} from './setUp';
+import { StringFldLayoutEdit } from '../../StringFld/StringFldLayoutEdit';
+import { FieldLayoutEdit } from '../../StringFld/FieldLayoutEdit';
+import { InputLayout } from '../../StringFld/InputLayout';
 
 describe('DirectoryTbl', () => {
 
@@ -50,15 +53,77 @@ describe('DirectoryTbl', () => {
   });
 
 
-  test('click add Btn', () => {
+  test('click toolbar btns', () => {
+    // add
     const onChange =  jest.fn((items) => items)
     const component = shallow(<DirectoryTbl items={items} onChange={onChange} columns={columns} />);
     component.find(GridLayout).dive().find(ToolbarLayout).dive().find(ImgButtonLayout).at(0).dive().find('div').simulate('click');
-    expect(onChange.mock.calls.length).toBe(1);
-    //expect(onChange.mock.results[0].value).toBe('');
-    //console.dir(component.find(GridLayout).dive().find(ItemsLayout).dive().debug());
-    //console.dir(component.find(GridLayout).dive().find(ToolbarLayout).dive().find(ImgButtonLayout).at(0).dive().find('div').debug())
+    
+    //remove
+    component.find(GridLayout).dive().find(ToolbarLayout).dive().find(ImgButtonLayout).at(1).dive().find('div').simulate('click');
+    expect(onChange.mock.calls.length).toBe(2);
   })
+
+
+  test('select row & change val', () => {
+    const onChange =  jest.fn((items) => items)
+    const onSelectItem =  jest.fn((item) => item)
+    const component = shallow(<DirectoryTbl items={items} onSelectItem = {onSelectItem} onChange={onChange} columns={columns} />);
+    let td = component.find(GridLayout).dive().find(ItemsLayout).dive()
+                      .find(RowLayout).at(0).dive().find(CellLayout).at(0).dive().find(StringFldCell).dive().find('td');
+
+    td.simulate('mousedown');
+    expect(onSelectItem.mock.calls.length).toBe(1);
+
+    let input = component.find(GridLayout).dive().find(ItemsLayout).dive()
+    .find(RowLayout).at(0).dive().find(CellLayout).at(0).dive().find(StringFldCell)
+    .dive().find(StringFldLayoutEdit).dive().find(FieldLayoutEdit)
+    .dive().find(InputLayout).dive().find('input');
+
+    input.simulate('change', {target: {value: 'blabla'}});
+    expect(onChange.mock.calls.length).toBe(1);
+  })
+
+  test('HEDAER: check sort column click',() => {
+    const component = shallow(<DirectoryTbl items={items} columns={columns} />);
+    let cell = component.find(GridLayout).dive()
+        .find(HeaderLayout).dive().find(HeaderRowLayout).dive().find(HeaderCellLayout)
+        .at(0).dive();
+    cell.find(".st-grid-head-cell-textContainer").simulate('click');
+    expect(cell.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1)
+    cell.find(".st-grid-head-cell-textContainer").simulate('click');
+    expect(cell.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1)
+    cell.find(".st-grid-head-cell-textContainer").simulate('click');
+    expect(cell.find(".st-grid-head-cell-sortAnchor")).toHaveLength(0)
+  })
+
+  test('HEDAER: change columns width',() => {
+    const component = shallow(<DirectoryTbl items={items} columns={columns} />);
+    let cell = component.find(GridLayout).dive()
+        .find(HeaderLayout).dive().find(HeaderRowLayout).dive().find(HeaderCellLayout)
+        .at(0)
+    cell.dive().find('.st-grid-head-cell-widthChangeAnchor').simulate('mousedown',{pageX: 200});
+    
+  });
+
+
+  test('ITEMS: onmousewhell & scrolls',()=>{
+    const component = mount(<DirectoryTbl items={items.concat(items, items,items)}  columns={columns} />);
+    let wr = component.find('.st-grid-body-div');
+    wr.simulate('wheel',{deltaY: 200})
+    wr.simulate('wheel',{deltaY: -100})
+    wr.simulate('scroll',{deltaY: 200})
+    wr.simulate('scroll',{deltaY: -100})
+    wr = component.find('.st-grid-rightScroll-div');
+    wr.simulate('scroll',{deltaY: 200})
+    wr.simulate('scroll',{deltaY: -100})
+
+    wr = component.find('.st-grid-bottomScroll-div');
+    wr.simulate('scroll',{deltaY: 200})
+    wr.simulate('scroll',{deltaY: -100})
+    
+  });
+
 
   
  })

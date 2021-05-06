@@ -28,7 +28,7 @@ export function onChangeItem(this: DirectoryTbl, item: typeItem, cellAlias: stri
   }
   
 
-  if(ST.isFunction(this.props.onChange))
+  if(this.props.onChange)
   {
     this.props.onChange(newItems, {event: 'changeItem', selItemNum: selNum, cellAlias, newVal});
   }
