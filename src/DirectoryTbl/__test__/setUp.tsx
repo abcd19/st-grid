@@ -83,27 +83,3 @@ export let columns: typeColumn[] = [
     }
   }
 ];
-
-export const setUp = (props?: IDirectoryTblProps) => {
-
-
-
-  const onChange = () => { };
-  const onSelectItem = () => { }
-  return shallow(<DirectoryTbl
-    height={400}
-    width={900}
-    columns={columns}
-    sortingFlag={true}
-    items={items}
-    addBtnFlag={true}
-    removeBtnFlag={true}
-    removeAllBtnFlag={true}
-    onChange={onChange}
-    onSelectItem={onSelectItem}
-    onRemoveAllItems={() => { }}
-    { ...props}
-  />);
-}
-
-

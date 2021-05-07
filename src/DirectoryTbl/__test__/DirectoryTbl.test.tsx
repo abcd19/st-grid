@@ -1,69 +1,56 @@
 import React from 'react';
 import {DirectoryTbl, IDirectoryTblProps} from './../DirectoryTbl';
-import {ComboboxFldCell} from './../../ComboboxFld/ComboboxFldCell';
-import {CheckboxFldCell} from './../../CheckboxFld/CheckboxFldCell';
-import {StringFldCell} from './../../StringFld/StringFldCell';
+import {StringFldCell, CheckboxFldCell, ComboboxFldCell, typeColumn} from './../../Grid';
 import { shallow, mount} from 'enzyme';
-import { typeColumn } from '../../Grid/GridLayout';
-import {GridLayout} from './../../Grid/GridLayout';
-import {ItemsLayout} from './../../Grid/Items/ItemsLayout';
-import {HeaderLayout} from './../../Grid/Header/HeaderLayout';
+import {GridLayout} from './../../Grid';
+import {ItemsLayout} from './../../Grid/Items';
+import {HeaderLayout} from './../../Grid/Header';
 import {HeaderCellLayout} from './../../Grid/Header/HeaderCellLayout';
-import {ToolbarLayout} from './../../Grid/Toolbar/ToolbarLayout'
+import {ToolbarLayout} from './../../Grid/Toolbar'
 import {RowLayout} from './../../Grid/Items/Table/RowLayout';
 import {HeaderRowLayout} from './../../Grid/Header/HeaderRowLayout';
 import {CellLayout} from './../../Grid/Items/Cell/CellLayout'
-import {ImgButtonLayout} from './../../StringFld/ImgButtonLayout';
 import {columns, items} from './setUp'
 
-import {setUp} from './setUp';
-import { StringFldLayoutEdit } from '../../StringFld/StringFldLayoutEdit';
-import { FieldLayoutEdit } from '../../StringFld/FieldLayoutEdit';
-import { InputLayout } from '../../StringFld/InputLayout';
+import { StringFldLayoutEdit, FieldLayoutEdit, InputLayout , ImgButtonLayout} from '../../StringFld';
+
 
 describe('DirectoryTbl', () => {
 
   it('should created successfully', () => {
-    const component = setUp();
-    let gird = component.find(GridLayout);
-    expect(gird).toHaveLength(1);
-    // toolbar
-    let toolbar = gird.dive().find(ToolbarLayout);
-    expect(toolbar).toHaveLength(1);
-    expect(toolbar.dive().find(ImgButtonLayout)).toHaveLength(3);
-    
-    //  header
-    let header = gird.dive().find(HeaderLayout);
-    expect(header).toHaveLength(1);
-    expect(header.dive().find(HeaderRowLayout)).toHaveLength(1);
-    let hRow = header.dive().find(HeaderRowLayout).dive().find(HeaderCellLayout);
-    expect(hRow).toHaveLength(5);
-    expect(hRow.at(0).dive().find(".st-grid-head-cell-textContainer").text()).toBe('№')
-
-    //  items
-    let items = gird.dive().find(ItemsLayout);
-    expect(items).toHaveLength(1);
-    expect(items.dive().find(RowLayout)).toHaveLength(3);
-    //firts row
-    let fr = items.dive().find(RowLayout).first().dive();
-    expect(fr.find(CellLayout)).toHaveLength(5);
-    expect(fr.find(CellLayout).at(0).dive().find(StringFldCell)).toHaveLength(1);
-    expect(fr.find(CellLayout).at(3).dive().find(CheckboxFldCell)).toHaveLength(1);
-    expect(fr.find(CellLayout).at(4).dive().find(ComboboxFldCell)).toHaveLength(1);
+    const component = mount(<DirectoryTbl columns = {columns}  />);
+    expect(component.render()).toMatchSnapshot();
   });
 
 
-  test('click toolbar btns', () => {
+  it('items property', () => {
+    const component = mount(<DirectoryTbl items={items} columns = {columns} />);
+    expect(component.render()).toMatchSnapshot();
+  });
+
+
+  test('click add btn', () => {
     // add
-    const onChange =  jest.fn((items) => items)
-    const component = shallow(<DirectoryTbl items={items} onChange={onChange} columns={columns} />);
-    component.find(GridLayout).dive().find(ToolbarLayout).dive().find(ImgButtonLayout).at(0).dive().find('div').simulate('click');
-    
-    //remove
-    component.find(GridLayout).dive().find(ToolbarLayout).dive().find(ImgButtonLayout).at(1).dive().find('div').simulate('click');
-    expect(onChange.mock.calls.length).toBe(2);
+    const onChange =  jest.fn((newItems) => {
+      expect(newItems.length).toBe(items.length + 1)
+    })
+    const component = mount(<DirectoryTbl items={items} onChange={onChange} columns={columns} />);
+    component.find(ToolbarLayout).find(ImgButtonLayout).at(0).find('div').simulate('click');
+    expect(component.render()).toMatchSnapshot();
+    expect(onChange).toHaveBeenCalled();
   })
 
+
+  test('click remove btn',()=>{
+    const onChange =  jest.fn((newItems) => {
+      expect(newItems.length).toBe(items.length - 1)
+    })
+    const component = mount(<DirectoryTbl items={items} onChange={onChange} columns={columns} />);
+    component.find(RowLayout).at(0).find(CellLayout).at(0).find(StringFldCell).find('td').simulate('mousedown');
+    component.find(ToolbarLayout).find(ImgButtonLayout).at(1).find('div').simulate('click');
+    expect(component.render()).toMatchSnapshot();
+    expect(onChange).toHaveBeenCalled();
+  });
 
   test('select row & change val', () => {
     const onChange =  jest.fn((items) => items)

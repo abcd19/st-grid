@@ -1,0 +1,1384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DirectoryTbl click add btn 1`] = `
+<table
+  class="st-grid-layout"
+>
+  <tbody>
+    <tr>
+      <td>
+        <div
+          class="st-grid-toolbar-div"
+          style="margin-bottom: 2px; width: 380px;"
+        >
+          <table
+            class="st-field-table-project st-linear-table"
+            style="padding: 0px; margin: 0px; border-spacing: 0px;"
+          >
+            <tbody>
+              <tr>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_plus"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Добавить"
+                  />
+                </td>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_remove"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Удалить"
+                  />
+                </td>
+                <td
+                  style="padding: 0px; margin: 0px;"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </td>
+      <td
+        class="st-grid-toolbar-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-header-td"
+      >
+        <div
+          class="st-grid-header-div"
+          style="height: 32px; width: 380px;"
+        >
+          <div
+            class="st-grid-header-content-div"
+            style="height: 32px;"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              class="st-innerTableLayout-table"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        №
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        Login
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        User name
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Verified
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Level
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-header-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-body-td"
+      >
+        <div
+          class="st-grid-body-div"
+          style="width: 380px; height: 116px;"
+        >
+          <div
+            class="st-grid-body-content-div"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     1
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Jane
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Jane Smith
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 30px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     newcomer
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     3
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Steven
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Steven Tyler
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 0px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     advanced user
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     2
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     John
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     John Cash
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 30px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     intermediate
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr
+                  class="free-spaceTr"
+                >
+                  <td
+                    colspan="5"
+                    style="height: 30px;"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-body-rightScroll"
+      >
+        <div
+          class="st-grid-rightScroll-div"
+          style="width: 20px; height: 116px;"
+        >
+          <div
+            style="height: 90px;"
+          />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          class="st-grid-bottomScroll-div"
+          style="height: 20px; width: 380px;"
+        >
+          <div
+            class="st-grid-bottomScroll-content-div"
+            style="height: 20px;"
+          />
+        </div>
+      </td>
+      <td />
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`DirectoryTbl click remove btn 1`] = `
+<table
+  class="st-grid-layout"
+>
+  <tbody>
+    <tr>
+      <td>
+        <div
+          class="st-grid-toolbar-div"
+          style="margin-bottom: 2px; width: 380px;"
+        >
+          <table
+            class="st-field-table-project st-linear-table"
+            style="padding: 0px; margin: 0px; border-spacing: 0px;"
+          >
+            <tbody>
+              <tr>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_plus"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Добавить"
+                  />
+                </td>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_remove"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Удалить"
+                  />
+                </td>
+                <td
+                  style="padding: 0px; margin: 0px;"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </td>
+      <td
+        class="st-grid-toolbar-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-header-td"
+      >
+        <div
+          class="st-grid-header-div"
+          style="height: 32px; width: 380px;"
+        >
+          <div
+            class="st-grid-header-content-div"
+            style="height: 32px;"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              class="st-innerTableLayout-table"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        №
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        Login
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        User name
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Verified
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Level
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-header-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-body-td"
+      >
+        <div
+          class="st-grid-body-div"
+          style="width: 380px; height: 116px;"
+        >
+          <div
+            class="st-grid-body-content-div"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     1
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Jane
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Jane Smith
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 30px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     newcomer
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     3
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Steven
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Steven Tyler
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 0px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     advanced user
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     2
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     John
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     John Cash
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 30px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     intermediate
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr
+                  class="free-spaceTr"
+                >
+                  <td
+                    colspan="5"
+                    style="height: 30px;"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-body-rightScroll"
+      >
+        <div
+          class="st-grid-rightScroll-div"
+          style="width: 20px; height: 116px;"
+        >
+          <div
+            style="height: 90px;"
+          />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          class="st-grid-bottomScroll-div"
+          style="height: 20px; width: 380px;"
+        >
+          <div
+            class="st-grid-bottomScroll-content-div"
+            style="height: 20px;"
+          />
+        </div>
+      </td>
+      <td />
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`DirectoryTbl items property 1`] = `
+<table
+  class="st-grid-layout"
+>
+  <tbody>
+    <tr>
+      <td>
+        <div
+          class="st-grid-toolbar-div"
+          style="margin-bottom: 2px; width: 380px;"
+        >
+          <table
+            class="st-field-table-project st-linear-table"
+            style="padding: 0px; margin: 0px; border-spacing: 0px;"
+          >
+            <tbody>
+              <tr>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_plus"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Добавить"
+                  />
+                </td>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_remove"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Удалить"
+                  />
+                </td>
+                <td
+                  style="padding: 0px; margin: 0px;"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </td>
+      <td
+        class="st-grid-toolbar-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-header-td"
+      >
+        <div
+          class="st-grid-header-div"
+          style="height: 32px; width: 380px;"
+        >
+          <div
+            class="st-grid-header-content-div"
+            style="height: 32px;"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              class="st-innerTableLayout-table"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        №
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        Login
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        User name
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Verified
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Level
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-header-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-body-td"
+      >
+        <div
+          class="st-grid-body-div"
+          style="width: 380px; height: 116px;"
+        >
+          <div
+            class="st-grid-body-content-div"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     1
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Jane
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Jane Smith
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 30px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     newcomer
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     3
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Steven
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     Steven Tyler
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 0px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     advanced user
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     2
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     John
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     John Cash
+                  </td>
+                  <td
+                    align="center"
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
+                  >
+                    <div
+                      class="pr-checkbox-imgCont"
+                      style="background-position: 30px 15px; opacity: 1;"
+                    />
+                  </td>
+                  <td
+                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
+                  >
+                     intermediate
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+                <tr
+                  class="free-spaceTr"
+                >
+                  <td
+                    colspan="5"
+                    style="height: 30px;"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-body-rightScroll"
+      >
+        <div
+          class="st-grid-rightScroll-div"
+          style="width: 20px; height: 116px;"
+        >
+          <div
+            style="height: 90px;"
+          />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          class="st-grid-bottomScroll-div"
+          style="height: 20px; width: 380px;"
+        >
+          <div
+            class="st-grid-bottomScroll-content-div"
+            style="height: 20px;"
+          />
+        </div>
+      </td>
+      <td />
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`DirectoryTbl should created successfully 1`] = `
+<table
+  class="st-grid-layout"
+>
+  <tbody>
+    <tr>
+      <td>
+        <div
+          class="st-grid-toolbar-div"
+          style="margin-bottom: 2px; width: 380px;"
+        >
+          <table
+            class="st-field-table-project st-linear-table"
+            style="padding: 0px; margin: 0px; border-spacing: 0px;"
+          >
+            <tbody>
+              <tr>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_plus"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Добавить"
+                  />
+                </td>
+                <td
+                  align="center"
+                  style="padding: 0px; margin: 0px; height: 32px; width: 32px;"
+                >
+                  <div
+                    class="st_icon_32_remove"
+                    style="width: 32px; height: 32px; background-color: transparent;"
+                    title="Удалить"
+                  />
+                </td>
+                <td
+                  style="padding: 0px; margin: 0px;"
+                />
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </td>
+      <td
+        class="st-grid-toolbar-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-header-td"
+      >
+        <div
+          class="st-grid-header-div"
+          style="height: 32px; width: 380px;"
+        >
+          <div
+            class="st-grid-header-content-div"
+            style="height: 32px;"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              class="st-innerTableLayout-table"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        №
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        Login
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 100px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 88px;"
+                      >
+                        User name
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Verified
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell st-grid-head-cell-project"
+                    style="box-sizing: border-box; width: 200px;"
+                  >
+                    <div
+                      class="st-grid-head-cell-general"
+                      style="height: 29px;"
+                    >
+                      <div
+                        class="st-grid-head-cell-textContainer"
+                        style="height: 29px; line-height: 29px; width: 188px;"
+                      >
+                        Level
+                      </div>
+                      <div
+                        class="st-grid-head-cell-widthChangeAnchor"
+                        style="height: 29px; width: 5px;"
+                      />
+                      <div
+                        style="clear: left;"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="st-grid-head-cell-freeSpace"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-header-rightScroll"
+      />
+    </tr>
+    <tr>
+      <td
+        class="st-grid-body-td"
+      >
+        <div
+          class="st-grid-body-div"
+          style="width: 380px; height: 116px;"
+        >
+          <div
+            class="st-grid-body-content-div"
+          >
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              style="border-collapse: collapse;"
+            >
+              <tbody>
+                <tr
+                  class="free-spaceTr"
+                >
+                  <td
+                    colspan="5"
+                    style="height: 30px;"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </td>
+      <td
+        class="st-grid-body-rightScroll"
+      >
+        <div
+          class="st-grid-rightScroll-div"
+          style="width: 20px; height: 116px;"
+        >
+          <div
+            style="height: 0px;"
+          />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div
+          class="st-grid-bottomScroll-div"
+          style="height: 20px; width: 380px;"
+        >
+          <div
+            class="st-grid-bottomScroll-content-div"
+            style="height: 20px;"
+          />
+        </div>
+      </td>
+      <td />
+    </tr>
+  </tbody>
+</table>
+`;

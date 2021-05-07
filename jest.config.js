@@ -4,6 +4,11 @@ module.exports = {
     "\\.(css|scss|less)$": "identity-obj-proxy"
   },
   setupFilesAfterEnv: ["<rootDir>/setupTests.js"],
+  
+  snapshotSerializers: [
+    "enzyme-to-json/serializer"
+  ],
+  coveragePathIgnorePatterns: ['/node_modules/','index.tsx', 'setUp.tsx']
   /*moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "json"],
   transform: {
       "^.+\\.(js|jsx|ts|tsx)$": 'ts-jest'

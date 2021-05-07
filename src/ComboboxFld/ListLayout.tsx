@@ -65,6 +65,7 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
 
     changeSearchHandle(val?: string): void
     {
+
       const ar = [];
       for(let i = 0;  i < this.props.items.length; i++)
       {
@@ -198,7 +199,7 @@ export class ListLayout extends React.Component<IListLayoutProps, IListLayoutSta
       {
         searchBlock = <tr>
                           <td>
-                            <div><SearchFldLayoutEdit onChangeDelay = { this.changeSearchHandle } /></div>
+                            <div><SearchFldLayoutEdit onSearchBtnClick = { this.changeSearchHandle } onChangeDelay = { this.changeSearchHandle } /></div>
                           </td>
                         </tr>;
       }

@@ -1,20 +1,19 @@
 import * as ST from '../common';
 import React from 'react';
 
-import { HeaderLayout } from './Header/HeaderLayout';
-import { ItemsLayout, CELL_HEIGHT } from './Items/ItemsLayout';
-import { ToolbarLayout } from './Toolbar/ToolbarLayout'
+import { HeaderLayout } from './Header';
+import { ItemsLayout, tyepCellVal, CELL_HEIGHT } from './Items';
+import { ToolbarLayout, IToolbarLayoutProps } from './Toolbar'
 import { calcSumColumnsWidth } from './calcSumColumnsWidth';
 import './GridLayout.scss'
 import { onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth } from './handle'
-import {IToolbarLayoutProps} from './Toolbar/ToolbarLayout';
-import {IStringFldLayoutEditProps} from './../StringFld/StringFldLayoutEdit';
-import {IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/} from './../ComboboxFld/ComboboxFldLayoutEdit';
-import {ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/} from './../CheckboxFld/CheckboxFldLayoutEdit';
+import {IStringFldLayoutEditProps} from './../StringFld';
+import {IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/} from './../ComboboxFld';
+import {ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/} from './../CheckboxFld';
 //import {ComboboxFldCell, IComboboxFldCellProps} from './../ComboboxFld/ComboboxFldCell';
 //import {CheckboxFldCell, ICheckboxFldCellProps} from './../CheckboxFld/CheckboxFldCell';
-import {StringFldCell/*, StringFldCellProps*/} from './../StringFld/StringFldCell';
-import {tyepCellVal} from './Items/Cell/CellLayout'
+//import {StringFldCell/*, StringFldCellProps*/} from './../StringFld/StringFldCell';
+
 
 
 export type typeTypeColumn = {

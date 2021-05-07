@@ -43,7 +43,7 @@ export const MyCheckbox = () =>
 export function run()
 {    
     ReactDOM.render(      
-        <MyTable  />
+        <MyCombobox  />
     , document.getElementById('myTbl1'));
 
 } 

@@ -1,12 +1,9 @@
 import React from 'react'
-import {GridLayout} from './../Grid/GridLayout'
+import {GridLayout, IToolbarLayoutProps, typeColumn, typeItem, tyepCellVal} from './../Grid'
 import {onChangeItem, onMouseDownItem, onClickHeaderCell} from './DirectoryTblHandle'
 import {sortItems} from './Sorting/sortItems';
 import * as ST from '../common'
 import {createDirectoryTableToolbar} from './Toolbar/createDirectoryTableToolbar';
-import {typeColumn, typeItem} from './../Grid/GridLayout';
-import {tyepCellVal} from './../Grid/Items/Cell/CellLayout';
-import {IToolbarLayoutProps} from './../Grid/Toolbar/ToolbarLayout';
 
 export interface IDirectoryTblProps {
   height?: number; 

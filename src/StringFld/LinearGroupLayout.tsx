@@ -6,7 +6,7 @@ import {IInputLayoutProps} from './InputLayout';
 import {IImgButtonLayoutProps} from './ImgButtonLayout';
 
 
-interface ILinearGroupLayoutProps {
+export interface ILinearGroupLayoutProps {
   children:  Array<React.ReactElement<IImgButtonLayoutProps | IInputLayoutProps>>;
   height?: number;
   prepareGridDisplay?: boolean;
