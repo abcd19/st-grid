@@ -7,7 +7,10 @@ function setUpDomEnvironment() {
   const dom = new JSDOM('<!doctype html><html><body></body></html>', {url: 'http://localhost/'});
   const { window } = dom;
 
-  global.window = window;
+  window.innerWidth = 1900;
+  window.innerHeight = 900;
+
+
   global.document = window.document;
   global.navigator = {
       userAgent: 'node.js',
