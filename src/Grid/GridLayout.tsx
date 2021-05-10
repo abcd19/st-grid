@@ -34,7 +34,8 @@ export type typeItem = {
   data: Record<string, tyepCellVal>,
   rowNum?: number,
   layoutMode?: string,
-  color?: string
+  color?: string,
+  propsI?: number
 }
 
 

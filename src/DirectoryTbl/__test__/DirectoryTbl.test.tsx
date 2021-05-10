@@ -88,6 +88,7 @@ describe('DirectoryTbl', () => {
     const component = mount(<DirectoryTbl items={items} columns={columns} />);
     component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
+    component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('mousedown');
     component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
     component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
