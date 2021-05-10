@@ -1,12 +1,12 @@
 
 
-import * as ST from '../../../common.js'
+import * as ST from '../../common.js'
 import React from 'react';
 import './Cell.scss';
-import {tyepStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
-import {typeComboValue} from './../../../ComboboxFld/ListLayout';
-import {tyepCheckboxFldVal} from './../../../CheckboxFld/CheckboxFldLayoutEdit'
-import { typeItem, typeTypeColumn } from './../../GridLayout'
+import {tyepStringFldVal} from './../../StringFld/StringFldLayoutEdit';
+import {typeComboValue} from './../../ComboboxFld/ListLayout';
+import {tyepCheckboxFldVal} from './../../CheckboxFld/CheckboxFldLayoutEdit'
+import { typeItem, typeTypeColumn } from './../GridLayout'
 export type tyepCellVal = tyepStringFldVal | typeComboValue |  tyepCheckboxFldVal; 
 
 

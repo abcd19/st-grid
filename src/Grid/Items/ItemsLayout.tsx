@@ -2,7 +2,7 @@
 import { renderRows } from './renderRows';
 import React from 'react';
 import { typeItem, typeColumn } from './../GridLayout'
-import { tyepCellVal } from './Cell/CellLayout'
+import { tyepCellVal } from './CellLayout'
 
 export interface IItemsLayoutProps {
   columns: typeColumn[];

@@ -1,9 +1,9 @@
-import * as ST from '../../../common'
-import { CellLayout } from '../Cell/CellLayout';
+import * as ST from '../../common'
+import { CellLayout } from './CellLayout';
 import React from 'react';
-import { tyepCellVal } from './../Cell/CellLayout'
-import { typeColumn, typeItem } from './../../../Grid/GridLayout'
-import {StringFldCell} from './../../../StringFld/StringFldCell'
+import { tyepCellVal } from './CellLayout'
+import { typeColumn, typeItem } from '../GridLayout'
+import {StringFldCell} from '../../StringFld/StringFldCell'
 
 
 export interface IRowLayoutProps {

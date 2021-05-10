@@ -7,9 +7,9 @@ import {ItemsLayout} from './../../Grid/Items';
 import {HeaderLayout} from './../../Grid/Header';
 import {HeaderCellLayout} from './../../Grid/Header/HeaderCellLayout';
 import {ToolbarLayout} from './../../Grid/Toolbar'
-import {RowLayout} from './../../Grid/Items/Table/RowLayout';
+import {RowLayout} from '../../Grid/Items/RowLayout';
 import {HeaderRowLayout} from './../../Grid/Header/HeaderRowLayout';
-import {CellLayout} from './../../Grid/Items/Cell/CellLayout'
+import {CellLayout} from './../../Grid/Items/CellLayout'
 import {columns, items} from './setUp'
 
 import { StringFldLayoutEdit, FieldLayoutEdit, InputLayout , ImgButtonLayout} from '../../StringFld';

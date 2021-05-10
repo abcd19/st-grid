@@ -1,5 +1,5 @@
 import * as ST from '../../common';
-import { RowLayout } from './Table/RowLayout'
+import { RowLayout } from './RowLayout'
 import { CELL_HEIGHT } from './ItemsLayout'
 import React from 'react';
 import { ItemsLayout } from './ItemsLayout'
