@@ -16,7 +16,7 @@ export interface StringFldCellProps {
 }
 
 export const StringFldCell : React.FC<StringFldCellProps> = (
-  {layoutMode, style, onMouseDownItem, onChangeItem, className, val = undefined,
+  {layoutMode, style, onMouseDownItem, onChangeItem, className, val,
       onMouseEnterItem, onDoubleClickItem, onMouseLeaveItem, onClickItem}: StringFldCellProps) =>
 {
  
@@ -29,13 +29,6 @@ export const StringFldCell : React.FC<StringFldCellProps> = (
         </td>
       );
   }
-
-    if(ST.isUndefined(val))
-    {
-      val  = '';
-    }else{
-      val = String(val)
-    }
      
   return (
       <td  style={style} onClick = {onClickItem} onMouseEnter={onMouseEnterItem} onMouseLeave={onMouseLeaveItem} onDoubleClick = {onDoubleClickItem}  onMouseDown = {onMouseDownItem} className={className}> { val }</td>

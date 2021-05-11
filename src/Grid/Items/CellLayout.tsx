@@ -62,59 +62,43 @@ class CellLayout extends React.Component<ICellLayoutProps> {
   }
 
   onMouseEnterItem(): void {
-    if (ST.has(this.props, 'onMouseEnterItem')) {
       this.props['onMouseEnterItem'](this.props.alias);
-    }
   }
 
   onMouseLeaveItem(): void {
-    if (ST.has(this.props, 'onMouseLeaveItem')) {
       this.props['onMouseLeaveItem'](this.props.alias);
-    }
   }
 
   onMouseDownItem(): void {
-    if (ST.has(this.props, 'onMouseDownItem')) {
       this.props['onMouseDownItem'](this.props.alias);
-    }
   }
 
   onChangeItem(/*cellAlias: string,*/ val: tyepCellVal): void {
-    if (ST.has(this.props, 'onChangeItem')) {
       this.props['onChangeItem'](this.props.alias, val);
-    }
   }
 
   onDoubleClickItem(/*cellAlias: string*/): void {
-    if (ST.has(this.props, 'onDoubleClickItem')) {
       this.props['onDoubleClickItem'](this.props.alias);
-    }
   }
 
   onClickItem(/*cellAlias: string*/): void {
-    if (ST.has(this.props, 'onClickItem')) {
       this.props['onClickItem'](this.props.alias);
-    }
   }
 
   render(): React.ReactElement {
 
-    //определяем цвет
-    let color = undefined;
-    if (this.props.color != '') {
-      color = this.props.color;
-    }
-
-    //Если строка выделена, то создаем компонент
+    let {color = '', widthPix, display, layoutMode, defaultColor, rowItem, val} = this.props;
+    
+    //If the line is selected, then create a component
     const style = {
-      width: this.props.widthPix + 'px', //на ширину левого падднинга
-      maxWidth: this.props.widthPix + 'px', //на ширину левого падднинга
-      display: this.props.display,
+      width: widthPix + 'px', //на ширину левого падднинга
+      maxWidth: widthPix + 'px', //на ширину левого падднинга
+      display: display,
       background: color,
       ...this._baseStyle
     }
 
-    if (this.props.layoutMode != 'edit') {
+    if (layoutMode != 'edit') {
       style.overflow = 'hidden';
       style.paddingLeft = '5px';
     }
@@ -122,21 +106,21 @@ class CellLayout extends React.Component<ICellLayoutProps> {
 
 
 
-    const className = 'st-grid-body-cell ' + this.props.defaultColor;
+    const className = 'st-grid-body-cell ' + defaultColor;
 
     //создаем ячейку
     return (<this.props.type.constr
-      layoutMode={this.props.layoutMode}
+      layoutMode={layoutMode}
       style={style}
-      widthPix={this.props.widthPix}
+      widthPix={widthPix}
       onChangeItem={this.onChangeItem}
       onMouseDownItem={this.onMouseDownItem}
       onMouseLeaveItem={this.onMouseLeaveItem}
       onMouseEnterItem={this.onMouseEnterItem}
       onDoubleClickItem={this.onDoubleClickItem}
       onClickItem={this.onClickItem}
-      rowItem={this.props.rowItem}
-      val={this.props.val}
+      rowItem={rowItem}
+      val={val}
       settings={this.props.type.settings}
       className={className} />)
   }

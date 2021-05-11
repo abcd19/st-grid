@@ -81,29 +81,6 @@ exports[`DirectoryTbl change header cell width 1`] = `
                         class="st-grid-head-cell-textContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
-                        №
-                      </div>
-                      <div
-                        class="st-grid-head-cell-widthChangeAnchor"
-                        style="height: 29px; width: 5px;"
-                      />
-                      <div
-                        style="clear: left;"
-                      />
-                    </div>
-                  </td>
-                  <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
-                    style="box-sizing: border-box; width: 100px;"
-                  >
-                    <div
-                      class="st-grid-head-cell-general"
-                      style="height: 29px;"
-                    >
-                      <div
-                        class="st-grid-head-cell-textContainer"
-                        style="height: 29px; line-height: 29px; width: 88px;"
-                      >
                         Login
                       </div>
                       <div
@@ -219,12 +196,6 @@ exports[`DirectoryTbl change header cell width 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     1
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Jane
                   </td>
                   <td
@@ -258,12 +229,6 @@ exports[`DirectoryTbl change header cell width 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-two"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     3
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Steven
                   </td>
                   <td
@@ -293,12 +258,6 @@ exports[`DirectoryTbl change header cell width 1`] = `
                   />
                 </tr>
                 <tr>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     2
-                  </td>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
@@ -446,29 +405,6 @@ exports[`DirectoryTbl change header cell width 2`] = `
                 <tr>
                   <td
                     class="st-grid-head-cell st-grid-head-cell-project"
-                    style="box-sizing: border-box; width: 100px;"
-                  >
-                    <div
-                      class="st-grid-head-cell-general"
-                      style="height: 29px;"
-                    >
-                      <div
-                        class="st-grid-head-cell-textContainer"
-                        style="height: 29px; line-height: 29px; width: 88px;"
-                      >
-                        №
-                      </div>
-                      <div
-                        class="st-grid-head-cell-widthChangeAnchor"
-                        style="height: 29px; width: 5px;"
-                      />
-                      <div
-                        style="clear: left;"
-                      />
-                    </div>
-                  </td>
-                  <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
                     style="box-sizing: border-box; width: 300px;"
                   >
                     <div
@@ -592,12 +528,6 @@ exports[`DirectoryTbl change header cell width 2`] = `
                 <tr>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     1
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 300px; max-width: 300px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane
@@ -631,12 +561,6 @@ exports[`DirectoryTbl change header cell width 2`] = `
                 <tr>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-two"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     3
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
                     style="width: 300px; max-width: 300px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven
@@ -668,12 +592,6 @@ exports[`DirectoryTbl change header cell width 2`] = `
                   />
                 </tr>
                 <tr>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     2
-                  </td>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 300px; max-width: 300px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
@@ -831,29 +749,6 @@ exports[`DirectoryTbl click add btn 1`] = `
                         class="st-grid-head-cell-textContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
-                        №
-                      </div>
-                      <div
-                        class="st-grid-head-cell-widthChangeAnchor"
-                        style="height: 29px; width: 5px;"
-                      />
-                      <div
-                        style="clear: left;"
-                      />
-                    </div>
-                  </td>
-                  <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
-                    style="box-sizing: border-box; width: 100px;"
-                  >
-                    <div
-                      class="st-grid-head-cell-general"
-                      style="height: 29px;"
-                    >
-                      <div
-                        class="st-grid-head-cell-textContainer"
-                        style="height: 29px; line-height: 29px; width: 88px;"
-                      >
                         Login
                       </div>
                       <div
@@ -969,12 +864,6 @@ exports[`DirectoryTbl click add btn 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     1
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Jane
                   </td>
                   <td
@@ -1008,12 +897,6 @@ exports[`DirectoryTbl click add btn 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-two"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     3
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Steven
                   </td>
                   <td
@@ -1043,12 +926,6 @@ exports[`DirectoryTbl click add btn 1`] = `
                   />
                 </tr>
                 <tr>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     2
-                  </td>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
@@ -1206,29 +1083,6 @@ exports[`DirectoryTbl click remove btn 1`] = `
                         class="st-grid-head-cell-textContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
-                        №
-                      </div>
-                      <div
-                        class="st-grid-head-cell-widthChangeAnchor"
-                        style="height: 29px; width: 5px;"
-                      />
-                      <div
-                        style="clear: left;"
-                      />
-                    </div>
-                  </td>
-                  <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
-                    style="box-sizing: border-box; width: 100px;"
-                  >
-                    <div
-                      class="st-grid-head-cell-general"
-                      style="height: 29px;"
-                    >
-                      <div
-                        class="st-grid-head-cell-textContainer"
-                        style="height: 29px; line-height: 29px; width: 88px;"
-                      >
                         Login
                       </div>
                       <div
@@ -1344,12 +1198,6 @@ exports[`DirectoryTbl click remove btn 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     1
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Jane
                   </td>
                   <td
@@ -1383,12 +1231,6 @@ exports[`DirectoryTbl click remove btn 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-two"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     3
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Steven
                   </td>
                   <td
@@ -1418,12 +1260,6 @@ exports[`DirectoryTbl click remove btn 1`] = `
                   />
                 </tr>
                 <tr>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     2
-                  </td>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
@@ -1581,29 +1417,6 @@ exports[`DirectoryTbl items property 1`] = `
                         class="st-grid-head-cell-textContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
-                        №
-                      </div>
-                      <div
-                        class="st-grid-head-cell-widthChangeAnchor"
-                        style="height: 29px; width: 5px;"
-                      />
-                      <div
-                        style="clear: left;"
-                      />
-                    </div>
-                  </td>
-                  <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
-                    style="box-sizing: border-box; width: 100px;"
-                  >
-                    <div
-                      class="st-grid-head-cell-general"
-                      style="height: 29px;"
-                    >
-                      <div
-                        class="st-grid-head-cell-textContainer"
-                        style="height: 29px; line-height: 29px; width: 88px;"
-                      >
                         Login
                       </div>
                       <div
@@ -1719,12 +1532,6 @@ exports[`DirectoryTbl items property 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     1
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Jane
                   </td>
                   <td
@@ -1758,12 +1565,6 @@ exports[`DirectoryTbl items property 1`] = `
                     class="st-grid-body-cell st-grid-body-cell-project-two"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
-                     3
-                  </td>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
                      Steven
                   </td>
                   <td
@@ -1793,12 +1594,6 @@ exports[`DirectoryTbl items property 1`] = `
                   />
                 </tr>
                 <tr>
-                  <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
-                    style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
-                  >
-                     2
-                  </td>
                   <td
                     class="st-grid-body-cell st-grid-body-cell-project-one"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
@@ -1944,29 +1739,6 @@ exports[`DirectoryTbl should created successfully 1`] = `
             >
               <tbody>
                 <tr>
-                  <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
-                    style="box-sizing: border-box; width: 100px;"
-                  >
-                    <div
-                      class="st-grid-head-cell-general"
-                      style="height: 29px;"
-                    >
-                      <div
-                        class="st-grid-head-cell-textContainer"
-                        style="height: 29px; line-height: 29px; width: 88px;"
-                      >
-                        №
-                      </div>
-                      <div
-                        class="st-grid-head-cell-widthChangeAnchor"
-                        style="height: 29px; width: 5px;"
-                      />
-                      <div
-                        style="clear: left;"
-                      />
-                    </div>
-                  </td>
                   <td
                     class="st-grid-head-cell st-grid-head-cell-project"
                     style="box-sizing: border-box; width: 100px;"

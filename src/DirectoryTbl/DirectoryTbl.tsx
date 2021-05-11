@@ -1,7 +1,6 @@
 import React from 'react'
 import { GridLayout, IToolbarLayoutProps, typeColumn, typeItem, tyepCellVal } from './../Grid'
-import { onChangeItem, onMouseDownItem, onClickHeaderCell } from './DirectoryTblHandle'
-import { sortItems } from './Sorting/sortItems';
+import { onChangeItem, onMouseDownItem} from './DirectoryTblHandle'
 import * as ST from '../common'
 import { createDirectoryTableToolbar } from './Toolbar/createDirectoryTableToolbar';
 
@@ -17,6 +16,7 @@ export interface IDirectoryTblProps {
   onMouseLeaveItem?: (rowObject: typeItem, cellAlias: string) => void,
   onDoubleClickItem?: (rowObject: typeItem, cellAlias: string) => void;
   onRemoveAllItems?: () => void;
+  onClickItem?: (rowObject: typeItem, cellAlias: string) => void
   onSelectItem?: (item?: typeItem, num?: number) => void;
   onChange?: (newItems: typeItem[], obj: { event: string, removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal }) => void;
   columns: typeColumn[];
@@ -25,10 +25,6 @@ export interface IDirectoryTblProps {
 
 export interface IDirectoryTblState {
   scrollToLastItem: boolean;
-  sorting?: {
-    order: string | undefined,
-    cellAlias: string;
-  };
   selItemNum?: number;
 }
 
@@ -46,7 +42,7 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
   public onRemoveBtnClick: () => void = () => {/* do nothing */ };
   public onAddBtnClick: () => void = () => {/* do nothing */ };
   private onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void;
-  private onClickHeaderCell: (sortingCellAlias: string, orderSorting?: string) => void;
+
   private toolbar: IToolbarLayoutProps
 
   constructor(props: IDirectoryTblProps) {
@@ -54,14 +50,13 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
 
     this.onChangeItem = onChangeItem.bind(this);
     this.onMouseDownItem = onMouseDownItem.bind(this);
-    this.onClickHeaderCell = onClickHeaderCell.bind(this);
+
 
 
     this.toolbar = createDirectoryTableToolbar(this);
 
     this.state = {
       selItemNum: undefined,
-      sorting: undefined,
       scrollToLastItem: false,
     }
 
@@ -74,10 +69,11 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
     const {
       onMouseEnterItem = () => {/* do nothing */ },
       onMouseLeaveItem = () => {/* do nothing */ },
-      onDoubleClickItem = () => {/* do nothing */ }
+      onDoubleClickItem = () => {/* do nothing */ },
+      onClickItem = () => {/* do nothing */ }
     } = this.props;
 
-    const { scrollToLastItem, sorting, selItemNum } = this.state;
+    const { scrollToLastItem, selItemNum } = this.state;
     let { items = [] } = this.props
 
     for (const item of items) {
@@ -96,23 +92,17 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
 
     }
 
-    if (sorting && ST.isString(sorting.order)) {
-      items = sortItems(ST.clone(items), sorting.cellAlias, sorting.order);
-    }
-
-
-
     return <GridLayout
       scrollToLastItem={scrollToLastItem}
       width={width}
       height={height}
       onChangeItem={this.onChangeItem}
       onMouseDownItem={this.onMouseDownItem}
-      onClickHeaderCell={this.onClickHeaderCell}
+      onClickHeaderCell={()=> {/** do nothing  */}}
       onMouseEnterItem={onMouseEnterItem}
       onMouseLeaveItem={onMouseLeaveItem}
       onDoubleClickItem={onDoubleClickItem}
-      onClickItem={() => {/* do nothing */ }}
+      onClickItem={onClickItem}
       sortingFlag={sortingFlag}
       toolbar={this.toolbar}
       items={items}

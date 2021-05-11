@@ -1,5 +1,6 @@
 
 import * as ST from '../../common'
+import { typeItem } from '../../Grid';
 import { cloneData } from '../DirectoryTblFunctions'
 import { DirectoryTbl } from './../DirectoryTbl';
 
@@ -8,7 +9,9 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
   if (typeof(this.state.selItemNum) != 'number') {
     return;
   }
-  const newItems = cloneData(this.props.items);
+
+  let {items} = this.props;
+  const newItems = cloneData(items as typeItem[]);
   const removedItem = ST.clone(newItems[this.state.selItemNum]);
   newItems.splice(this.state.selItemNum, 1);
   this.setState({ selItemNum: undefined }, () => {
@@ -28,7 +31,10 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
 
 //click on the add row button
 export function onAddBtnClick(this: DirectoryTbl): void {
-  const newItems = cloneData(this.props.items);
+  
+  let {items} = this.props;
+
+  const newItems = cloneData(items as typeItem[]);
   newItems.push({ data: {} });
   if (this.props.onChange) {
     this.props.onChange(newItems, { event: 'addItem' });

@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Combobox readOnly 1`] = `
+<table
+  class="st-field-table-project st-linear-table"
+  style="padding: 0px; margin: 0px; border-spacing: 0px;"
+>
+  <tbody>
+    <tr>
+      <td
+        align="center"
+        style="padding: 0px; margin: 0px;"
+      >
+        <input
+          class="st-core-input-input"
+          placeholder=""
+          readonly=""
+          style="white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt;"
+          type="text"
+          value=""
+        />
+      </td>
+      <td
+        align="center"
+        style="padding: 0px; margin: 0px; width: 24px;"
+      >
+        <div
+          class="st_icon_24_combobox"
+          style="width: 24px; height: 24px; background-color: transparent;"
+          title="button"
+        />
+      </td>
+      <td
+        style="padding: 0px; margin: 0px;"
+      />
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Combobox should created successfully 1`] = `
 <table
   class="st-field-table-project st-linear-table"

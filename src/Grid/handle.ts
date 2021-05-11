@@ -67,7 +67,6 @@ export function onItemMouseWheelScrollingY(this: any, e: any) {
   }
 
 
-
   //scroll down
   if (delta > 0) {
     // if scroll is in the botttom dont scroll anymore

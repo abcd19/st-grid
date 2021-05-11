@@ -36,83 +36,53 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
   }
 
   onChangeItem(cellAlias: string, val: tyepCellVal): void {
-    if (ST.isFunction(this.props['onChangeItem'])) {
       const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onChangeItem'].apply(self, [rowObject, cellAlias, val])
-    }
   }
 
   onMouseEnterItem(cellAlias: string): void {
-    if (ST.isFunction(this.props['onMouseEnterItem'])) {
       const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onMouseEnterItem'].apply(self, [rowObject, cellAlias])
-    }
   }
 
   onMouseLeaveItem(cellAlias: string): void {
-    if (ST.isFunction(this.props['onMouseLeaveItem'])) {
       const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onMouseLeaveItem'].apply(self, [rowObject, cellAlias])
-    }
   }
 
   onMouseDownItem(cellAlias: string): void {
-    if (ST.isFunction(this.props['onMouseDownItem'])) {
       const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onMouseDownItem'].apply(this, [rowObject, cellAlias])
-    }
   }
 
   onDoubleClickItem(cellAlias: string): void {
-    if (ST.isFunction(this.props['onDoubleClickItem'])) {
       const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onDoubleClickItem'].apply(this, [rowObject, cellAlias])
-    }
   }
 
   onClickItem(cellAlias: string): void {
-    if (ST.isFunction(this.props['onClickItem'])) {
       const rowObject = this.props.item;
       rowObject.rowNum = this.props.rowNum;
       this.props['onClickItem'].apply(this, [rowObject, cellAlias])
-    }
   }
 
 
   render(): React.ReactElement {
     const cells = [];
     for (let i = 0; i < this.props.columns.length; i++) {
-      const { visible, type, alias, widthPix } = this.props['columns'][i];
+      const { visible, type = {constr: StringFldCell,settings: {}}, alias, widthPix = 100 } = this.props['columns'][i];
 
       if (visible === false) {
         continue
       }
 
-      const layoutMode = this.props.item ? this.props.item.layoutMode : 'view';
-      const color = this.props.item ? this.props.item.color : undefined;
-      const itemData = this.props.item ? this.props.item['data'] : undefined;
-      const val = itemData ? this.props.item['data'][alias] : undefined;
-
-      let cWidthPix: number = 100;
-      if(typeof(widthPix) =='number' && widthPix >=0)
-      {
-        cWidthPix = widthPix;
-      }
-
-      let cType = type;
-      if(!cType)
-      {
-        cType = {
-          constr: StringFldCell,
-          settings: {}
-        };
-        
-      }
+      let {item:{layoutMode = 'view', color = undefined, data = {}}} = this.props;
+      const val = this.props.item['data'][alias];
 
       const newCell = <CellLayout
         color={color}
@@ -123,13 +93,13 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
         onDoubleClickItem={this.onDoubleClickItem}
         onClickItem={this.onClickItem}
         layoutMode={layoutMode}
-        type={cType}
+        type={type}
         alias={alias}
         rowItem={this.props.item}
         rowNum={this.props.rowNum}
         val={val}
         defaultColor={this.props.defaultColor}
-        widthPix={cWidthPix}
+        widthPix={widthPix}
         key={alias} />;
 
       cells.push(newCell);

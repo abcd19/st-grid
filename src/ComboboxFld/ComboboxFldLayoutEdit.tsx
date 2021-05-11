@@ -7,6 +7,7 @@ import {IImgFieldLayoutEditBtn} from './../StringFld/FieldLayoutEdit';
 
 export interface IComboboxFldLayoutEditProps {
   disableSearch?: boolean;
+  readOnly?: boolean,
   onChange?: (val?: typeComboValue) => void;
   items: typeComboValue[];
   val?: typeComboValue;
@@ -33,6 +34,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
 
     static defaultProps: IComboboxFldLayoutEditProps = {
       disableSearch: false,
+      readOnly: false,
       onChange: () => {/* */},
       items: [],
       listWidthPix: 250,
@@ -64,6 +66,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
       this.buttons['items'].push({
         name: 'choiseBtn',
         settings: { 
+          readOnly: this.props.readOnly,
           handler:{
             click: this.onClickChoiceHandle.bind(this),
           },
@@ -156,6 +159,7 @@ export class ComboboxFldLayoutEdit extends React.Component<IComboboxFldLayoutEdi
       }
 
       const fieldLayout = <FieldLayoutEdit 
+                          readOnly = {this.props.readOnly}
                           clearBtnFlag = {this.props['clearBtnFlag']}
                           prepareGridDisplay = { this.props.prepareGridDisplay }  
                           inputVal = {  String(realVal['display']) } 

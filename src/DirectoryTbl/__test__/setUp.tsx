@@ -46,7 +46,8 @@ export let items = [
 export let columns: typeColumn[] = [
   {
     title: "№",
-    alias: "num"
+    alias: "num",
+    visible: false
   },
 
   {

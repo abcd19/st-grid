@@ -5,7 +5,7 @@ import {onChangeType} from './../StringFld/InputLayout';
 import {IImgFieldLayoutEditBtn} from './../StringFld/FieldLayoutEdit';
 
 export interface ISearchFldLayoutEditProps {
-  onSearchBtnClick?: onChangeType;
+  onSearchBtnClick: onChangeType;
   onChangeDelay?: onChangeType;
   val?: string;
 }
@@ -34,10 +34,7 @@ export class SearchFldLayoutEdit extends React.Component<ISearchFldLayoutEditPro
               imageName: 'search',
               handler:{
                 click: () => {
-                  if(typeof this.props.onSearchBtnClick == 'function')
-                  {
                     this.props.onSearchBtnClick(this.state.val);
-                  }
                 }
           },
 

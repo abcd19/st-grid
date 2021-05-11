@@ -34,7 +34,7 @@ export class ToolbarLayout extends React.Component<IToolbarLayoutProps>{
       const { name, widthPix } = this.props['items'][i]
       nItems.push(<Constr
         key={name}
-        widthPix={widthPix ? widthPix : 32}
+        widthPix={32}
         {...settings}
       />);
     }

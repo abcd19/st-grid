@@ -1,7 +1,6 @@
 
 import * as ST from '../common'
 import {cloneData} from './DirectoryTblFunctions'
-import {calcOriginal} from './Sorting/sortItems'
 import {DirectoryTbl} from './DirectoryTbl';
 import {typeItem} from './../Grid/GridLayout';
 import {tyepCellVal} from './../Grid/Items/CellLayout';
@@ -9,19 +8,11 @@ import {tyepCellVal} from './../Grid/Items/CellLayout';
 //change item
 export function onChangeItem(this: DirectoryTbl, item: typeItem, cellAlias: string, newVal: tyepCellVal): void
 {
-  
-  const newItems = cloneData(this.props.items);
+  let { items = [] } = this.props;
+  const newItems = cloneData(items);
   let selNum = item.rowNum;
   
-  if(this.state.sorting && ST.isString(this.state.sorting.order))
-  {
-    const selItemNumLink = calcOriginal(item.rowNum, newItems, this.state.sorting.cellAlias, this.state.sorting.order);
-    if(selItemNumLink)
-    {
-      selNum = selItemNumLink;
-    }
-    
-  }
+
   if(typeof(selNum) == 'number')
   {
     newItems[selNum].data[cellAlias] = newVal;
@@ -37,19 +28,7 @@ export function onChangeItem(this: DirectoryTbl, item: typeItem, cellAlias: stri
 // click header cell
 export function onClickHeaderCell(this: DirectoryTbl, sortingCellAlias: string, orderSorting?: string): void
 { 
-  const newSorting = {
-    order: orderSorting,
-    cellAlias: sortingCellAlias
-  };
-
-  this.setState({sorting: newSorting, selItemNum: undefined}, () => {
-    
-    if(this.props.onSelectItem)
-    {
-      this.props.onSelectItem();
-    }
-
-  });
+  
 }
 
 
@@ -57,15 +36,7 @@ export function onClickHeaderCell(this: DirectoryTbl, sortingCellAlias: string, 
 export function onMouseDownItem(this: DirectoryTbl, item: typeItem /*, cellAlias: string*/): void
 {
   let selNum = item.rowNum;
-  if(this.state.sorting && ST.isString(this.state.sorting.order))
-  {
-    const selItemNumLink = calcOriginal(item.rowNum, this.props.items, this.state.sorting.cellAlias, this.state.sorting.order);
-    if(selItemNumLink)
-    {
-      selNum = selItemNumLink;
-    }
-    
-  }
+
   this.setState({selItemNum: selNum},() => {
     if(this.props.onSelectItem)
     {

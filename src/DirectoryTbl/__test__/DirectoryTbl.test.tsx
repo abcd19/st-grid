@@ -15,12 +15,13 @@ import { columns, items } from './setUp'
 import { StringFldLayoutEdit, FieldLayoutEdit, InputLayout, ImgButtonLayout } from '../../StringFld';
 
 const SEL_ROW_NUM = 0;
-const CELL_LOGIN_NUM = 1;
+const CELL_LOGIN_NUM = 0;
 
 
 describe('DirectoryTbl', () => {
 
   let container: HTMLElement;
+  
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
@@ -47,10 +48,14 @@ describe('DirectoryTbl', () => {
     const onChange = jest.fn((newItems) => {
       expect(newItems.length).toBe(items.length + 1)
     })
-    const component = mount(<DirectoryTbl items={items} onChange={onChange} columns={columns} />);
+
+    const onSelectItem = jest.fn((selRow) => {});
+
+    const component = mount(<DirectoryTbl onSelectItem={onSelectItem} items={items} onChange={onChange} columns={columns} />);
     component.find(ToolbarLayout).find(ImgButtonLayout).at(0).find('div').simulate('click');
     expect(component.render()).toMatchSnapshot();
     expect(onChange).toHaveBeenCalled();
+    expect(onSelectItem).toHaveBeenCalled();
   })
 
 
@@ -58,11 +63,20 @@ describe('DirectoryTbl', () => {
     const onChange = jest.fn((newItems) => {
       expect(newItems.length).toBe(items.length - 1)
     })
-    const component = mount(<DirectoryTbl items={items} onChange={onChange} columns={columns} />);
+
+    const onSelectItem = jest.fn((newItems) => { })
+   
+    const component = mount(<DirectoryTbl items={items} onChange={onChange} onSelectItem={onSelectItem} columns={columns} />);
     component.find(RowLayout).at(0).find(CellLayout).at(0).find(StringFldCell).find('td').simulate('mousedown');
     component.find(ToolbarLayout).find(ImgButtonLayout).at(1).find('div').simulate('click');
     expect(component.render()).toMatchSnapshot();
     expect(onChange).toHaveBeenCalled();
+    expect(onSelectItem).toHaveBeenCalled();
+
+    //no select empty
+    const componentEmpty = mount(<DirectoryTbl items={[]} onChange={onChange} columns={columns} />);
+    component.find(ToolbarLayout).find(ImgButtonLayout).at(1).find('div').simulate('click');
+
   });
 
   test('select row & change val', () => {
@@ -82,11 +96,12 @@ describe('DirectoryTbl', () => {
   })
 
 
-  test('onMouseEnterItem & onMouseLeaveItem & onDoubleClickItem works fine', () => {
+  test('onMouseEnterItem & onMouseLeaveItem & onDoubleClickItem & onClick works fine', () => {
     const onMouseEnterItem = jest.fn((rowObject: typeItem, cellAlias: string) => { });
     const onMouseLeaveItem = jest.fn((rowObject: typeItem, cellAlias: string) => { })
     const onDoubleClickItem = jest.fn((rowObject: typeItem, cellAlias: string) => { })
-    const component = mount(<DirectoryTbl onDoubleClickItem={onDoubleClickItem} onMouseEnterItem={onMouseEnterItem}
+    const onClickItem = jest.fn((rowObject: typeItem, cellAlias: string) => { })
+    const component = mount(<DirectoryTbl onClickItem={onClickItem} onDoubleClickItem={onDoubleClickItem} onMouseEnterItem={onMouseEnterItem}
       onMouseLeaveItem={onMouseLeaveItem} items={items} columns={columns} />);
 
     component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('mouseenter');
@@ -97,6 +112,9 @@ describe('DirectoryTbl', () => {
 
     component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('dblclick');
     expect(onDoubleClickItem).toHaveBeenCalled();
+
+    component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('click');
+    expect(onClickItem).toHaveBeenCalled();
   });
 
 
@@ -109,6 +127,16 @@ describe('DirectoryTbl', () => {
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
     component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(0);
+
+    //sorting when empty items
+    component.unmount();
+    const componentEmptyItems = mount(<DirectoryTbl items={[]} columns={columns} />);
+    componentEmptyItems.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
+    expect(componentEmptyItems.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
+
+    //sorting flag == false
+    const componentSortingFlag = mount(<DirectoryTbl sortingFlag={false} items={items} columns={columns} />);
+    componentSortingFlag.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
   })
 
 
@@ -135,20 +163,30 @@ describe('DirectoryTbl', () => {
 
 
   test('onmousewhell & scrolls on items', () => {
+
+
     const component = mount(<DirectoryTbl items={items.concat(items, items, items)} columns={columns} />);
     let wr = component.find('.st-grid-body-div');
-    wr.simulate('wheel', { deltaY: 200 })
-    wr.simulate('wheel', { deltaY: -100 })
-    wr.simulate('scroll', { deltaY: 200 })
-    wr.simulate('scroll', { deltaY: -100 })
+    Object.defineProperty(component.find('.st-grid-rightScroll-div').getDOMNode() , 'scrollHeight' , { configurable: true, value: 100 });
+
+    //wheel tests
+    wr.simulate('wheel', { deltaY: 100 });
+    wr.simulate('wheel', { deltaY: 100 });
+    wr.simulate('wheel', { deltaY: -100 });
+    wr.simulate('wheel', { deltaY: -100 });
+    
+    //scroll moving
     wr = component.find('.st-grid-rightScroll-div');
-    wr.simulate('scroll', { deltaY: 200 })
+    wr.simulate('wheel', { deltaY: 100 });
+    wr.simulate('scroll', { deltaY: 100 })
     wr.simulate('scroll', { deltaY: -100 })
-
+    wr.simulate('wheel', { deltaY: -100 });
+    
     wr = component.find('.st-grid-bottomScroll-div');
-    wr.simulate('scroll', { deltaY: 200 })
+    wr.simulate('scroll', { deltaY: 100 })
+    wr.simulate('scroll', { deltaY: 100 })
     wr.simulate('scroll', { deltaY: -100 })
-
+    wr.simulate('scroll', { deltaY: -100 })
   });
 
 

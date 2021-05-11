@@ -102,9 +102,7 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
 
 
   onClickHeaderCell(alias: string, order?: string): void {
-    if (ST.isFunction(this.props.onClickHeaderCell)) {
       this.props.onClickHeaderCell(alias, order);
-    }
   }
 
   componentDidMount(): void {
@@ -116,13 +114,13 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
       if ('onwheel' in document) {
         // IE9+, FF17+, Ch31+
         this.bodyDivRef.current.addEventListener("wheel", prevDef, { passive: false });
-      } else if ('onmousewheel' in document) {
-        // устаревший вариант события
+      }/* else if ('onmousewheel' in document) {
+        // old
         this.bodyDivRef.current.addEventListener("mousewheel", prevDef, { passive: false });
       } else {
         // Firefox < 17
         this.bodyDivRef.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
-      }
+      }*/
     }
 
     this.prepareScrollToLastItem();

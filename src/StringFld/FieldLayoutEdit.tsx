@@ -26,22 +26,17 @@ export interface IFieldLayoutEditProps {
 // input & buttons
 export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLayoutEditProps) => {
   
+    let {onChange = (val:string | undefined)=>{/** do nothing */}, onChangeDelay = (val:string | undefined)=>{/** do nothing */}} = props;
+
     const items = [
         <InputLayout   readOnly= {props.readOnly || props.inputReadOnly} val ={props['inputVal']} key="input" onChange = {
             function(val: string | undefined){  
-              if(typeof props['onChange'] == 'function')
-              {
-                props['onChange'](val)
-              }
+              onChange(val)
             }
         }  
         onChangeDelay = {
             function(val: string | undefined){  
-              
-              if(typeof props['onChangeDelay'] == 'function')
-              {
-                props['onChangeDelay'](val)
-              }
+                onChangeDelay(val)
             }
         }  
         />
@@ -77,10 +72,7 @@ export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLa
       items.push(<ImgButtonLayout 
             handler = {{
               click: function(/*e: React.MouseEvent<HTMLDivElement>*/){
-                if(typeof props['onChange'] == 'function')
-                {
-                  props['onChange']('')
-                }
+                  onChange('');
               }
             }}
             title='Очистить'
