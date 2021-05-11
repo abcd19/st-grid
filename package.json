@@ -1,6 +1,6 @@
 {
   "name": "@abcd19/st-grid",
-  "version": "7.0.0",
+  "version": "7.1.1",
   "description": "JavaScript Grid for building storage and accounting forms. Works with React.",
   "main": "dist/index.bundle.js",
   "devDependencies": {
