@@ -5,13 +5,13 @@ import { ComboboxFldCell } from './../../ComboboxFld/ComboboxFldCell';
 import { CheckboxFldCell } from './../../CheckboxFld/CheckboxFldCell';
 import React from 'react';
 
-let list = [
+const list = [
   { raw: "newcomer", display: "newcomer" },
   { raw: "intermediate", display: "intermediate" },
   { raw: "advanced", display: "advanced user" }
 ];
 
-export let items = [
+export const items = [
   {
     data: {
       num: String(1),
@@ -43,7 +43,7 @@ export let items = [
   }
 ];
 
-export let columns: typeColumn[] = [
+export const columns: typeColumn[] = [
   {
     title: "№",
     alias: "num",

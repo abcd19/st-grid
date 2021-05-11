@@ -1,6 +1,3 @@
-
-
-import * as ST from '../../common.js'
 import React from 'react';
 import './Cell.scss';
 import {tyepStringFldVal} from './../../StringFld/StringFldLayoutEdit';
@@ -87,7 +84,7 @@ class CellLayout extends React.Component<ICellLayoutProps> {
 
   render(): React.ReactElement {
 
-    let {color = '', widthPix, display, layoutMode, defaultColor, rowItem, val} = this.props;
+    const {color = '', widthPix, display, layoutMode, defaultColor, rowItem, val} = this.props;
     
     //If the line is selected, then create a component
     const style = {

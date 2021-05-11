@@ -10,7 +10,7 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
     return;
   }
 
-  let {items} = this.props;
+  const {items} = this.props;
   const newItems = cloneData(items as typeItem[]);
   const removedItem = ST.clone(newItems[this.state.selItemNum]);
   newItems.splice(this.state.selItemNum, 1);
@@ -32,7 +32,7 @@ export function onRemoveBtnClick(this: DirectoryTbl): void {
 //click on the add row button
 export function onAddBtnClick(this: DirectoryTbl): void {
   
-  let {items} = this.props;
+  const {items} = this.props;
 
   const newItems = cloneData(items as typeItem[]);
   newItems.push({ data: {} });

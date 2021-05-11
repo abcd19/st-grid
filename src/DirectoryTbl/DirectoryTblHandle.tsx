@@ -8,9 +8,9 @@ import {tyepCellVal} from './../Grid/Items/CellLayout';
 //change item
 export function onChangeItem(this: DirectoryTbl, item: typeItem, cellAlias: string, newVal: tyepCellVal): void
 {
-  let { items } = this.props;
+  const { items } = this.props;
   const newItems = cloneData(items as typeItem[]);
-  let selNum = item.rowNum;
+  const selNum = item.rowNum;
   
 
   if(typeof(selNum) == 'number')
@@ -35,10 +35,10 @@ export function onClickHeaderCell(this: DirectoryTbl, sortingCellAlias: string, 
 // клик по строке
 export function onMouseDownItem(this: DirectoryTbl, item: typeItem /*, cellAlias: string*/): void
 {
-  let selNum = item.rowNum;
+  const selNum = item.rowNum;
   
   this.setState({selItemNum: selNum},() => {
-    let items = this.props.items as typeItem[];
+    const items = this.props.items as typeItem[];
     if(this.props.onSelectItem)
     {
       if(typeof(this.state.selItemNum) == 'number')

@@ -1,4 +1,3 @@
-import * as ST from '../common';
 import React from 'react';
 import {StringFldLayoutEdit} from './StringFldLayoutEdit';
 

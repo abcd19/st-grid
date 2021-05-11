@@ -1,4 +1,3 @@
-import * as ST from '../../common'
 import { CellLayout } from './CellLayout';
 import React from 'react';
 import { tyepCellVal } from './CellLayout'
@@ -81,7 +80,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
         continue
       }
 
-      let {item:{layoutMode = 'view', color = undefined, data = {}}} = this.props;
+      const {item:{layoutMode = 'view', color = undefined, data = {}}} = this.props;
       const val = this.props.item['data'][alias];
 
       const newCell = <CellLayout

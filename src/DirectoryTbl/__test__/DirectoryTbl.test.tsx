@@ -162,7 +162,7 @@ describe('DirectoryTbl', () => {
     let clientX = 200
     for (let i = 0; i < 10; i++) {
       clientX = clientX + 20;
-      let ev = new window.MouseEvent("mousemove", {
+      const ev = new window.MouseEvent("mousemove", {
         bubbles: true,
         cancelable: true,
       });

@@ -31,9 +31,9 @@ export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
         continue
       }
       
-      let {widthPix, title} = this.props['columns'][i];
+      const {widthPix, title} = this.props['columns'][i];
 
-      let cWidthPix: number = 100;
+      let cWidthPix = 100;
       if(typeof(widthPix) =='number' && widthPix >=0)
       {
         cWidthPix = widthPix;

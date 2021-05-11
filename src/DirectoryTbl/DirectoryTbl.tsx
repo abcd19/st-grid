@@ -72,7 +72,7 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
     } = this.props;
 
     const { scrollToLastItem, selItemNum } = this.state;
-    let { items = [] } = this.props
+    const { items = [] } = this.props
 
     for (const item of items) {
       item.color = undefined;

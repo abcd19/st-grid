@@ -26,7 +26,7 @@ export interface IFieldLayoutEditProps {
 // input & buttons
 export const FieldLayoutEdit: React.FC<IFieldLayoutEditProps> = (props: IFieldLayoutEditProps) => {
   
-    let {onChange = (val:string | undefined)=>{/** do nothing */}, onChangeDelay = (val:string | undefined)=>{/** do nothing */}} = props;
+    const {onChange = (/*val:string | undefined*/)=>{/** do nothing */}, onChangeDelay = (/*val:string | undefined*/)=>{/** do nothing */}} = props;
 
     const items = [
         <InputLayout   readOnly= {props.readOnly || props.inputReadOnly} val ={props['inputVal']} key="input" onChange = {
