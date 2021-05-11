@@ -21,9 +21,8 @@ module.exports = {
   ],
 	module:{
 		rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      { test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader,  'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -41,8 +40,19 @@ module.exports = {
 					presets: ["@babel/preset-env", "@babel/preset-react"]
 				}
 			}
+		},
+    {
+			test: /\.(ts|tsx)?$/,
+			exclude: /\.test.tsx?$/,
+			use: {
+				loader: 'ts-loader'
+			},
+			exclude: /node_modules/
 		}]
 	},
+  	resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 	devtool: 'source-map',
 	plugins: [
     new CleanWebpackPlugin(),
