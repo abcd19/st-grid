@@ -8,7 +8,7 @@ import {DirectoryTbl} from './../DirectoryTbl';
 export const createDirectoryTableToolbar = ($this: DirectoryTbl): IToolbarLayoutProps =>
 {
   const {addBtnFlag = true, 
-    removeBtnFlag = true, removeAllBtnFlag = false, onRemoveAllItems = ()=>{/* do nothing  */}} = $this.props;
+    removeBtnFlag = true} = $this.props;
   
   $this.onRemoveBtnClick = onRemoveBtnClick.bind($this);
   $this.onAddBtnClick = onAddBtnClick.bind($this);
@@ -51,51 +51,5 @@ export const createDirectoryTableToolbar = ($this: DirectoryTbl): IToolbarLayout
     });
   }
   
-  if(removeAllBtnFlag === true)
-  {
-    toolbar['items'].push({
-      name: 'delAll',
-      widthPix: 32,
-      type: {
-        constr: ImgButtonLayout,
-        settings: { 
-          title: 'Удалить всё',
-          imageName: 'removeAll',
-          handler:{
-            click: onRemoveAllItems,
-          }
-        }
-      }
-    });
-  }
-
   return toolbar;
-
-  /*
-  if(searchFldFlag === true)
-  {
-    toolbar['items'].push({
-    name: 'search',
-    widthPix: 250,
-    type: {
-      constr: SearchFldLayoutEdit,
-      settings: { 
-        onChangeDelay: (val)  => {
-
-          if(ST.isFunction(this.props.onChangeSearchFld))
-          {
-            this.props.onChangeSearchFld(val)
-          }
-
-        },
-        onSearchBtnClick:  (val) =>{
-          if(ST.isFunction(this.props.onChangeSearchFld))
-          {
-            this.props.onChangeSearchFld(val)
-          }
-        }
-      }
-    }
-  })
-  }*/
 }

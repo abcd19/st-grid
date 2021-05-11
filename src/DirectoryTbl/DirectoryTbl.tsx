@@ -11,11 +11,9 @@ export interface IDirectoryTblProps {
   items?: typeItem[];
   addBtnFlag?: boolean;
   removeBtnFlag?: boolean;
-  removeAllBtnFlag?: boolean;
   onMouseEnterItem?: (rowObject: typeItem, cellAlias: string) => void,
   onMouseLeaveItem?: (rowObject: typeItem, cellAlias: string) => void,
   onDoubleClickItem?: (rowObject: typeItem, cellAlias: string) => void;
-  onRemoveAllItems?: () => void;
   onClickItem?: (rowObject: typeItem, cellAlias: string) => void
   onSelectItem?: (item?: typeItem, num?: number) => void;
   onChange?: (newItems: typeItem[], obj: { event: string, removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal }) => void;

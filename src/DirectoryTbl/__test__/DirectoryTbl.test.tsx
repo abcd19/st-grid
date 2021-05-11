@@ -56,6 +56,14 @@ describe('DirectoryTbl', () => {
     expect(component.render()).toMatchSnapshot();
     expect(onChange).toHaveBeenCalled();
     expect(onSelectItem).toHaveBeenCalled();
+
+
+    const componentNoHandlers = mount(<DirectoryTbl items={items}  columns={columns} />);
+    componentNoHandlers.find(ToolbarLayout).find(ImgButtonLayout).at(0).find('div').simulate('click');
+
+    //no btn
+    const componentNoBtn = mount(<DirectoryTbl addBtnFlag={false}  items={items}  columns={columns} />);
+
   })
 
 
@@ -75,8 +83,13 @@ describe('DirectoryTbl', () => {
 
     //no select empty
     const componentEmpty = mount(<DirectoryTbl items={[]} onChange={onChange} columns={columns} />);
-    component.find(ToolbarLayout).find(ImgButtonLayout).at(1).find('div').simulate('click');
+    componentEmpty.find(ToolbarLayout).find(ImgButtonLayout).at(1).find('div').simulate('click');
 
+    //empty handlers
+    const componentNoHandlers = mount(<DirectoryTbl  items={items}  columns={columns} />);
+    componentNoHandlers.find(ToolbarLayout).find(ImgButtonLayout).at(1).find('div').simulate('click');
+    //no btn
+    const componentNoBtn = mount(<DirectoryTbl removeBtnFlag={false}  items={items}  columns={columns} />);
   });
 
   test('select row & change val', () => {
