@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "esModuleInterop":true,
     "strict": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "es6",
-    "moduleResolution": "node",
+    "module": "CommonJS",
     "target": "es5",
     "jsx": "react",
-    "noEmit": false,
-    "outDir": "dist",
+    "declaration": true,
+    "outDir": "dist/types",
     "sourceMap": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "__test__"
   ],
   "lib": [
     "dom",
