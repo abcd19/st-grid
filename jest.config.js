@@ -8,7 +8,8 @@ module.exports = {
   snapshotSerializers: [
     "enzyme-to-json/serializer"
   ],
-  coveragePathIgnorePatterns: ['/node_modules/','index.tsx', 'setUp.tsx']
+  coveragePathIgnorePatterns: ['/node_modules/','index.tsx', 'setUp.tsx'],
+  //preset: "jest-puppeteer"
   /*moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "json"],
   transform: {
       "^.+\\.(js|jsx|ts|tsx)$": 'ts-jest'

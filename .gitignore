@@ -8,3 +8,4 @@ dev/**/*.min.js
 prod
 /dev/assets/grid.bundle.js
 /dev/assets/main.bundle.js
+__screenshots__

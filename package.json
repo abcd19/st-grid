@@ -11,8 +11,11 @@
     "@babel/preset-typescript": "^7.13.0",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/expect-puppeteer": "^4.4.5",
     "@types/jest": "^26.0.22",
+    "@types/jest-environment-puppeteer": "^4.4.1",
     "@types/node": "^14.14.37",
+    "@types/puppeteer": "^5.4.3",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "@types/react-test-renderer": "^17.0.1",
@@ -55,9 +58,11 @@
     "gulp.spritesmith": "^6.11.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
+    "jest-puppeteer": "^5.0.3",
     "jsdom": "^16.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-static": "^0.7.11",
+    "puppeteer": "^9.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.14.0",
@@ -80,6 +85,7 @@
   "scripts": {
     "updateSnapshot": "jest --updateSnapshot",
     "test": "jest --coverage",
+    "e2e": "jest --config jest.e2e.config.js",
     "testAll": "jest",
     "watch": "webpack --watch",
     "build": "webpack --config webpack.config.build.js",
@@ -93,20 +99,20 @@
   },
   "keywords": [
     "grid",
-    "accounting",
-    "storage",
-    "UI",
+    "data grid",
     "billing",
     "react",
     "typescript",
     "sass",
     "jest",
-    "enzyme"
+    "enzyme",
+    "pupetter"
   ],
   "author": "A. Subbotin",
   "license": "MIT",
   "bugs": {
     "url": ""
   },
-  "homepage": ""
+  "homepage": "",
+  "dependencies": {}
 }
