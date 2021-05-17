@@ -1,5 +1,5 @@
 
-td.st-grid-body-cell {
+:local .bodyCell {
   border: 1px solid lightgray; 
   margin: 0px;
   font-family: Tahoma,​Helvetica,​sans-serif;
@@ -9,4 +9,5 @@ td.st-grid-body-cell {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
 }
+
 

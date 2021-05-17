@@ -1,5 +1,3 @@
-import './project.css'
-
 export {StringFldLayoutEdit} from './StringFld/StringFldLayoutEdit'
 export {ComboboxFldLayoutEdit} from './ComboboxFld/ComboboxFldLayoutEdit'
 export {CheckboxFldLayoutEdit} from './CheckboxFld/CheckboxFldLayoutEdit'

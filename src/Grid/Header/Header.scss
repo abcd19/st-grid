@@ -1,30 +1,30 @@
-td.st-grid-head-cell {
+:local .headerCell {
   user-select: none;
   -moz-user-select: none;
   text-align: center;
   padding: 0px;
   height: 29px;
+  background-color: #586169;
+  border: 1px lightgray solid;
+  color: #FEFEFE;
+  font-weight: bold;
+  font-family: "Tahoma",Helvetica,sans-serif;
+  font-size: 10pt;
 }
 
 
-div.st-grid-head-cell-widthChangeAnchor {
+:local .widthChangeAnchor {
   width: 5px;
   float: left;
   cursor: w-resize;
-  //background-color: lightgray;
 }
 
-div.st-grid-head-cell-textContainer {
+:local .headCellTextContainer {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   float: left;
-  //background-color: lightgray;
-}
-
-div.st-grid-head-cell-textContainer {
   text-align: left;
   margin-left: 5px;
+  //background-color: lightgray;
 }
-
-

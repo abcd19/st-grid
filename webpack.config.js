@@ -19,9 +19,39 @@ module.exports = {
 
 	module:{
 		rules: [
-      { test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader,  'css-loader', 'sass-loader'],
-      },
+			{
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+						options: {
+							modules: {
+								mode: "global",
+							},
+							sourceMap: true
+						}
+          }
+        ]
+			},
+			{
+        test: /\.scss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+						options: {
+							sourceMap: true,
+							modules: {
+								mode: "global",
+								localIdentName: 'st-grid__[name]-[local]'
+							},
+						}
+          },
+          {
+            loader: 'sass-loader',
+          }]
+			},
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [

@@ -1,7 +1,7 @@
 
 import * as ST from '../common'
 import React from 'react';
-import './assets/LinearGroupLayout.scss'
+import css from './assets/LinearGroupLayout.scss'
 import {IInputLayoutProps} from './InputLayout';
 import {IImgButtonLayoutProps} from './ImgButtonLayout';
 
@@ -68,7 +68,7 @@ export class LinearGroupLayout extends React.Component<ILinearGroupLayoutProps> 
     }
 
     return (
-        <table className = "st-field-table-project st-linear-table" style={style}>
+        <table className = {css.linearTable} style={style}>
           <tbody>
           <tr>
             { items }

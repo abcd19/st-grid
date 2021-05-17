@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cell.scss';
+import css from './Cell.scss';
 import {tyepStringFldVal} from './../../StringFld/StringFldLayoutEdit';
 import {typeComboValue} from './../../ComboboxFld/ListLayout';
 import {tyepCheckboxFldVal} from './../../CheckboxFld/CheckboxFldLayoutEdit'
@@ -103,7 +103,7 @@ class CellLayout extends React.Component<ICellLayoutProps> {
 
 
 
-    const className = 'st-grid-body-cell ' + defaultColor;
+    const className = `${css.bodyCell} ` + defaultColor;
 
     //создаем ячейку
     return (<this.props.type.constr

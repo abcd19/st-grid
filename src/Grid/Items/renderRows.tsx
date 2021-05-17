@@ -3,7 +3,7 @@ import { RowLayout } from './RowLayout'
 import { CELL_HEIGHT } from './ItemsLayout'
 import React from 'react';
 import { ItemsLayout } from './ItemsLayout'
-
+import css from './../Items/renderRows.scss'
 
 // reder rows
 export function renderRows(this: ItemsLayout): React.ReactElement[] {
@@ -23,11 +23,11 @@ export function renderRows(this: ItemsLayout): React.ReactElement[] {
     rowViewEnd = props.items.length;
   }
 
-  let defaultColor = 'st-grid-body-cell-project-one';
+  let defaultColor = css.bodyCellTOne;
   for (let i = rowViewStart; i < rowViewEnd; i++) {
-    defaultColor = 'st-grid-body-cell-project-one';
+    defaultColor = css.bodyCellOne;
     if (i % 2 == 1) {
-      defaultColor = 'st-grid-body-cell-project-two';
+      defaultColor = css.bodyCellTwo;
     }
 
     const newItem: React.ReactElement = <RowLayout

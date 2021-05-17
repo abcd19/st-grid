@@ -1,6 +1,6 @@
 import * as ST from '../../common'
 import React from 'react';
-import './Header.scss'
+import css from './Header.scss'
 import {typeHandler} from './HeaderLayout';
 
 const ARR_DOWN = '&#8595;', ARR_UP = '&#8593;', ARR_NONE = '';
@@ -147,11 +147,11 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     }
 
     return (
-      <td className="st-grid-head-cell st-grid-head-cell-project" style={{ boxSizing: "border-box", width: this.props.width + 'px' }}>
+      <td className={css.headerCell} style={{ boxSizing: "border-box", width: this.props.width + 'px' }}>
         <div style={{ height: cellHeight }} className="st-grid-head-cell-general">
-          <div onClick={this.clickHeaderCellHandle} style={{ height: cellHeight, lineHeight: cellHeight, width: this.props.width - bagWidthCoef + 'px' }} className="st-grid-head-cell-textContainer" >{this.props.text}</div>
+          <div onClick={this.clickHeaderCellHandle} style={{ height: cellHeight, lineHeight: cellHeight, width: this.props.width - bagWidthCoef + 'px' }} className={css.headCellTextContainer} >{this.props.text}</div>
           {sortState}
-          <div onMouseDown={this.anchorMouseDownHandle} style={{ height: cellHeight, width: '5px' }} className="st-grid-head-cell-widthChangeAnchor"></div>
+          <div onMouseDown={this.anchorMouseDownHandle} style={{ height: cellHeight, width: '5px' }} className={css.widthChangeAnchor}></div>
           <div style={{ clear: "left" }}></div>
         </div>
       </td>)

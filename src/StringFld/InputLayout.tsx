@@ -1,5 +1,5 @@
 import React from 'react';
-import './assets/InputLinear.scss'
+import css from './assets/InputLinear.scss'
 
 
 export type onChangeType = (val: string | undefined) => void;
@@ -82,7 +82,7 @@ export class InputLayout extends React.Component<IInputLayoutProps> {
           style={_baseStyle}
 					readOnly = {readOnly}
 					onChange = { this.onChange }
-          className = "st-core-input-input" 
+          className = {css.input} 
           placeholder = {placeholder} />
       );
   }

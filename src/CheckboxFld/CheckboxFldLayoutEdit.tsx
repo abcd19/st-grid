@@ -1,5 +1,5 @@
 import React from 'react';
-import './Checkbox.scss';
+import css from './Checkbox.scss';
 
 
 type onChangeType = (val: boolean) => void;
@@ -73,7 +73,7 @@ export class CheckboxFldLayoutEdit extends React.Component<ICheckboxFldLayoutEdi
           style.backgroundPosition = '30px 15px';
           break;
       }
-      return (<div className="pr-checkbox-imgCont" onClick = {this.onClickHandle} style={style}></div>);
+      return (<div className={css.imgCont} onClick = {this.onClickHandle} style={style}></div>);
     }
 
 
