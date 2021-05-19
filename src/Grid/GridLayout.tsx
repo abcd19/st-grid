@@ -5,16 +5,16 @@ import { ToolbarLayout, IToolbarLayoutProps } from './Toolbar'
 import { calcSumColumnsWidth } from './calcSumColumnsWidth';
 import './GridLayout.scss'
 import { onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth } from './handle'
-import {IStringFldLayoutEditProps} from './../StringFld';
-import {IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/} from './../ComboboxFld';
-import {ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/} from './../CheckboxFld';
+import { IStringFldLayoutEditProps } from './../StringFld';
+import { IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/ } from './../ComboboxFld';
+import { ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/ } from './../CheckboxFld';
 
 
 
 
 export type typeTypeColumn = {
   constr: any;
-  settings: IStringFldLayoutEditProps | IComboboxFldLayoutEditProps | ICheckboxFldLayoutEditProps 
+  settings: IStringFldLayoutEditProps | IComboboxFldLayoutEditProps | ICheckboxFldLayoutEditProps
 }
 
 export type typeColumn = {
@@ -39,7 +39,7 @@ export interface IGridLayoutProps {
   onClickHeaderCell: (alias: string, order?: string) => void;
   scrollToLastItem: boolean;
   columns: typeColumn[];
-  items:  typeItem[];
+  items: typeItem[];
   height: number;
   width: number;
   sortingFlag: boolean;
@@ -98,7 +98,7 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
 
 
   onClickHeaderCell(alias: string, order?: string): void {
-      this.props.onClickHeaderCell(alias, order);
+    this.props.onClickHeaderCell(alias, order);
   }
 
   componentDidMount(): void {
@@ -142,13 +142,17 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
       if (columns[i]['visible'] == false) {
         columns[i]['widthPix'] = 0;
       }
+
+      if (columns[i]['widthPix'] == undefined) {
+        columns[i]['widthPix'] = 100;
+      }
     }
 
     const width = this.props.width - this.SCROLL;
     let rightScrollHeight = items.length * CELL_HEIGHT;
     const bodyContentHeight = this.props.height - this.SCROLL - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
     const bodyContentWidth = calcSumColumnsWidth(this.props.columns);
-
+    //console.dir(bodyContentWidth)
     // one line can be added to this height for the beauty of display at the end of the lines
     // add another line to the body
     // one more empty invisible line free-spaceTr with a height of 30 is added to the end of the lines

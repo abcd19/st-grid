@@ -12,7 +12,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
           style="margin-bottom: 2px; width: 380px;"
         >
           <table
-            class="st-field-table-project st-linear-table"
+            class="linearTable"
             style="padding: 0px; margin: 0px; border-spacing: 0px;"
           >
             <tbody>
@@ -70,7 +70,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -78,13 +78,13 @@ exports[`DirectoryTbl change header cell width 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         Login
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -93,7 +93,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -101,13 +101,13 @@ exports[`DirectoryTbl change header cell width 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         User name
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -116,7 +116,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -124,13 +124,13 @@ exports[`DirectoryTbl change header cell width 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Verified
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -139,7 +139,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -147,13 +147,13 @@ exports[`DirectoryTbl change header cell width 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Level
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -193,29 +193,29 @@ exports[`DirectoryTbl change header cell width 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane Smith
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      newcomer
@@ -226,29 +226,29 @@ exports[`DirectoryTbl change header cell width 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven Tyler
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 0px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      advanced user
@@ -259,29 +259,29 @@ exports[`DirectoryTbl change header cell width 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John Cash
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      intermediate
@@ -346,7 +346,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
           style="margin-bottom: 2px; width: 380px;"
         >
           <table
-            class="st-field-table-project st-linear-table"
+            class="linearTable"
             style="padding: 0px; margin: 0px; border-spacing: 0px;"
           >
             <tbody>
@@ -404,7 +404,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 300px;"
                   >
                     <div
@@ -412,13 +412,13 @@ exports[`DirectoryTbl change header cell width 2`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 288px;"
                       >
                         Login
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -427,7 +427,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -435,13 +435,13 @@ exports[`DirectoryTbl change header cell width 2`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         User name
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -450,7 +450,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -458,13 +458,13 @@ exports[`DirectoryTbl change header cell width 2`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Verified
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -473,7 +473,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -481,13 +481,13 @@ exports[`DirectoryTbl change header cell width 2`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Level
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -527,29 +527,29 @@ exports[`DirectoryTbl change header cell width 2`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 300px; max-width: 300px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane Smith
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      newcomer
@@ -560,29 +560,29 @@ exports[`DirectoryTbl change header cell width 2`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 300px; max-width: 300px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven Tyler
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 0px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      advanced user
@@ -593,29 +593,29 @@ exports[`DirectoryTbl change header cell width 2`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 300px; max-width: 300px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John Cash
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      intermediate
@@ -680,7 +680,7 @@ exports[`DirectoryTbl click add btn 1`] = `
           style="margin-bottom: 2px; width: 380px;"
         >
           <table
-            class="st-field-table-project st-linear-table"
+            class="linearTable"
             style="padding: 0px; margin: 0px; border-spacing: 0px;"
           >
             <tbody>
@@ -738,7 +738,7 @@ exports[`DirectoryTbl click add btn 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -746,13 +746,13 @@ exports[`DirectoryTbl click add btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         Login
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -761,7 +761,7 @@ exports[`DirectoryTbl click add btn 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -769,13 +769,13 @@ exports[`DirectoryTbl click add btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         User name
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -784,7 +784,7 @@ exports[`DirectoryTbl click add btn 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -792,13 +792,13 @@ exports[`DirectoryTbl click add btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Verified
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -807,7 +807,7 @@ exports[`DirectoryTbl click add btn 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -815,13 +815,13 @@ exports[`DirectoryTbl click add btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Level
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -861,29 +861,29 @@ exports[`DirectoryTbl click add btn 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane Smith
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      newcomer
@@ -894,29 +894,29 @@ exports[`DirectoryTbl click add btn 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven Tyler
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 0px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      advanced user
@@ -927,29 +927,29 @@ exports[`DirectoryTbl click add btn 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John Cash
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      intermediate
@@ -1014,7 +1014,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
           style="margin-bottom: 2px; width: 380px;"
         >
           <table
-            class="st-field-table-project st-linear-table"
+            class="linearTable"
             style="padding: 0px; margin: 0px; border-spacing: 0px;"
           >
             <tbody>
@@ -1072,7 +1072,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -1080,13 +1080,13 @@ exports[`DirectoryTbl click remove btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         Login
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1095,7 +1095,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -1103,13 +1103,13 @@ exports[`DirectoryTbl click remove btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         User name
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1118,7 +1118,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -1126,13 +1126,13 @@ exports[`DirectoryTbl click remove btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Verified
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1141,7 +1141,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -1149,13 +1149,13 @@ exports[`DirectoryTbl click remove btn 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Level
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1195,29 +1195,29 @@ exports[`DirectoryTbl click remove btn 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane Smith
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      newcomer
@@ -1228,29 +1228,29 @@ exports[`DirectoryTbl click remove btn 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven Tyler
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 0px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      advanced user
@@ -1261,29 +1261,29 @@ exports[`DirectoryTbl click remove btn 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John Cash
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      intermediate
@@ -1348,7 +1348,7 @@ exports[`DirectoryTbl items property 1`] = `
           style="margin-bottom: 2px; width: 380px;"
         >
           <table
-            class="st-field-table-project st-linear-table"
+            class="linearTable"
             style="padding: 0px; margin: 0px; border-spacing: 0px;"
           >
             <tbody>
@@ -1406,7 +1406,7 @@ exports[`DirectoryTbl items property 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -1414,13 +1414,13 @@ exports[`DirectoryTbl items property 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         Login
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1429,7 +1429,7 @@ exports[`DirectoryTbl items property 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -1437,13 +1437,13 @@ exports[`DirectoryTbl items property 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         User name
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1452,7 +1452,7 @@ exports[`DirectoryTbl items property 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -1460,13 +1460,13 @@ exports[`DirectoryTbl items property 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Verified
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1475,7 +1475,7 @@ exports[`DirectoryTbl items property 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -1483,13 +1483,13 @@ exports[`DirectoryTbl items property 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Level
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1529,29 +1529,29 @@ exports[`DirectoryTbl items property 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Jane Smith
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      newcomer
@@ -1562,29 +1562,29 @@ exports[`DirectoryTbl items property 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      Steven Tyler
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 0px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-two"
+                    class="bodyCell bodyCellTwo"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      advanced user
@@ -1595,29 +1595,29 @@ exports[`DirectoryTbl items property 1`] = `
                 </tr>
                 <tr>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 100px; max-width: 100px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      John Cash
                   </td>
                   <td
                     align="center"
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 0px; overflow: hidden;"
                   >
                     <div
-                      class="pr-checkbox-imgCont"
+                      class="imgCont"
                       style="background-position: 30px 15px; opacity: 1;"
                     />
                   </td>
                   <td
-                    class="st-grid-body-cell st-grid-body-cell-project-one"
+                    class="bodyCell bodyCellOne"
                     style="width: 200px; max-width: 200px; white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt; text-overflow: ellipsis; box-sizing: border-box; padding-left: 5px; overflow: hidden;"
                   >
                      intermediate
@@ -1682,7 +1682,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
           style="margin-bottom: 2px; width: 380px;"
         >
           <table
-            class="st-field-table-project st-linear-table"
+            class="linearTable"
             style="padding: 0px; margin: 0px; border-spacing: 0px;"
           >
             <tbody>
@@ -1740,7 +1740,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
               <tbody>
                 <tr>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -1748,13 +1748,13 @@ exports[`DirectoryTbl should created successfully 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         Login
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1763,7 +1763,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 100px;"
                   >
                     <div
@@ -1771,13 +1771,13 @@ exports[`DirectoryTbl should created successfully 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 88px;"
                       >
                         User name
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1786,7 +1786,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -1794,13 +1794,13 @@ exports[`DirectoryTbl should created successfully 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Verified
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div
@@ -1809,7 +1809,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
                     </div>
                   </td>
                   <td
-                    class="st-grid-head-cell st-grid-head-cell-project"
+                    class="headerCell"
                     style="box-sizing: border-box; width: 200px;"
                   >
                     <div
@@ -1817,13 +1817,13 @@ exports[`DirectoryTbl should created successfully 1`] = `
                       style="height: 29px;"
                     >
                       <div
-                        class="st-grid-head-cell-textContainer"
+                        class="headCellTextContainer"
                         style="height: 29px; line-height: 29px; width: 188px;"
                       >
                         Level
                       </div>
                       <div
-                        class="st-grid-head-cell-widthChangeAnchor"
+                        class="widthChangeAnchor"
                         style="height: 29px; width: 5px;"
                       />
                       <div

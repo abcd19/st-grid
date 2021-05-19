@@ -2,7 +2,7 @@
 
 exports[`Combobox readOnly 1`] = `
 <table
-  class="st-field-table-project st-linear-table"
+  class="linearTable"
   style="padding: 0px; margin: 0px; border-spacing: 0px;"
 >
   <tbody>
@@ -12,7 +12,7 @@ exports[`Combobox readOnly 1`] = `
         style="padding: 0px; margin: 0px;"
       >
         <input
-          class="st-core-input-input"
+          class="input"
           placeholder=""
           readonly=""
           style="white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt;"
@@ -40,7 +40,7 @@ exports[`Combobox readOnly 1`] = `
 
 exports[`Combobox should created successfully 1`] = `
 <table
-  class="st-field-table-project st-linear-table"
+  class="linearTable"
   style="padding: 0px; margin: 0px; border-spacing: 0px;"
 >
   <tbody>
@@ -50,7 +50,7 @@ exports[`Combobox should created successfully 1`] = `
         style="padding: 0px; margin: 0px;"
       >
         <input
-          class="st-core-input-input"
+          class="input"
           placeholder=""
           style="white-space: nowrap; line-height: normal; font-kerning: auto; font-family: \\"Tahoma\\", Helvetica, Arial, sans-serif; font-size: 10pt;"
           type="text"

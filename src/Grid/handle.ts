@@ -119,7 +119,6 @@ export function onItemMouseWheelScrollingY(this: any, e: any) {
 
 export function onChangeHeaderCellWidth(this: any, cellAlias: string, width: number) {
   let { columns } = this.props;
-
   for (let i = 0; i < columns.length; i++) {
     if (columns[i]['alias'] == cellAlias) {
       columns[i]['widthPix'] = width;

@@ -133,29 +133,30 @@ describe('DirectoryTbl', () => {
 
   test('click header cell (sorting)', () => {
     const component = mount(<DirectoryTbl items={items} columns={columns} />);
-    component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
+    //console.dir(component.debug())
+    component.find(".headCellTextContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
     component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('mousedown');
-    component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
+    component.find(".headCellTextContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
-    component.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
+    component.find(".headCellTextContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(component.find(".st-grid-head-cell-sortAnchor")).toHaveLength(0);
 
     //sorting when empty items
     component.unmount();
     const componentEmptyItems = mount(<DirectoryTbl items={[]} columns={columns} />);
-    componentEmptyItems.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
+    componentEmptyItems.find(".headCellTextContainer").at(CELL_LOGIN_NUM).simulate('click');
     expect(componentEmptyItems.find(".st-grid-head-cell-sortAnchor")).toHaveLength(1);
 
     //sorting flag == false
     const componentSortingFlag = mount(<DirectoryTbl sortingFlag={false} items={items} columns={columns} />);
-    componentSortingFlag.find(".st-grid-head-cell-textContainer").at(CELL_LOGIN_NUM).simulate('click');
+    componentSortingFlag.find(".headCellTextContainer").at(CELL_LOGIN_NUM).simulate('click');
   })
 
 
   test('change header cell width', () => {
     const component = mount(<DirectoryTbl items={items} columns={columns} />, { attachTo: container });
-    component.find(".st-grid-head-cell-widthChangeAnchor").at(CELL_LOGIN_NUM).simulate('mousedown', { pageX: 200 });
+    component.find(".widthChangeAnchor").at(CELL_LOGIN_NUM).simulate('mousedown', { pageX: 200 });
     expect(component.render()).toMatchSnapshot();
 
 
