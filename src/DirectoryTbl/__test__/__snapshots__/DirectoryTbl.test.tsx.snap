@@ -59,7 +59,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
         >
           <div
             class="st-grid-header-content-div"
-            style="height: 32px;"
+            style="height: 32px; width: 600px;"
           >
             <table
               cellpadding="0"
@@ -184,6 +184,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
         >
           <div
             class="st-grid-body-content-div"
+            style="width: 600px;"
           >
             <table
               cellpadding="0"
@@ -324,7 +325,7 @@ exports[`DirectoryTbl change header cell width 1`] = `
         >
           <div
             class="st-grid-bottomScroll-content-div"
-            style="height: 20px;"
+            style="height: 20px; width: 600px;"
           />
         </div>
       </td>
@@ -393,7 +394,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
         >
           <div
             class="st-grid-header-content-div"
-            style="height: 32px;"
+            style="height: 32px; width: 800px;"
           >
             <table
               cellpadding="0"
@@ -518,6 +519,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
         >
           <div
             class="st-grid-body-content-div"
+            style="width: 800px;"
           >
             <table
               cellpadding="0"
@@ -658,7 +660,7 @@ exports[`DirectoryTbl change header cell width 2`] = `
         >
           <div
             class="st-grid-bottomScroll-content-div"
-            style="height: 20px;"
+            style="height: 20px; width: 800px;"
           />
         </div>
       </td>
@@ -727,7 +729,7 @@ exports[`DirectoryTbl click add btn 1`] = `
         >
           <div
             class="st-grid-header-content-div"
-            style="height: 32px;"
+            style="height: 32px; width: 600px;"
           >
             <table
               cellpadding="0"
@@ -852,6 +854,7 @@ exports[`DirectoryTbl click add btn 1`] = `
         >
           <div
             class="st-grid-body-content-div"
+            style="width: 600px;"
           >
             <table
               cellpadding="0"
@@ -992,7 +995,7 @@ exports[`DirectoryTbl click add btn 1`] = `
         >
           <div
             class="st-grid-bottomScroll-content-div"
-            style="height: 20px;"
+            style="height: 20px; width: 600px;"
           />
         </div>
       </td>
@@ -1061,7 +1064,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
         >
           <div
             class="st-grid-header-content-div"
-            style="height: 32px;"
+            style="height: 32px; width: 600px;"
           >
             <table
               cellpadding="0"
@@ -1186,6 +1189,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
         >
           <div
             class="st-grid-body-content-div"
+            style="width: 600px;"
           >
             <table
               cellpadding="0"
@@ -1326,7 +1330,7 @@ exports[`DirectoryTbl click remove btn 1`] = `
         >
           <div
             class="st-grid-bottomScroll-content-div"
-            style="height: 20px;"
+            style="height: 20px; width: 600px;"
           />
         </div>
       </td>
@@ -1395,7 +1399,7 @@ exports[`DirectoryTbl items property 1`] = `
         >
           <div
             class="st-grid-header-content-div"
-            style="height: 32px;"
+            style="height: 32px; width: 600px;"
           >
             <table
               cellpadding="0"
@@ -1520,6 +1524,7 @@ exports[`DirectoryTbl items property 1`] = `
         >
           <div
             class="st-grid-body-content-div"
+            style="width: 600px;"
           >
             <table
               cellpadding="0"
@@ -1660,7 +1665,7 @@ exports[`DirectoryTbl items property 1`] = `
         >
           <div
             class="st-grid-bottomScroll-content-div"
-            style="height: 20px;"
+            style="height: 20px; width: 600px;"
           />
         </div>
       </td>
@@ -1729,7 +1734,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
         >
           <div
             class="st-grid-header-content-div"
-            style="height: 32px;"
+            style="height: 32px; width: 600px;"
           >
             <table
               cellpadding="0"
@@ -1854,6 +1859,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
         >
           <div
             class="st-grid-body-content-div"
+            style="width: 600px;"
           >
             <table
               cellpadding="0"
@@ -1895,7 +1901,7 @@ exports[`DirectoryTbl should created successfully 1`] = `
         >
           <div
             class="st-grid-bottomScroll-content-div"
-            style="height: 20px;"
+            style="height: 20px; width: 600px;"
           />
         </div>
       </td>
