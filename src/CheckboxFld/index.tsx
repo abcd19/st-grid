@@ -1,2 +1,3 @@
-export {CheckboxFldLayoutEdit, ICheckboxFldLayoutEditProps} from './CheckboxFldLayoutEdit'
+export {CheckboxFldLayoutEdit, ICheckboxFldLayoutEditProps, 
+  typeCheckboxFldOnChange, typeCheckboxFldVal} from './CheckboxFldLayoutEdit'
 export {CheckboxFldCell, ICheckboxFldCellProps} from './CheckboxFldCell'

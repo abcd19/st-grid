@@ -109,28 +109,6 @@ describe('DirectoryTbl', () => {
   })
 
 
-  test('onMouseEnterItem & onMouseLeaveItem & onDoubleClickItem & onClick works fine', () => {
-    const onMouseEnterItem = jest.fn((rowObject: typeItem, cellAlias: string) => { });
-    const onMouseLeaveItem = jest.fn((rowObject: typeItem, cellAlias: string) => { })
-    const onDoubleClickItem = jest.fn((rowObject: typeItem, cellAlias: string) => { })
-    const onClickItem = jest.fn((rowObject: typeItem, cellAlias: string) => { })
-    const component = mount(<DirectoryTbl onClickItem={onClickItem} onDoubleClickItem={onDoubleClickItem} onMouseEnterItem={onMouseEnterItem}
-      onMouseLeaveItem={onMouseLeaveItem} items={items} columns={columns} />);
-
-    component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('mouseenter');
-    expect(onMouseEnterItem).toHaveBeenCalled();
-
-    component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('mouseleave');
-    expect(onMouseLeaveItem).toHaveBeenCalled();
-
-    component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('dblclick');
-    expect(onDoubleClickItem).toHaveBeenCalled();
-
-    component.find(RowLayout).at(SEL_ROW_NUM).find(CellLayout).at(CELL_LOGIN_NUM).find(StringFldCell).find('td').simulate('click');
-    expect(onClickItem).toHaveBeenCalled();
-  });
-
-
   test('click header cell (sorting)', () => {
     const component = mount(<DirectoryTbl items={items} columns={columns} />);
     //console.dir(component.debug())

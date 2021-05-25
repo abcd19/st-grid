@@ -4,7 +4,7 @@ import {shallow,} from "enzyme";
 import {CheckboxFldLayoutEdit} from './../CheckboxFldLayoutEdit';
 import {ICheckboxFldLayoutEditProps} from './../CheckboxFldLayoutEdit';
 
-const setUp = (props?: ICheckboxFldLayoutEditProps) => shallow<CheckboxFldLayoutEdit>(<CheckboxFldLayoutEdit {...props}  />)
+const setUp = (props?: ICheckboxFldLayoutEditProps) => shallow(<CheckboxFldLayoutEdit {...props}  />)
 
 describe('Checkbox tests', () => {
 
@@ -24,9 +24,7 @@ describe('Checkbox tests', () => {
     expect(div.get(0).props.style).toHaveProperty(
       'backgroundPosition',
       '30px 15px',
-    );
-    const inst = component.instance();
-    inst.onClickHandle();
+    );   
   });
 
 

@@ -1,14 +1,21 @@
 import * as ST from '../common';
 import React from 'react';
 import {FieldLayoutEdit} from '../StringFld/FieldLayoutEdit';
-import {ListLayout, typeComboValue} from './ListLayout'
+import {ListLayout} from './ListLayout'
 import {IImgFieldLayoutEditBtn} from './../StringFld/FieldLayoutEdit';
+
+export type typeComboValue = {
+  raw?: string | number | boolean,
+  display?: string | number | boolean,
+}
+
+export type typeComboOnChange = (val?: typeComboValue) => void;
 
 
 export interface IComboboxFldLayoutEditProps {
   disableSearch?: boolean;
   readOnly?: boolean,
-  onChange?: (val?: typeComboValue) => void;
+  onChange?: typeComboOnChange;
   items: typeComboValue[];
   val?: typeComboValue;
   listWidthPix?: number;

@@ -1,10 +1,10 @@
 import React from 'react';
 import css from './Cell.scss';
-import {tyepStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
-import {typeComboValue} from './../../../ComboboxFld/ListLayout';
+import {typeStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
+import {typeComboValue} from './../../../ComboboxFld';
 import {typeCheckboxFldVal} from './../../../CheckboxFld/CheckboxFldLayoutEdit'
 import { typeItem, typeTypeColumn } from './../GridLayout'
-export type tyepCellVal = tyepStringFldVal | typeComboValue |  typeCheckboxFldVal; 
+export type tyepCellVal = typeStringFldVal | typeComboValue |  typeCheckboxFldVal; 
 
 
 export interface ICellLayoutProps {

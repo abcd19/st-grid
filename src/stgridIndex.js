@@ -35,15 +35,15 @@ export const MyCombobox = () =>
 
 export const MyCheckbox = () =>
 {
-  const [val, setVal] = useState('');
-  return (<CheckboxFldLayoutEdit val = {val} />)
+  const [val, setVal] = useState();
+  return (<CheckboxFldLayoutEdit val = {val} onChange={setVal} />)
 }
 
 
 export function run()
 {    
     ReactDOM.render(      
-        <MyTable  />
+        <MyCheckbox />
     , document.getElementById('myTbl1'));
 
 } 

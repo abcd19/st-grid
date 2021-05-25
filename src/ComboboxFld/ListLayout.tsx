@@ -3,6 +3,7 @@ import React from 'react';
 import {ListItemLayout} from './ListItemLayout'
 import {SearchFldLayoutEdit} from './SearchFldLayoutEdit'
 import {calcRank} from '../findWords';
+import {typeComboValue, typeComboOnChange} from './ComboboxFldLayoutEdit';
 
 //ширина списка при котрытии
 export const WIDTH = 300;
@@ -11,14 +12,9 @@ export const LIST_ITEM_WIDTH = WIDTH-5;
 //максимальная высота списка
 export const MAXHEIGHT = 250;
 
-export type typeComboValue = {
-  raw?: string | number | boolean,
-  display?: string | number | boolean,
-}
-
 export interface IListLayoutProps {
   handler: {
-    change: (val?: typeComboValue) => void
+    change: typeComboOnChange
   };
   items: typeComboValue[];
   cordBtnLeft: number;
