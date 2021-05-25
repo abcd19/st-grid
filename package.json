@@ -84,6 +84,7 @@
   },
   "scripts": {
     "updateSnapshot": "jest --updateSnapshot",
+    "jestWatch": "jest --watch",
     "test": "jest --coverage",
     "e2e": "jest --config jest.e2e.config.js",
     "testAll": "jest",

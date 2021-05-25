@@ -5,9 +5,9 @@ import { ToolbarLayout, IToolbarLayoutProps } from './Toolbar'
 import { calcSumColumnsWidth } from './calcSumColumnsWidth';
 import './GridLayout.scss'
 import { onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth } from './handle'
-import { IStringFldLayoutEditProps } from './../StringFld';
-import { IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/ } from './../ComboboxFld';
-import { ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/ } from './../CheckboxFld';
+import { IStringFldLayoutEditProps } from './../../StringFld';
+import { IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/ } from './../../ComboboxFld';
+import { ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/ } from './../../CheckboxFld';
 
 
 

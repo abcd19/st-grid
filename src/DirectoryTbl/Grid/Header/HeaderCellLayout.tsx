@@ -1,4 +1,4 @@
-import * as ST from '../../common'
+import * as ST from '../../../common'
 import React from 'react';
 import css from './Header.scss'
 import {typeHandler} from './HeaderLayout';

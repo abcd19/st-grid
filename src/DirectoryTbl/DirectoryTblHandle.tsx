@@ -2,8 +2,8 @@
 import * as ST from '../common'
 import {cloneData} from './DirectoryTblFunctions'
 import {DirectoryTbl} from './DirectoryTbl';
-import {typeItem} from './../Grid/GridLayout';
-import {tyepCellVal} from './../Grid/Items/CellLayout';
+import {typeItem} from './Grid/GridLayout';
+import {tyepCellVal} from './Grid/Items/CellLayout';
 
 //change item
 export function onChangeItem(this: DirectoryTbl, item: typeItem, cellAlias: string, newVal: tyepCellVal): void

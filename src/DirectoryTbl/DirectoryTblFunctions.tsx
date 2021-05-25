@@ -1,6 +1,6 @@
 
 import * as ST from '../common';
-import {typeItem} from './../Grid/GridLayout';
+import {typeItem} from './Grid/GridLayout';
 
 // copies an array of items
 // this removes any system variables such as layoutmode, color, etc.

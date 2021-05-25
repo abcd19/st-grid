@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { DirectoryTbl, IDirectoryTblProps } from './../DirectoryTbl';
-import { typeColumn } from '../../Grid/GridLayout';
+import { typeColumn } from '../Grid/GridLayout';
 import { ComboboxFldCell } from './../../ComboboxFld/ComboboxFldCell';
 import { CheckboxFldCell } from './../../CheckboxFld/CheckboxFldCell';
 import React from 'react';

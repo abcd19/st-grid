@@ -2,7 +2,7 @@ import { CellLayout } from './CellLayout';
 import React from 'react';
 import { tyepCellVal } from './CellLayout'
 import { typeColumn, typeItem } from '../GridLayout'
-import {StringFldCell} from '../../StringFld/StringFldCell'
+import {StringFldCell} from '../../../StringFld/StringFldCell'
 
 
 export interface IRowLayoutProps {

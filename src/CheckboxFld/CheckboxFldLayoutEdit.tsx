@@ -4,12 +4,12 @@ import css from './Checkbox.scss';
 
 type onChangeType = (val: boolean) => void;
 
-export type tyepCheckboxFldVal = boolean | undefined;
+export type typeCheckboxFldVal = boolean | undefined;
 
 export interface ICheckboxFldLayoutEditProps {
   onChange?: onChangeType;
   readOnly?: boolean;
-  val?: tyepCheckboxFldVal;
+  val?: typeCheckboxFldVal;
 }
 
 // checkbox layout component

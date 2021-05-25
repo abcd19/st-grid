@@ -1,5 +1,5 @@
 import React from 'react'
-import { GridLayout, IToolbarLayoutProps, typeColumn, typeItem, tyepCellVal } from './../Grid'
+import { GridLayout, IToolbarLayoutProps, typeColumn, typeItem, tyepCellVal } from './Grid'
 import { onChangeItem, onMouseDownItem} from './DirectoryTblHandle'
 import * as ST from '../common'
 import { createDirectoryTableToolbar } from './Toolbar/createDirectoryTableToolbar';

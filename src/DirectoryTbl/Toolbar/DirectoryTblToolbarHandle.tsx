@@ -1,6 +1,6 @@
 
 import * as ST from '../../common'
-import { typeItem } from '../../Grid';
+import { typeItem } from '../Grid';
 import { cloneData } from '../DirectoryTblFunctions'
 import { DirectoryTbl } from './../DirectoryTbl';
 

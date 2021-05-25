@@ -1,4 +1,4 @@
-import * as ST from '../../common';
+import * as ST from './../../../common';
 import { RowLayout } from './RowLayout'
 import { CELL_HEIGHT } from './ItemsLayout'
 import React from 'react';

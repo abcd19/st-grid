@@ -1,7 +1,7 @@
 
 import {ImgButtonLayout} from '../../StringFld/ImgButtonLayout'
 import {onRemoveBtnClick, onAddBtnClick} from './DirectoryTblToolbarHandle'
-import {IToolbarLayoutProps} from './../../Grid/Toolbar/ToolbarLayout'
+import {IToolbarLayoutProps} from './../Grid/Toolbar/ToolbarLayout'
 import {DirectoryTbl} from './../DirectoryTbl';
 
 // create toolbar

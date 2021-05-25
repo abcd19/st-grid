@@ -1,6 +1,6 @@
 import React from 'react';
-import { LinearGroupLayout } from '../../StringFld/LinearGroupLayout';
-import { IImgButtonLayoutProps } from './../../StringFld/ImgButtonLayout'
+import { LinearGroupLayout } from '../../../StringFld/LinearGroupLayout';
+import { IImgButtonLayoutProps } from './../../../StringFld/ImgButtonLayout'
 
 
 export interface IToolbarItem {
