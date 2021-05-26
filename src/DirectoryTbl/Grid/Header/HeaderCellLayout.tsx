@@ -14,16 +14,13 @@ export interface IHeaderCellLayoutProps {
 }
 
 export interface IHeaderCellLayoutState {
-  startChord: number;
-  cellWidthChangingNow: boolean;
-  clientWidth: number;
   sortBadge: string
 }
 
 const CELL_HEIGHT = 30;
 
 /* cell of header */
-export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IHeaderCellLayoutState> {
+export class HeaderCellLayout extends React.PureComponent<IHeaderCellLayoutProps, IHeaderCellLayoutState> {
 
   /**
    * @constructor
@@ -33,9 +30,6 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     super(props);
 
     this.state = {
-      startChord: 0,
-      cellWidthChangingNow: false,
-      clientWidth: this.props.width,
       sortBadge: ARR_NONE
     };
 
@@ -89,42 +83,39 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
 
 
   anchorMouseDownHandle(e: React.MouseEvent): void {
-    window.document.addEventListener('mousemove', this.anchorMouseMoveHandle);
-    window.document.addEventListener('mouseup', this.anchorMouseUpHandle);
-
-    this.setState({
-      startChord: e.pageX,
-      clientWidth: this.props.width,
-      cellWidthChangingNow: true
-    });
+    window.document.addEventListener('mousemove', this.anchorMouseMoveHandle, true);
+    window.document.addEventListener('mouseup', this.anchorMouseUpHandle, true);
   }
 
-  anchorMouseUpHandle(): void {
-    window.document.removeEventListener('mousemove', this.anchorMouseMoveHandle);
-    window.document.removeEventListener('mouseup', this.anchorMouseUpHandle);
-    this.setState({
-      cellWidthChangingNow: false
-    });
+  anchorMouseUpHandle(e: MouseEvent): void {
+
+    e.stopPropagation();
+
+    window.document.removeEventListener('mousemove', this.anchorMouseMoveHandle, true);
+    window.document.removeEventListener('mouseup', this.anchorMouseUpHandle, true);
   }
 
   anchorMouseMoveHandle(e: MouseEvent): void {
-    if (this.state.cellWidthChangingNow == false) {
-      return;
-    }
+
+    e.stopPropagation();
 
     if (typeof (this.props['changeHeaderCellWidth']) == 'function') {
-      const moveX = e.pageX - this.state.startChord;
-      const newWidth = this.state.clientWidth + moveX;
-      if (this.state.clientWidth + moveX > 20) {
-        this.props['changeHeaderCellWidth'](this.props.alias, newWidth);
+      if (this.props.width > 20) {
+        this.props['changeHeaderCellWidth'](this.props.alias, this.props.width + e.movementX);
       }
     }
   }
 
-  render(): React.ReactElement
-  {
+  componentWillUnmount() {
+    window.document.removeEventListener('mousemove', this.anchorMouseMoveHandle, true);
+    window.document.removeEventListener('mouseup', this.anchorMouseUpHandle, true);
+  }
+
+
+  render(): React.ReactElement {
+    console.log('render')
     const cellHeight = String(CELL_HEIGHT - 1) + 'px';
-    
+
     const { sortBadge } = this.state;
 
     let sortState = undefined;

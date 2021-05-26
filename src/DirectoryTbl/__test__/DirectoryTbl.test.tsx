@@ -145,7 +145,7 @@ describe('DirectoryTbl', () => {
         bubbles: true,
         cancelable: true,
       });
-      Object.defineProperty(ev, 'pageX', { get: () => clientX });
+      Object.defineProperty(ev, 'movementX', { get: () => 20 });
       component.getDOMNode().dispatchEvent(ev);
     }
 
