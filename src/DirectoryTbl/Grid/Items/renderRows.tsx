@@ -34,10 +34,6 @@ export function renderRows(this: ItemsLayout): React.ReactElement[] {
       defaultColor={defaultColor}
       onChangeItem={props.onChangeItem}
       onMouseDownItem={props.onMouseDownItem}
-      onMouseEnterItem={props.onMouseEnterItem}
-      onMouseLeaveItem={props.onMouseLeaveItem}
-      onDoubleClickItem={props.onDoubleClickItem}
-      onClickItem={props.onClickItem}
       rowNum={i}
       columns={ST.clone(props.columns)}
       item={props.items[i]} key={i} />

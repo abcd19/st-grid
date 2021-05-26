@@ -2,9 +2,9 @@ import React from 'react';
 import css from './Checkbox.scss';
 
 
-export type typeCheckboxFldVal = boolean | undefined;
+export type typeCheckboxFldVal = boolean;
 
-export type typeCheckboxFldOnChange = (val: boolean) => void | undefined;
+export type typeCheckboxFldOnChange = (val: typeCheckboxFldVal) => void;
 
 export interface ICheckboxFldLayoutEditProps {
   onChange?: typeCheckboxFldOnChange;

@@ -1,59 +1,42 @@
 import {HeaderCellLayout} from './HeaderCellLayout'
 import React from 'react';
 import {typeColumn} from './../../Grid/GridLayout'
-import {typeHandler} from './HeaderLayout';
+import {IHeaderLayoutProps} from './HeaderLayout';
 
-export interface IeaderRowLayoutProps {
-  columns: typeColumn[];
-  handler: typeHandler;
-  sortingFlag: boolean;
-}
+export interface IHeaderRowLayoutProps extends IHeaderLayoutProps {};
 
 /* header row */
-export class HeaderRowLayout extends React.Component<IeaderRowLayoutProps> {
-  
+export const HeaderRowLayout: React.FC<IHeaderRowLayoutProps> = (props: IHeaderRowLayoutProps)=> {
 
-  constructor(props: IeaderRowLayoutProps)
+  const items = [];
+
+  const {columns, sortingFlag = false}  = props;
+
+  for(let i = 0; i < columns.length; i++)
   {
-    super(props);
-  }
-
-
-  render(): React.ReactElement
-  {
-
-    const items = [];
-    
-    for(let i = 0; i < this.props['columns'].length; i++)
+    if(columns[i]['visible'] === false)
     {
-      if(this.props['columns'][i]['visible'] === false)
-      {
-        continue
-      }
-      
-      const {widthPix, title} = this.props['columns'][i];
-
-      let cWidthPix = 100;
-      if(typeof(widthPix) =='number' && widthPix >=0)
-      {
-        cWidthPix = widthPix;
-      }
-
-      const newItem = <HeaderCellLayout 
-                          key = {i} 
-                          sortingFlag={this.props.sortingFlag}
-                          width = {cWidthPix}
-                          handler={this.props['handler']}  
-                          settings={this.props['columns'][i]} 
-                          text={title} />;
-                  
-      items.push(newItem);
+      continue;
     }
-    return(<tr>
-            {items}
-            <td  className='st-grid-head-cell-freeSpace'></td>
-          </tr>)
+    
+    const {widthPix = 100, title = `cell_${i}`, alias = `cell_${i}`} = columns[i];
+
+    const newItem = <HeaderCellLayout 
+                        key = {i} 
+                        sortingFlag={sortingFlag}
+                        width = {widthPix}
+                        changeHeaderCellWidth={props.changeHeaderCellWidth} 
+                        clickHeaderCell={props.clickHeaderCell}
+                        alias={alias} 
+                        title={title} />;
+                
+    items.push(newItem);
   }
-  
+  return(<tr>
+          {items}
+          <td  className='st-grid-head-cell-freeSpace'></td>
+        </tr>)
 }
+
+
 

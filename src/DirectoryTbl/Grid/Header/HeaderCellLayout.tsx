@@ -1,19 +1,16 @@
 import * as ST from '../../../common'
 import React from 'react';
 import css from './Header.scss'
-import {typeHandler} from './HeaderLayout';
 
 const ARR_DOWN = '&#8595;', ARR_UP = '&#8593;', ARR_NONE = '';
 
-
 export interface IHeaderCellLayoutProps {
   width: number;
-  text: string;
+  title: string;
   sortingFlag: boolean;
-  handler: typeHandler;
-  settings: {
-    alias: string
-  }
+  clickHeaderCell: (alias: string, mark?: string) => void;
+  changeHeaderCellWidth: (alias: string, newWidth: number) => void;
+  alias: string;
 }
 
 export interface IHeaderCellLayoutState {
@@ -23,13 +20,10 @@ export interface IHeaderCellLayoutState {
   sortBadge: string
 }
 
+const CELL_HEIGHT = 30;
+
 /* cell of header */
 export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IHeaderCellLayoutState> {
-
-  private CELL_HEIGHT: number;
-  private startChord: number;
-  private width: number;
-
 
   /**
    * @constructor
@@ -45,15 +39,11 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
       sortBadge: ARR_NONE
     };
 
-    this.CELL_HEIGHT = 30;
-
     this.anchorMouseDownHandle = this.anchorMouseDownHandle.bind(this);
     this.anchorMouseMoveHandle = this.anchorMouseMoveHandle.bind(this);
     this.anchorMouseUpHandle = this.anchorMouseUpHandle.bind(this);
     this.clickHeaderCellHandle = this.clickHeaderCellHandle.bind(this);
 
-    this.startChord = 0;
-    this.width = this.props.width;
   }
 
 
@@ -82,7 +72,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
 
     this.setState({ sortBadge: newSortBadge }, () => {
 
-      if (ST.isFunction(this.props['handler']['clickHeaderCell'])) {
+      if (ST.isFunction(this.props['clickHeaderCell'])) {
         let mark = undefined;
         if (newSortBadge == ARR_UP) {
           mark = 'smallestfirst';
@@ -90,7 +80,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
           mark = 'biggestfirst';
         }
 
-        this.props['handler']['clickHeaderCell'](this.props['settings']['alias'], mark);
+        this.props['clickHeaderCell'](this.props.alias, mark);
       }
     })
 
@@ -122,21 +112,19 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
       return;
     }
 
-    if (typeof (this.props['handler']['changeHeaderCellWidth']) == 'function') {
+    if (typeof (this.props['changeHeaderCellWidth']) == 'function') {
       const moveX = e.pageX - this.state.startChord;
       const newWidth = this.state.clientWidth + moveX;
       if (this.state.clientWidth + moveX > 20) {
-        this.props['handler']['changeHeaderCellWidth'](this.props.settings.alias, newWidth);
+        this.props['changeHeaderCellWidth'](this.props.alias, newWidth);
       }
     }
   }
 
   render(): React.ReactElement
   {
-    const cellHeight = String(this.CELL_HEIGHT - 1) + 'px';
-    this.width = this.props.width;
-
-
+    const cellHeight = String(CELL_HEIGHT - 1) + 'px';
+    
     const { sortBadge } = this.state;
 
     let sortState = undefined;
@@ -149,7 +137,7 @@ export class HeaderCellLayout extends React.Component<IHeaderCellLayoutProps, IH
     return (
       <td className={css.headerCell} style={{ boxSizing: "border-box", width: this.props.width + 'px' }}>
         <div style={{ height: cellHeight }} className="st-grid-head-cell-general">
-          <div onClick={this.clickHeaderCellHandle} style={{ height: cellHeight, lineHeight: cellHeight, width: this.props.width - bagWidthCoef + 'px' }} className={css.headCellTextContainer} >{this.props.text}</div>
+          <div onClick={this.clickHeaderCellHandle} style={{ height: cellHeight, lineHeight: cellHeight, width: this.props.width - bagWidthCoef + 'px' }} className={css.headCellTextContainer} >{this.props.title}</div>
           {sortState}
           <div onMouseDown={this.anchorMouseDownHandle} style={{ height: cellHeight, width: '5px' }} className={css.widthChangeAnchor}></div>
           <div style={{ clear: "left" }}></div>

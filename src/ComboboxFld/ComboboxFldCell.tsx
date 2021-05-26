@@ -1,16 +1,10 @@
 import React, { CSSProperties } from 'react';
 import {ComboboxFldLayoutEdit, IComboboxFldLayoutEditProps} from './ComboboxFldLayoutEdit';
 import {typeComboValue, typeComboOnChange} from './ComboboxFldLayoutEdit'
+import {IFldCellProps} from './../StringFld'
 
-export interface IComboboxFldCellProps {
-  layoutMode?: string;
-  style?: CSSProperties; 
-  onMouseDownItem?: (e: React.MouseEvent<HTMLTableCellElement>) => void;
-  onChangeItem?: typeComboOnChange;
-  className?: string;
-  val?: typeComboValue;
-  settings: IComboboxFldLayoutEditProps;
-}
+
+export interface IComboboxFldCellProps extends IFldCellProps<typeComboOnChange, typeComboValue, IComboboxFldLayoutEditProps>{}
 
 export const ComboboxFldCell: React.FC<IComboboxFldCellProps> = (props: IComboboxFldCellProps) =>
 {

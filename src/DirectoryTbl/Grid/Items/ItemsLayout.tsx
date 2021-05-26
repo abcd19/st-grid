@@ -10,16 +10,15 @@ export interface IItemsLayoutProps {
   height: number;
   items: typeItem[];
   onChangeItem: (rowObject: typeItem, cellAlias: string, val: tyepCellVal) => void,
-  onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void,
-  onMouseEnterItem: (rowObject: typeItem, cellAlias: string) => void,
-  onMouseLeaveItem: (rowObject: typeItem, cellAlias: string) => void,
-  onDoubleClickItem: (rowObject: typeItem, cellAlias: string) => void;
-  onClickItem: (rowObject: typeItem, cellAlias: string) => void;
+  onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void
 }
 
+export const CELL_HEIGHT = 30;
+export const SCROLL_PLACE = 20;
+export const MIN_COL_WIDTH = 100;
 
 // set of rows
-class ItemsLayout extends React.Component<IItemsLayoutProps> {
+export class ItemsLayout extends React.Component<IItemsLayoutProps> {
 
   private renderRows: (props: IItemsLayoutProps) => React.ReactElement[];
 
@@ -47,10 +46,3 @@ class ItemsLayout extends React.Component<IItemsLayoutProps> {
 
   }
 }
-
-
-const CELL_HEIGHT = 30;
-const SCROLL_PLACE = 20;
-const MIN_COL_WIDTH = 100;
-export { ItemsLayout, CELL_HEIGHT, SCROLL_PLACE, MIN_COL_WIDTH }
-

@@ -2,8 +2,8 @@ import React from 'react';
 import {FieldLayoutEdit} from './FieldLayoutEdit';
 
 
-export type typeStringFldVal = string | undefined;
-export type typeStringFldOnChange = (val: string | undefined) => void;
+export type typeStringFldVal = string;
+export type typeStringFldOnChange = (val?: typeStringFldVal) => void;
 
 export interface IStringFldLayoutEditProps {
   onChangeDelay?: typeStringFldOnChange,

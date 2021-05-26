@@ -186,7 +186,7 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
           <td className="st-grid-header-td">
             <div className="st-grid-header-div" ref={this.headerDivRef} style={{ height: '32px', width: width }}>
               <div className="st-grid-header-content-div" style={{ height: '32px', width: bodyContentWidth + 'px' }}>
-                <HeaderLayout clickHeaderCell={this.onClickHeaderCell} sortingFlag={this.props.sortingFlag} columns={columns} onChangeHeaderCellWidth={this.onChangeHeaderCellWidth} />
+                <HeaderLayout clickHeaderCell={this.onClickHeaderCell} sortingFlag={this.props.sortingFlag} columns={columns} changeHeaderCellWidth={this.onChangeHeaderCellWidth} />
               </div>
             </div>
           </td>
@@ -199,10 +199,6 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
                 <ItemsLayout
                   columns={columns}
                   onMouseDownItem={this.props.onMouseDownItem}
-                  onMouseEnterItem={this.props.onMouseEnterItem}
-                  onMouseLeaveItem={this.props.onMouseLeaveItem}
-                  onDoubleClickItem={this.props.onDoubleClickItem}
-                  onClickItem={this.props.onClickItem}
                   onChangeItem={this.props.onChangeItem}
                   items={items}
                   height={bodyContentHeight}

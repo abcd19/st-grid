@@ -1,18 +1,22 @@
 import React from 'react';
 import {StringFldLayoutEdit, IStringFldLayoutEditProps, typeStringFldVal, typeStringFldOnChange} from './StringFldLayoutEdit';
 
-export interface StringFldCellProps {
+
+export interface IFldCellProps<typeOnChange, typeVal, typeSettings> {
   layoutMode: string; 
   style: React.CSSProperties;
   onMouseDownItem: (e: React.MouseEvent<HTMLTableCellElement>) => void;
-  onChangeItem: typeStringFldOnChange;
+  onChangeItem: typeOnChange;
   className: string; 
-  val: typeStringFldVal;
-  settings?: IStringFldLayoutEditProps
+  val: typeVal;
+  settings: typeSettings
 }
 
-export const StringFldCell : React.FC<StringFldCellProps> = (
-  {layoutMode, style, onMouseDownItem, onChangeItem, className, val}: StringFldCellProps) =>
+export interface IStringFldCellProps extends IFldCellProps<typeStringFldOnChange, typeStringFldVal, IStringFldLayoutEditProps>{}
+
+
+export const StringFldCell : React.FC<IStringFldCellProps> = (
+  {layoutMode, style, onMouseDownItem, onChangeItem, className, val}: IStringFldCellProps) =>
 {
  
   

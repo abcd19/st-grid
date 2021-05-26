@@ -1,17 +1,9 @@
 import React from 'react';
 import {CheckboxFldLayoutEdit, ICheckboxFldLayoutEditProps, 
    typeCheckboxFldOnChange, typeCheckboxFldVal} from './CheckboxFldLayoutEdit';
+import {IFldCellProps} from './../StringFld'
 
-
-export interface ICheckboxFldCellProps {
-  layoutMode: string;
-  style: React.CSSProperties;
-  onMouseDownItem: (e: React.MouseEvent<HTMLTableCellElement>) => void;
-  className: string;
-  settings: ICheckboxFldLayoutEditProps;
-  onChangeItem: typeCheckboxFldOnChange;
-  val: typeCheckboxFldVal;
-}
+export interface ICheckboxFldCellProps extends IFldCellProps<typeCheckboxFldOnChange, typeCheckboxFldVal, ICheckboxFldLayoutEditProps>{};
 
 export const CheckboxFldCell : React.FC<ICheckboxFldCellProps> = (props: ICheckboxFldCellProps) =>
 {

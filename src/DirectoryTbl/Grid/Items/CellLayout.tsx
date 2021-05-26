@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import css from './Cell.scss';
 import {typeStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
 import {typeComboValue} from './../../../ComboboxFld';
@@ -8,14 +8,10 @@ export type tyepCellVal = typeStringFldVal | typeComboValue |  typeCheckboxFldVa
 
 
 export interface ICellLayoutProps {
-  onMouseEnterItem: (alias: string) => void,
-  onMouseLeaveItem: (alias: string) => void,
   onMouseDownItem: (alias: string) => void,
   onChangeItem: (cellAlias: string, val: tyepCellVal) => void,
   color?: string,
   widthPix: number,
-  onDoubleClickItem: (cellAlias: string)=>void,
-  onClickItem: (cellAlias: string) => void,
   val: tyepCellVal,
   rowItem: typeItem,
   rowNum: number,
@@ -28,101 +24,48 @@ export interface ICellLayoutProps {
 
 
 // cell of the table
-class CellLayout extends React.Component<ICellLayoutProps> {
+export const CellLayout : React.FC<ICellLayoutProps> = (props: ICellLayoutProps) => {
 
-  private background: string;
-  private display: string;
-  private _baseStyle: React.CSSProperties;
-
-  constructor(props: ICellLayoutProps) {
-    super(props);
-    this.background = '';
-    this.display = '';
-    this.onMouseDownItem = this.onMouseDownItem.bind(this);
-    this.onChangeItem = this.onChangeItem.bind(this);
-
-    this.onMouseEnterItem = this.onMouseEnterItem.bind(this);
-    this.onMouseLeaveItem = this.onMouseLeaveItem.bind(this);
-    this.onDoubleClickItem = this.onDoubleClickItem.bind(this);
-    this.onClickItem = this.onClickItem.bind(this);
-
-    this._baseStyle = {
-      whiteSpace: 'nowrap',
-      lineHeight: 'normal',
-      fontKerning: 'auto',
-      fontFamily: '"Tahoma", Helvetica, Arial, sans-serif',
-      fontSize: '10pt',
-      textOverflow: 'ellipsis',
-      boxSizing: 'border-box',
-      paddingLeft: '0px',
-    }
-  }
-
-  onMouseEnterItem(): void {
-      this.props['onMouseEnterItem'](this.props.alias);
-  }
-
-  onMouseLeaveItem(): void {
-      this.props['onMouseLeaveItem'](this.props.alias);
-  }
-
-  onMouseDownItem(): void {
-      this.props['onMouseDownItem'](this.props.alias);
-  }
-
-  onChangeItem(/*cellAlias: string,*/ val: tyepCellVal): void {
-      this.props['onChangeItem'](this.props.alias, val);
-  }
-
-  onDoubleClickItem(/*cellAlias: string*/): void {
-      this.props['onDoubleClickItem'](this.props.alias);
-  }
-
-  onClickItem(/*cellAlias: string*/): void {
-      this.props['onClickItem'](this.props.alias);
-  }
-
-  render(): React.ReactElement {
-
-    const {color = '', widthPix, display, layoutMode, defaultColor, rowItem, val} = this.props;
+  const {color = '', widthPix, display, layoutMode, defaultColor, rowItem, val} = props;
     
-    //If the line is selected, then create a component
-    const style = {
-      width: widthPix + 'px', //на ширину левого падднинга
-      maxWidth: widthPix + 'px', //на ширину левого падднинга
-      display: display,
-      background: color,
-      ...this._baseStyle
-    }
-
-    if (layoutMode != 'edit') {
-      style.overflow = 'hidden';
-      style.paddingLeft = '5px';
-    }
-
-
-
-
-    const className = `${css.bodyCell} ` + defaultColor;
-
-    //создаем ячейку
-    return (<this.props.type.constr
-      layoutMode={layoutMode}
-      style={style}
-      widthPix={widthPix}
-      onChangeItem={this.onChangeItem}
-      onMouseDownItem={this.onMouseDownItem}
-      onMouseLeaveItem={this.onMouseLeaveItem}
-      onMouseEnterItem={this.onMouseEnterItem}
-      onDoubleClickItem={this.onDoubleClickItem}
-      onClickItem={this.onClickItem}
-      rowItem={rowItem}
-      val={val}
-      settings={this.props.type.settings}
-      className={className} />)
+  //If the line is selected, then create a component
+  const style: CSSProperties = {
+    width: `${widthPix}px`, 
+    maxWidth: `${widthPix}px`, 
+    display: display,
+    background: color,
+    whiteSpace: 'nowrap',
+    lineHeight: 'normal',
+    fontKerning: 'auto',
+    fontFamily: '"Tahoma", Helvetica, Arial, sans-serif',
+    fontSize: '10pt',
+    textOverflow: 'ellipsis',
+    boxSizing: 'border-box',
+    paddingLeft: '0px',
   }
 
+  if (layoutMode != 'edit') {
+    style.overflow = 'hidden';
+    style.paddingLeft = '5px';
+  }
+
+  const onMouseDownItem = (): void => {
+    props['onMouseDownItem'](props.alias);
+  };
+
+  const onChangeItem = (/*cellAlias: string,*/ val: tyepCellVal): void => {
+    props['onChangeItem'](props.alias, val);
+  };
+
+
+  return (<props.type.constr
+    layoutMode={layoutMode}
+    style={style}
+    widthPix={widthPix}
+    onChangeItem={onChangeItem}
+    onMouseDownItem={onMouseDownItem}
+    rowItem={rowItem}
+    val={val}
+    settings={props.type.settings}
+    className={`${css.bodyCell} ` + defaultColor} />)
 }
-
-export { CellLayout }
-
