@@ -16,35 +16,19 @@ export interface IToolbarLayoutProps {
   items: IToolbarItem[]
 }
 
-
-
 // group of image buttons and other elements
-export class ToolbarLayout extends React.Component<IToolbarLayoutProps>{
-
-
-  constructor(props: IToolbarLayoutProps) {
-    super(props);
-  }
-
-  render(): React.ReactElement {
-    const nItems = [];
-    for (let i = 0; i < this.props['items'].length; i++) {
-      const Constr = this.props.items[i].type.constr;
-      const settings = this.props.items[i].type.settings;
-      const { name, widthPix } = this.props['items'][i]
-      nItems.push(<Constr
-        key={name}
-        widthPix={32}
-        {...settings}
-      />);
-    }
-
-
-    return (
-      <LinearGroupLayout height={32} prepareGridDisplay={true}  >
-        {nItems}
-      </LinearGroupLayout>
-    )
-  }
+export const ToolbarLayout: React.FC<IToolbarLayoutProps> = ({ items }: IToolbarLayoutProps) => {
+  return (
+    <LinearGroupLayout height={32} prepareGridDisplay={true}  >
+      {
+        items.map((item) => {
+          const Constr = item.type.constr;
+          const settings = item.type.settings;
+          const { name } = item;
+          return <Constr key={name} widthPix={32} {...settings} />
+        })
+      }
+    </LinearGroupLayout>
+  )
 }
 

@@ -1,6 +1,6 @@
 import * as ST from './../../../common';
 import { RowLayout } from './RowLayout'
-import { CELL_HEIGHT } from './ItemsLayout'
+import { CELL_HEIGHT } from './../constants'
 import React from 'react';
 import { ItemsLayout } from './ItemsLayout'
 import css from './../Items/renderRows.scss'

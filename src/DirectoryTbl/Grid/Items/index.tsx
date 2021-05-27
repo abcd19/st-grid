@@ -1,2 +1,2 @@
-export {ItemsLayout, IItemsLayoutProps, CELL_HEIGHT} from './ItemsLayout';
+export {ItemsLayout, IItemsLayoutProps} from './ItemsLayout';
 export {tyepCellVal} from './CellLayout';

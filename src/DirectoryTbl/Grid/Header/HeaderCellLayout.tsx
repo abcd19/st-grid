@@ -1,4 +1,5 @@
-import * as ST from '../../../common'
+import * as ST from '../../../common';
+import {CELL_HEIGHT} from './../constants';
 import React from 'react';
 import css from './Header.scss'
 
@@ -17,7 +18,6 @@ export interface IHeaderCellLayoutState {
   sortBadge: string
 }
 
-const CELL_HEIGHT = 30;
 
 /* cell of header */
 export class HeaderCellLayout extends React.PureComponent<IHeaderCellLayoutProps, IHeaderCellLayoutState> {

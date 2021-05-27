@@ -1,15 +1,15 @@
 import React from 'react';
 import { HeaderLayout } from './Header';
-import { ItemsLayout, tyepCellVal, CELL_HEIGHT } from './Items';
+import { ItemsLayout, tyepCellVal } from './Items';
+import { CELL_HEIGHT, SCROLL_PLACE } from './constants';
 import { ToolbarLayout, IToolbarLayoutProps } from './Toolbar'
 import { calcSumColumnsWidth } from './calcSumColumnsWidth';
-import './GridLayout.scss'
 import { onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth } from './handle'
 import { IStringFldLayoutEditProps } from './../../StringFld';
 import { IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/ } from './../../ComboboxFld';
 import { ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/ } from './../../CheckboxFld';
 
-
+import './GridLayout.scss'
 
 
 export type typeTypeColumn = {
@@ -45,10 +45,6 @@ export interface IGridLayoutProps {
   sortingFlag: boolean;
   toolbar: IToolbarLayoutProps;
   onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void,
-  onMouseEnterItem: (rowObject: typeItem, cellAlias: string) => void,
-  onMouseLeaveItem: (rowObject: typeItem, cellAlias: string) => void,
-  onDoubleClickItem: (rowObject: typeItem, cellAlias: string) => void;
-  onClickItem: (rowObject: typeItem, cellAlias: string) => void;
   onChangeItem: (rowObject: typeItem, cellAlias: string, val: tyepCellVal) => void;
 }
 
@@ -59,7 +55,7 @@ export interface IGridLayoutState {
 /** grid */
 export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
 
-  private SCROLL: number;
+
   private HEADER_HEIGHT: number;
   private TOOLBAR_HEIGHT: number;
   private scrollBottomRef: React.RefObject<HTMLDivElement>;
@@ -75,7 +71,7 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
 
   constructor(props: IGridLayoutProps) {
     super(props);
-    this.SCROLL = 20;
+
     this.TOOLBAR_HEIGHT = 34;
     this.HEADER_HEIGHT = 30;
     this.firstVisibleRowI = 0;
@@ -108,15 +104,8 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
 
     if (this.bodyDivRef && this.bodyDivRef.current) {
       if ('onwheel' in document) {
-        // IE9+, FF17+, Ch31+
         this.bodyDivRef.current.addEventListener("wheel", prevDef, { passive: false });
-      }/* else if ('onmousewheel' in document) {
-        // old
-        this.bodyDivRef.current.addEventListener("mousewheel", prevDef, { passive: false });
-      } else {
-        // Firefox < 17
-        this.bodyDivRef.current.addEventListener("MozMousePixelScroll", prevDef, { passive: false });
-      }*/
+      }
     }
 
     this.prepareScrollToLastItem();
@@ -148,9 +137,9 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
       }
     }
 
-    const width = this.props.width - this.SCROLL;
+    const width = this.props.width - SCROLL_PLACE;
     let rightScrollHeight = items.length * CELL_HEIGHT;
-    const bodyContentHeight = this.props.height - this.SCROLL - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
+    const bodyContentHeight = this.props.height - SCROLL_PLACE - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
     const bodyContentWidth = calcSumColumnsWidth(this.props.columns);
     //console.dir(bodyContentWidth)
     // one line can be added to this height for the beauty of display at the end of the lines
@@ -207,15 +196,15 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
             </div>
           </td>
           <td className="st-grid-body-rightScroll">
-            <div onScroll={this.onItemScrollY} ref={this.scrollRightRef} className="st-grid-rightScroll-div" style={{ width: this.SCROLL + 'px', height: bodyContentHeight }}>
+            <div onScroll={this.onItemScrollY} ref={this.scrollRightRef} className="st-grid-rightScroll-div" style={{ width: SCROLL_PLACE + 'px', height: bodyContentHeight }}>
               <div style={{ height: rightScrollHeight }}></div>
             </div>
           </td>
         </tr>
         <tr>
           <td>
-            <div onScroll={this.onItemScrollX} ref={this.scrollBottomRef} className="st-grid-bottomScroll-div" style={{ height: this.SCROLL + 'px', width: width }}>
-              <div className="st-grid-bottomScroll-content-div" style={{ height: this.SCROLL + 'px', width: bodyContentWidth + 'px' }}></div>
+            <div onScroll={this.onItemScrollX} ref={this.scrollBottomRef} className="st-grid-bottomScroll-div" style={{ height: SCROLL_PLACE + 'px', width: width }}>
+              <div className="st-grid-bottomScroll-content-div" style={{ height: SCROLL_PLACE + 'px', width: bodyContentWidth + 'px' }}></div>
             </div>
           </td>
           <td></td>

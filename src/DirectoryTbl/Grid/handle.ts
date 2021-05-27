@@ -1,5 +1,5 @@
 import * as ST from '../../common'
-import { CELL_HEIGHT } from './Items/ItemsLayout';
+import { CELL_HEIGHT } from './constants';
 
 
 

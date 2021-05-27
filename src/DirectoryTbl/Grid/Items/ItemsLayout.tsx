@@ -3,6 +3,7 @@ import { renderRows } from './renderRows';
 import React from 'react';
 import { typeItem, typeColumn } from './../GridLayout'
 import { tyepCellVal } from './CellLayout'
+import {CELL_HEIGHT} from './../constants';
 
 export interface IItemsLayoutProps {
   columns: typeColumn[];
@@ -13,8 +14,7 @@ export interface IItemsLayoutProps {
   onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void
 }
 
-export const CELL_HEIGHT = 30;
-export const SCROLL_PLACE = 20;
+
 export const MIN_COL_WIDTH = 100;
 
 // set of rows

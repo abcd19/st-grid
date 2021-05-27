@@ -11,9 +11,6 @@ export interface IDirectoryTblProps {
   items?: typeItem[];
   addBtnFlag?: boolean;
   removeBtnFlag?: boolean;
-  onMouseEnterItem?: (rowObject: typeItem, cellAlias: string) => void,
-  onMouseLeaveItem?: (rowObject: typeItem, cellAlias: string) => void,
-  onDoubleClickItem?: (rowObject: typeItem, cellAlias: string) => void;
   onClickItem?: (rowObject: typeItem, cellAlias: string) => void
   onSelectItem?: (item?: typeItem, num?: number) => void;
   onChange?: (newItems: typeItem[], obj: { event: string, removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal }) => void;
@@ -65,9 +62,6 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
 
     const { height = 200, width = 400, columns, sortingFlag = true } = this.props;
     const {
-      onMouseEnterItem = () => {/* do nothing */ },
-      onMouseLeaveItem = () => {/* do nothing */ },
-      onDoubleClickItem = () => {/* do nothing */ },
       onClickItem = () => {/* do nothing */ }
     } = this.props;
 
@@ -97,10 +91,6 @@ export class DirectoryTbl extends React.Component<IDirectoryTblProps, IDirectory
       onChangeItem={this.onChangeItem}
       onMouseDownItem={this.onMouseDownItem}
       onClickHeaderCell={()=> {/** do nothing  */}}
-      onMouseEnterItem={onMouseEnterItem}
-      onMouseLeaveItem={onMouseLeaveItem}
-      onDoubleClickItem={onDoubleClickItem}
-      onClickItem={onClickItem}
       sortingFlag={sortingFlag}
       toolbar={this.toolbar}
       items={items}
