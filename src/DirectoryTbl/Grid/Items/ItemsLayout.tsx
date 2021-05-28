@@ -1,12 +1,12 @@
 
 import { renderRows } from './renderRows';
 import React from 'react';
-import { typeItem, typeColumn } from './../GridLayout'
+import { typeItem, TGridColumn } from './../GridLayout'
 import { tyepCellVal } from './CellLayout'
 import {CELL_HEIGHT} from './../constants';
 
 export interface IItemsLayoutProps {
-  columns: typeColumn[];
+  columns: TGridColumn[];
   firstVisibleRowI: number;
   height: number;
   items: typeItem[];
@@ -14,8 +14,6 @@ export interface IItemsLayoutProps {
   onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void
 }
 
-
-export const MIN_COL_WIDTH = 100;
 
 // set of rows
 export class ItemsLayout extends React.Component<IItemsLayoutProps> {

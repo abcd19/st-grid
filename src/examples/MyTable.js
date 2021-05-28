@@ -90,7 +90,7 @@ export class MyTable extends React.Component {
     this.onChange = this.onChange.bind(this);
 
     this.state = {
-      items: items,
+      items: items.concat(items,items,items,items,items,items),
       columns: columns
     };
   }

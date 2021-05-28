@@ -3,7 +3,7 @@ import css from './Cell.scss';
 import {typeStringFldVal} from './../../../StringFld/StringFldLayoutEdit';
 import {typeComboValue} from './../../../ComboboxFld';
 import {typeCheckboxFldVal} from './../../../CheckboxFld/CheckboxFldLayoutEdit'
-import { typeItem, typeTypeColumn } from './../GridLayout'
+import { typeItem, TGridColumnType } from './../GridLayout'
 export type tyepCellVal = typeStringFldVal | typeComboValue |  typeCheckboxFldVal; 
 
 
@@ -15,7 +15,7 @@ export interface ICellLayoutProps {
   val: tyepCellVal,
   rowItem: typeItem,
   rowNum: number,
-  type: typeTypeColumn,
+  type: TGridColumnType,
   alias: string,
   display?: string,
   defaultColor: string,

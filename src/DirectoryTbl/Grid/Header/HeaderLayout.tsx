@@ -1,13 +1,13 @@
 
 import {HeaderRowLayout} from './HeaderRowLayout';
 import React from 'react';
-import {typeColumn} from './../../Grid/GridLayout'
+import {TGridColumn} from './../../Grid/GridLayout'
 
 
 export interface IHeaderLayoutProps {
   changeHeaderCellWidth: (cellAlias: string, width: number)=>void;
   clickHeaderCell: (alias: string, order?: string) => void
-  columns: typeColumn[];
+  columns: TGridColumn[];
   sortingFlag: boolean;
 }
 

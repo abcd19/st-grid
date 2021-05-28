@@ -1,6 +1,5 @@
 import {HeaderCellLayout} from './HeaderCellLayout'
 import React from 'react';
-import {typeColumn} from './../../Grid/GridLayout'
 import {IHeaderLayoutProps} from './HeaderLayout';
 
 export interface IHeaderRowLayoutProps extends IHeaderLayoutProps {};
@@ -19,7 +18,7 @@ export const HeaderRowLayout: React.FC<IHeaderRowLayoutProps> = (props: IHeaderR
       continue;
     }
     
-    const {widthPix = 100, title = `cell_${i}`, alias = `cell_${i}`} = columns[i];
+    const {widthPix, title, alias} = columns[i];
 
     const newItem = <HeaderCellLayout 
                         key = {i} 

@@ -1,7 +1,7 @@
 import { CellLayout } from './CellLayout';
 import React from 'react';
 import { tyepCellVal } from './CellLayout'
-import { typeColumn, typeItem } from '../GridLayout'
+import { TGridColumn, typeItem } from '../GridLayout'
 import {StringFldCell} from '../../../StringFld/StringFldCell'
 
 
@@ -10,7 +10,7 @@ export interface IRowLayoutProps {
   onMouseDownItem: (rowObject: typeItem, cellAlias: string) => void,
   item: typeItem,
   defaultColor: string,
-  columns: typeColumn[],
+  columns: TGridColumn[],
   rowNum: number,
 }
 
@@ -43,7 +43,7 @@ export class RowLayout extends React.Component<IRowLayoutProps> {
     const cells: React.ReactElement[] = [];
 
     for (let i = 0; i < this.props.columns.length; i++) {
-      const { visible, type = {constr: StringFldCell,settings: {}}, alias, widthPix = 100 } = this.props['columns'][i];
+      const { visible, type, alias, widthPix} = this.props['columns'][i];
 
       if (visible === false) {
         continue

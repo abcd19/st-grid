@@ -1,6 +1,6 @@
 import React from 'react';
 import { DirectoryTbl, IDirectoryTblProps } from './../DirectoryTbl';
-import { StringFldCell, CheckboxFldCell, ComboboxFldCell, typeColumn, typeItem } from './../Grid';
+import { StringFldCell, CheckboxFldCell, ComboboxFldCell, TGridColumn, typeItem } from './../Grid';
 import { shallow, mount } from 'enzyme';
 import { GridLayout } from './../Grid';
 import { ItemsLayout } from './../Grid/Items';

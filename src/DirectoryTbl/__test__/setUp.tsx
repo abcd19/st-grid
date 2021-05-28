@@ -1,6 +1,5 @@
 import { shallow } from 'enzyme';
-import { DirectoryTbl, IDirectoryTblProps } from './../DirectoryTbl';
-import { typeColumn } from '../Grid/GridLayout';
+import { DirectoryTbl, IDirectoryTblProps, TDirectoryTblColumn } from './../DirectoryTbl';
 import { ComboboxFldCell } from './../../ComboboxFld/ComboboxFldCell';
 import { CheckboxFldCell } from './../../CheckboxFld/CheckboxFldCell';
 import React from 'react';
@@ -43,7 +42,7 @@ export const items = [
   }
 ];
 
-export const columns: typeColumn[] = [
+export const columns: TDirectoryTblColumn[] = [
   {
     title: "№",
     alias: "num",

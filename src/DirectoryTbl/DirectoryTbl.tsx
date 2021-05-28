@@ -1,8 +1,21 @@
 import React from 'react'
-import { GridLayout, IToolbarLayoutProps, typeColumn, typeItem, tyepCellVal } from './Grid'
+import { GridLayout, IToolbarLayoutProps, typeItem, tyepCellVal } from './Grid'
 import { onChangeItem, onMouseDownItem} from './DirectoryTblHandle'
 import * as ST from '../common'
 import { createDirectoryTableToolbar } from './Toolbar/createDirectoryTableToolbar';
+
+
+export type TDirectoryTblColumn = {
+  title?: string;
+  alias?: string;
+  widthPix?: number;
+  type?: {
+    constr: any;
+    settings: any;
+  };
+  visible?: boolean;
+}
+
 
 export interface IDirectoryTblProps {
   height?: number;
@@ -14,7 +27,7 @@ export interface IDirectoryTblProps {
   onClickItem?: (rowObject: typeItem, cellAlias: string) => void
   onSelectItem?: (item?: typeItem, num?: number) => void;
   onChange?: (newItems: typeItem[], obj: { event: string, removedItem?: typeItem, selItemNum?: number, cellAlias?: string, newVal?: tyepCellVal }) => void;
-  columns: typeColumn[];
+  columns: TDirectoryTblColumn[];
 }
 
 

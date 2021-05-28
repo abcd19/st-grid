@@ -111,7 +111,7 @@ export function onItemMouseWheelScrollingY(this: any, e: any) {
 
   }
 
-
+  console.dir(newFirstVisibleRow );
   this.setState({ firstVisibleRowI: newFirstVisibleRow });
 
 }

@@ -1,28 +1,27 @@
 import React from 'react';
 import { HeaderLayout } from './Header';
 import { ItemsLayout, tyepCellVal } from './Items';
-import { CELL_HEIGHT, SCROLL_PLACE } from './constants';
+import { CELL_HEIGHT, SCROLL_PLACE, TOOLBAR_HEIGHT, HEADER_HEIGHT } from './constants';
 import { ToolbarLayout, IToolbarLayoutProps } from './Toolbar'
 import { calcSumColumnsWidth } from './calcSumColumnsWidth';
 import { onItemScrollX, onItemScrollY, onItemMouseWheelScrollingY, onChangeHeaderCellWidth } from './handle'
-import { IStringFldLayoutEditProps } from './../../StringFld';
-import { IComboboxFldLayoutEditProps/*, ComboboxFldLayoutEdit*/ } from './../../ComboboxFld';
-import { ICheckboxFldLayoutEditProps/*, CheckboxFldLayoutEdit*/ } from './../../CheckboxFld';
-
+import { StringFldCell } from '../../StringFld/StringFldCell';
+import {TDirectoryTblColumn} from './../DirectoryTbl';
 import './GridLayout.scss'
 
 
-export type typeTypeColumn = {
-  constr: any;
-  settings: IStringFldLayoutEditProps | IComboboxFldLayoutEditProps | ICheckboxFldLayoutEditProps
-}
-
-export type typeColumn = {
+export type TGridColumn = {
   title: string,
   alias: string,
-  widthPix?: number,
-  type?: typeTypeColumn,
-  visible?: boolean
+  widthPix: number,
+  type: TGridColumnType,
+  visible: boolean
+}
+
+
+export type TGridColumnType = {
+  constr: any;
+  settings: any;
 }
 
 
@@ -38,7 +37,7 @@ export type typeItem = {
 export interface IGridLayoutProps {
   onClickHeaderCell: (alias: string, order?: string) => void;
   scrollToLastItem: boolean;
-  columns: typeColumn[];
+  columns: TDirectoryTblColumn[];
   items: typeItem[];
   height: number;
   width: number;
@@ -50,14 +49,13 @@ export interface IGridLayoutProps {
 
 export interface IGridLayoutState {
   scrollToLastItem: boolean;
+  firstVisibleRowI: number;
 }
 
 /** grid */
 export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutState> {
 
 
-  private HEADER_HEIGHT: number;
-  private TOOLBAR_HEIGHT: number;
   private scrollBottomRef: React.RefObject<HTMLDivElement>;
   private scrollRightRef: React.RefObject<HTMLDivElement>;
   private bodyDivRef: React.RefObject<HTMLDivElement>;
@@ -66,17 +64,13 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
   private onItemMouseWheelScrollingY: (this: GridLayout, e: React.WheelEvent) => void;
   private onItemScrollY: () => void;
   private onChangeHeaderCellWidth: (this: GridLayout, cellAlias: string, width: number) => void;
-  private firstVisibleRowI: number;
-
 
   constructor(props: IGridLayoutProps) {
     super(props);
 
-    this.TOOLBAR_HEIGHT = 34;
-    this.HEADER_HEIGHT = 30;
-    this.firstVisibleRowI = 0;
     this.state = {
       scrollToLastItem: false,
+      firstVisibleRowI: 0
     }
 
     this.scrollBottomRef = React.createRef();
@@ -118,29 +112,32 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
   //todo 
   prepareScrollToLastItem(): void {
     if (this.props.scrollToLastItem === true && this.scrollRightRef && this.scrollRightRef.current) {
-      let newScroll = this.firstVisibleRowI * CELL_HEIGHT;
+      let newScroll = this.state.firstVisibleRowI * CELL_HEIGHT;
       newScroll = newScroll + CELL_HEIGHT;
       this.scrollRightRef.current.scrollTop = newScroll;
     }
   }
 
   render(): React.ReactElement {
-    const { columns, items } = this.props;
-    for (let i = 0; i < this.props.columns.length; i++) {
+    const { items } = this.props;
+    let {firstVisibleRowI} = this.state;
 
-      if (columns[i]['visible'] == false) {
-        columns[i]['widthPix'] = 0;
+    const columns: TGridColumn[] = this.props.columns.map((item, i) => {
+      let { title = `cell_${i}`, alias = `cell_${i}`, widthPix = 100, type = { constr: StringFldCell, settings: {} }, visible = true } = item;
+
+      if (visible == false) {
+        widthPix = 0;
       }
 
-      if (columns[i]['widthPix'] == undefined) {
-        columns[i]['widthPix'] = 100;
-      }
-    }
+      return { title, alias, widthPix, type, visible }
+    });
+
 
     const width = this.props.width - SCROLL_PLACE;
+    const bodyContentHeight = this.props.height - SCROLL_PLACE - TOOLBAR_HEIGHT - HEADER_HEIGHT;
+
     let rightScrollHeight = items.length * CELL_HEIGHT;
-    const bodyContentHeight = this.props.height - SCROLL_PLACE - this.TOOLBAR_HEIGHT - this.HEADER_HEIGHT;
-    const bodyContentWidth = calcSumColumnsWidth(this.props.columns);
+    const bodyContentWidth = calcSumColumnsWidth(columns);
     //console.dir(bodyContentWidth)
     // one line can be added to this height for the beauty of display at the end of the lines
     // add another line to the body
@@ -152,13 +149,13 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
     if (this.props.scrollToLastItem === true) {
       const visibleRowsCount = Math.ceil(bodyContentHeight / CELL_HEIGHT);
 
-      this.firstVisibleRowI = items.length - visibleRowsCount + 1;
+      firstVisibleRowI = items.length - visibleRowsCount + 1;
 
     }
 
     // the case when the height of the table was changed and all the rows fit
     if (bodyContentHeight > rightScrollHeight) {
-      this.firstVisibleRowI = 0;
+      firstVisibleRowI = 0;
     }
 
     return (<table className="st-grid-layout">
@@ -191,7 +188,7 @@ export class GridLayout extends React.Component<IGridLayoutProps, IGridLayoutSta
                   onChangeItem={this.props.onChangeItem}
                   items={items}
                   height={bodyContentHeight}
-                  firstVisibleRowI={this.firstVisibleRowI} />
+                  firstVisibleRowI={firstVisibleRowI} />
               </div>
             </div>
           </td>
